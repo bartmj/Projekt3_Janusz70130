@@ -257,7 +257,7 @@ namespace Projekt2_Janusz70130
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.bjChrt.Series.Add(series1);
-            this.bjChrt.Size = new System.Drawing.Size(493, 300);
+            this.bjChrt.Size = new System.Drawing.Size(493, 426);
             this.bjChrt.TabIndex = 30;
             this.bjChrt.Text = "chart1";
             this.bjChrt.Visible = false;
