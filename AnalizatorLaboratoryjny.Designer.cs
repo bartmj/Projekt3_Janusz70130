@@ -29,10 +29,10 @@ namespace Projekt2_Janusz70130
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.btnObliczWartoœæFx = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -347,38 +347,38 @@ namespace Projekt2_Janusz70130
             // chrtFx
             // 
             this.chrtFx.BackColor = System.Drawing.Color.LightSkyBlue;
-            chartArea4.AxisX.Title = "Wartoœæ X";
-            chartArea4.AxisX.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea4.AxisX2.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea4.AxisY.Title = "Wartoœæ równania";
-            chartArea4.AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea4.AxisY2.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea4.Name = "ChartArea1";
-            chartArea4.Position.Auto = false;
-            chartArea4.Position.Height = 72.87241F;
-            chartArea4.Position.Width = 84F;
-            chartArea4.Position.X = 3F;
-            chartArea4.Position.Y = 12.8231F;
-            this.chrtFx.ChartAreas.Add(chartArea4);
-            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend4.Name = "Legend1";
-            legend4.TitleFont = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chrtFx.Legends.Add(legend4);
+            chartArea6.AxisX.Title = "Wartoœæ X";
+            chartArea6.AxisX.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea6.AxisX2.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea6.AxisY.Title = "Wartoœæ równania";
+            chartArea6.AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea6.AxisY2.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea6.Name = "ChartArea1";
+            chartArea6.Position.Auto = false;
+            chartArea6.Position.Height = 72.87241F;
+            chartArea6.Position.Width = 84F;
+            chartArea6.Position.X = 3F;
+            chartArea6.Position.Y = 12.8231F;
+            this.chrtFx.ChartAreas.Add(chartArea6);
+            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend6.Name = "Legend1";
+            legend6.TitleFont = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chrtFx.Legends.Add(legend6);
             this.chrtFx.Location = new System.Drawing.Point(257, 79);
             this.chrtFx.Margin = new System.Windows.Forms.Padding(0);
             this.chrtFx.Name = "chrtFx";
-            series4.ChartArea = "ChartArea1";
-            series4.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chrtFx.Series.Add(series4);
+            series6.ChartArea = "ChartArea1";
+            series6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series6.Legend = "Legend1";
+            series6.Name = "Series1";
+            this.chrtFx.Series.Add(series6);
             this.chrtFx.Size = new System.Drawing.Size(493, 426);
             this.chrtFx.TabIndex = 19;
             this.chrtFx.Text = "chart1";
-            title4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            title4.Name = "Wykres zmian wartoœci równania kwadratowego";
-            title4.Text = "Wykres zmian wartoœci równania kwadratowego";
-            this.chrtFx.Titles.Add(title4);
+            title6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            title6.Name = "Wykres zmian wartoœci równania kwadratowego";
+            title6.Text = "Wykres zmian wartoœci równania kwadratowego";
+            this.chrtFx.Titles.Add(title6);
             this.chrtFx.Visible = false;
             // 
             // btnWizualizacjaGraficznaFx
@@ -423,12 +423,14 @@ namespace Projekt2_Janusz70130
             this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Name = "zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem";
             this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Text = "Zapisz wiersze danych kontrolki DataGridView w pliku";
+            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Click += new System.EventHandler(this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem_Click);
             // 
             // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem
             // 
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Name = "pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem";
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Text = "Pobierz z pliku wiersze danych do kontrolki DataGridView";
+            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Click += new System.EventHandler(this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem_Click);
             // 
             // zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem
             // 

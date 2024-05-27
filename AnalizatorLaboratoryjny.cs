@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -433,8 +434,123 @@ namespace Projekt2_Janusz70130
             txth.Clear();
             txtWartoœæRównania.Clear();
         }
-    }
-}
 
+        private void zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // wygaszenie kontrolki errorProvider
+            errorProvider1.Dispose();
+            // sprawdzenie, czy kontrolka DataGridView jest widoczna 
+            if (dgvTWFx == null || !dgvTWFx.Visible || dgvTWFx.Rows.Count <= 0)
+            {
+                errorProvider1.SetError(btnWizualizacjaTabelarycznaFx, "ERROR: " +
+                    " polecenie nie mo¿e byæ zrealizowane bo Kontrolka DataGridView jest " +
+                    " niewidoczna lub pusta");
+                // przerwanie dalszej obs³ugi 
+                return;
+            }
+            // 1. utworzenie egzemplarza okna dialogowego: OknoPlikuDoZapisu
+            SaveFileDialog OknoPlikuDoZapisu = new SaveFileDialog();
+            // 2. ustawienie atrybutu okna dialogowego OknoPlikuDoZapisu
+            OknoPlikuDoZapisu.Title = "Wybór pliku do wpisania wierszy danych z kontrolki " +
+                "DataGridView";
+            OknoPlikuDoZapisu.Filter = "txtfiles(*.txt)|*.txt|all files (*.*)|*.*";
+            OknoPlikuDoZapisu.FilterIndex = 1;
+            OknoPlikuDoZapisu.RestoreDirectory = true;
+            OknoPlikuDoZapisu.InitialDirectory = "C:\\";
+            // wizualizacja okna OknoPlikuDoZapisu i odczytanie informacji o wyborze pliku
+            if (OknoPlikuDoZapisu.ShowDialog() == DialogResult.OK)
+            {
+                // plik zosta³ wybrany lub zosta³ utworzony nowy plik 
+                // utworzenie egzemplarza strumienia do zapisu 
+                StreamWriter PlikZnakowy = new StreamWriter(OknoPlikuDoZapisu.FileName);
+                try
+                { // wypisaywanie do pliku wierszy danych kontrolki DataGridView
+                    for (int i = 0; i < dgvTWFx.Rows.Count; i++)
+                    {
+                        if ((dgvTWFx.Rows[i].Cells[0].Value != null) &&
+                            (dgvTWFx.Rows[i].Cells[1].Value != null) &&
+                            (dgvTWFx.Rows[i].Cells[2].Value != null)
+                            )
+                        {
+                            PlikZnakowy.Write(dgvTWFx.Rows[i].Cells[0].Value.ToString());
+                            PlikZnakowy.Write(";");
+                            PlikZnakowy.Write(dgvTWFx.Rows[i].Cells[1].Value.ToString());
+                            PlikZnakowy.Write(";");
+                            PlikZnakowy.WriteLine(dgvTWFx.Rows[i].Cells[2].Value.ToString());
+                        }
+                    }
+                }
+                catch (Exception B³¹d)
+                {
+                    MessageBox.Show("ERROR: wyst¹pi³ nieoczekiwany b³¹d podczas zapisu " +
+                        "wierszy danych z kontrolki DataGridView (komunikat systemowy: " +
+                        B³¹d.Message + " )");
+                }
+                finally
+                {
+                    PlikZnakowy.Close();
+                    PlikZnakowy.Dispose();
+                }
+                // zmkniêcie okna dialogowego OknoPlikuDoZapisu 
+                OknoPlikuDoZapisu.Dispose();
+            }
+        }
+
+        private void pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+                // wygaszenie kontrolki errorProvider
+                errorProvider1.Dispose();
+                // 1. utworzenie egzemplarza okna dialogowego: OknoPlikuDoOdczytu
+                OpenFileDialog OknoPlikuDoOdczytu = new OpenFileDialog();
+                // 2. ustawienie atrybutu okna dialogowego OknoPlikuDoOdczytu
+                OknoPlikuDoOdczytu.Title = "Wybór pliku do wczytania wierszy danych do kontrolki " +
+                    "DataGridView";
+                OknoPlikuDoOdczytu.Filter = "txtfiles(*.txt)|*.txt|all files (*.*)|*.*";
+                OknoPlikuDoOdczytu.FilterIndex = 1;
+                OknoPlikuDoOdczytu.RestoreDirectory = true;
+                OknoPlikuDoOdczytu.InitialDirectory = "C:\\";
+
+                // wizualizacja okna OknoPlikuDoOdczytu i odczytanie informacji o wyborze pliku
+                if (OknoPlikuDoOdczytu.ShowDialog() == DialogResult.OK)
+                {
+                    // plik zosta³ wybrany 
+                    // utworzenie egzemplarza strumienia do odczytu 
+                    StreamReader PlikZnakowy = new StreamReader(OknoPlikuDoOdczytu.FileName);
+                    try
+                    {
+                        // wczytywanie wierszy danych do kontrolki DataGridView
+                        string linia;
+                        while ((linia = PlikZnakowy.ReadLine()) != null)
+                        {
+                            string[] dane = linia.Split(';');
+                            if (dane.Length == 3)
+                            {
+                                dgvTWFx.Rows.Add(dane[0], dane[1], dane[2]);
+                            }
+                        }
+                    }
+                    catch (Exception B³¹d)
+                    {
+                        MessageBox.Show("ERROR: wyst¹pi³ nieoczekiwany b³¹d podczas odczytu " +
+                            "wierszy danych z pliku (komunikat systemowy: " +
+                            B³¹d.Message + " )");
+                    }
+                    finally
+                    {
+                        PlikZnakowy.Close();
+                        PlikZnakowy.Dispose();
+                    }
+                    // zmkniêcie okna dialogowego OknoPlikuDoOdczytu 
+                    OknoPlikuDoOdczytu.Dispose();
+
+                    // 5. Ods³oniêcie kontrolki DataGridView
+                    dgvTWFx.Visible = true;
+
+                    // 6. Ustawienie stanu braku aktywnoœci dla obs³ugiwanego przycisku poleceñ btnWizualizacjaTabelarycznaFx
+                    btnWizualizacjaTabelarycznaFx.Enabled = false;
+                }
+            }
+        }
+    }
 #endregion
 
