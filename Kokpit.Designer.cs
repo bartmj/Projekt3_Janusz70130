@@ -31,7 +31,8 @@ namespace Projekt2_Janusz70130
             this.label1 = new System.Windows.Forms.Label();
             this.btnAnalizatorLaboratoryjnyProjektuNr2 = new System.Windows.Forms.Button();
             this.btnAnalizatorIndywidualnyProjektuNr2 = new System.Windows.Forms.Button();
-            this.bjBtnSprawdzian = new System.Windows.Forms.Button();
+            this.btnSpr3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -68,23 +69,34 @@ namespace Projekt2_Janusz70130
             this.btnAnalizatorIndywidualnyProjektuNr2.UseVisualStyleBackColor = true;
             this.btnAnalizatorIndywidualnyProjektuNr2.Click += new System.EventHandler(this.btnAnalizatorIndywidualnyProjektuNr2_Click);
             // 
-            // bjBtnSprawdzian
+            // btnSpr3
             // 
-            this.bjBtnSprawdzian.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjBtnSprawdzian.Location = new System.Drawing.Point(261, 231);
-            this.bjBtnSprawdzian.Name = "bjBtnSprawdzian";
-            this.bjBtnSprawdzian.Size = new System.Drawing.Size(195, 60);
-            this.bjBtnSprawdzian.TabIndex = 3;
-            this.bjBtnSprawdzian.Text = "Sprawdzian 2";
-            this.bjBtnSprawdzian.UseVisualStyleBackColor = true;
-            this.bjBtnSprawdzian.Click += new System.EventHandler(this.bjBtnSprawdzian_Click);
+            this.btnSpr3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnSpr3.Location = new System.Drawing.Point(391, 231);
+            this.btnSpr3.Name = "btnSpr3";
+            this.btnSpr3.Size = new System.Drawing.Size(195, 60);
+            this.btnSpr3.TabIndex = 4;
+            this.btnSpr3.Text = "Sprawdzian 3";
+            this.btnSpr3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(116, 231);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(195, 60);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Sprawdzian 2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.bjBtnSprawdzian_Click);
             // 
             // KokpitNr2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(717, 331);
-            this.Controls.Add(this.bjBtnSprawdzian);
+            this.Controls.Add(this.btnSpr3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAnalizatorIndywidualnyProjektuNr2);
             this.Controls.Add(this.btnAnalizatorLaboratoryjnyProjektuNr2);
             this.Controls.Add(this.label1);
@@ -101,7 +113,8 @@ namespace Projekt2_Janusz70130
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAnalizatorLaboratoryjnyProjektuNr2;
         private System.Windows.Forms.Button btnAnalizatorIndywidualnyProjektuNr2;
-        private System.Windows.Forms.Button bjBtnSprawdzian;
+        private System.Windows.Forms.Button btnSpr3;
+        private System.Windows.Forms.Button button2;
     }
 }
 

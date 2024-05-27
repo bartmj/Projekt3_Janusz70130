@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -53,11 +53,11 @@
     <Compile Include="AnalizatorIndywidualny.Designer.cs">
       <DependentUpon>AnalizatorIndywidualny.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Sprawdzian2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Sprawdzian2.Designer.cs">
+      <DependentUpon>Sprawdzian2.cs</DependentUpon>
     </Compile>
     <Compile Include="Kokpit.cs">
       <SubType>Form</SubType>
@@ -76,8 +76,8 @@
     <EmbeddedResource Include="AnalizatorIndywidualny.resx">
       <DependentUpon>AnalizatorIndywidualny.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Sprawdzian2.resx">
+      <DependentUpon>Sprawdzian2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kokpit.resx">
       <DependentUpon>Kokpit.cs</DependentUpon>

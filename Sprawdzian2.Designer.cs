@@ -78,7 +78,7 @@ namespace Projekt2_Janusz70130
             // 
             this.bjLabel3.AutoSize = true;
             this.bjLabel3.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjLabel3.Location = new System.Drawing.Point(280, 9);
+            this.bjLabel3.Location = new System.Drawing.Point(299, 9);
             this.bjLabel3.Name = "bjLabel3";
             this.bjLabel3.Size = new System.Drawing.Size(330, 26);
             this.bjLabel3.TabIndex = 4;
