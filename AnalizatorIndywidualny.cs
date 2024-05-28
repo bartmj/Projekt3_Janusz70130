@@ -186,7 +186,7 @@ namespace Projekt2_Janusz70130
                 // by³ b³¹d, to go sygnalizuje 
                 errorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: w zapisie danych wejœciowych wyst¹pi³ " +
                     "niedozwolony znak.");
-                // przerwanie obs³ugi zdarzenia Click: btnWizualizacjaTabelarycznaFx_Click
+                // przerwanie obs³ugi zdarzenia Click: bjBtnWizualizacjaTabelarycznaFx_Click
                 return;
             }
 
@@ -309,15 +309,16 @@ namespace Projekt2_Janusz70130
         {
             // wygaszenie kontrolki errorProvider
             errorProvider2.Dispose();
-           /* // sprawdzenie, czy kontrolka DataGridView jest widoczna 
-            if (dgvTWFx == null || !dgvTWFx.Visible || dgvTWFx.Rows.Count <= 0)
+            if (bjDgvTWFx == null || !bjDgvTWFx.Visible || bjDgvTWFx.Rows.Count <= 0)
             {
-                errorProvider1.SetError(btnWizualizacjaTabelarycznaFx, "ERROR: " +
+                errorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: " +
                     " polecenie nie mo¿e byæ zrealizowane bo Kontrolka DataGridView jest " +
                     " niewidoczna lub pusta");
                 // przerwanie dalszej obs³ugi zdarzenia Click
                 return;
             }
+            /* // sprawdzenie, czy kontrolka DataGridView jest widoczna 
+            
             // 1. utworzenie egzemplarza okna dialogowego: OknoPlikuDoZapisu
             SaveFileDialog OknoPlikuDoZapisu = new SaveFileDialog();
             // 2. ustawienie atrybutu okna dialogowego OknoPlikuDoZapisu
@@ -335,16 +336,16 @@ namespace Projekt2_Janusz70130
                 StreamWriter PlikZnakowy = new StreamWriter(OknoPlikuDoZapisu.FileName);
                 try
                 { // wypisaywanie do pliku wierszy danych kontrolki DataGridView
-                    for (int i = 0; i < dgvTWFx.Rows.Count; i++)
+                    for (int i = 0; i < bjDgvTWFx.Rows.Count; i++)
                     {
                         // wpisanie do pliku i-tego wiersza kontrolki DataGridView
-                        PlikZnakowy.Write(dgvTWFx.Rows[i].Cells[0].Value);
+                        PlikZnakowy.Write(bjDgvTWFx.Rows[i].Cells[0].Value);
                         // wpisanie separatora danych 
                         PlikZnakowy.Write(";");
-                        PlikZnakowy.Write(dgvTWFx.Rows[i].Cells[1].Value);
+                        PlikZnakowy.Write(bjDgvTWFx.Rows[i].Cells[1].Value);
                         // wpisanie separatora danych 
                         PlikZnakowy.Write(";");
-                        PlikZnakowy.WriteLine(dgvTWFx.Rows[i].Cells[2].Value);
+                        PlikZnakowy.WriteLine(bjDgvTWFx.Rows[i].Cells[2].Value);
                     }
                 }
                 catch (Exception B³¹d)
