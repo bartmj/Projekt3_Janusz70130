@@ -30,9 +30,9 @@ namespace Projekt2_Janusz70130
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalizatorIndywidualny));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.bjTxtX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@ namespace Projekt2_Janusz70130
             this.bjTxtH = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bjErrorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.bjChrt = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +84,7 @@ namespace Projekt2_Janusz70130
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bjDgvTWFx)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bjErrorProvider2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bjChrt)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -287,27 +287,27 @@ namespace Projekt2_Janusz70130
             this.label8.TabIndex = 13;
             this.label8.Text = "h";
             // 
-            // errorProvider2
+            // bjErrorProvider2
             // 
-            this.errorProvider2.ContainerControl = this;
+            this.bjErrorProvider2.ContainerControl = this;
             // 
             // bjChrt
             // 
-            chartArea1.Name = "ChartArea1";
-            this.bjChrt.ChartAreas.Add(chartArea1);
-            legend1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            legend1.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjChrt.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.bjChrt.ChartAreas.Add(chartArea3);
+            legend3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            legend3.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bjChrt.Legends.Add(legend3);
             this.bjChrt.Location = new System.Drawing.Point(270, 198);
             this.bjChrt.Name = "bjChrt";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.bjChrt.Series.Add(series1);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.bjChrt.Series.Add(series3);
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
             this.bjChrt.TabIndex = 25;
             this.bjChrt.Text = "chart1";
@@ -350,6 +350,7 @@ namespace Projekt2_Janusz70130
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Name = "pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem";
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Text = "Pobierz z pliku wiersze danych do kontrolki DataGridView";
+            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Click += new System.EventHandler(this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem_Click);
             // 
             // zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem
             // 
@@ -416,6 +417,7 @@ namespace Projekt2_Janusz70130
             this.usuñWierszeDanychToolStripMenuItem.Name = "usuñWierszeDanychToolStripMenuItem";
             this.usuñWierszeDanychToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
             this.usuñWierszeDanychToolStripMenuItem.Text = "Usuñ wiersze danych kontrolki DataGridView";
+            this.usuñWierszeDanychToolStripMenuItem.Click += new System.EventHandler(this.usuñWierszeDanychToolStripMenuItem_Click);
             // 
             // formatowanieKontrolkiChartToolStripMenuItem
             // 
@@ -530,12 +532,11 @@ namespace Projekt2_Janusz70130
             this.Name = "AnalizatorIndywidualny";
             this.Text = "Analizator Indywidualny";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.bjAnalizatorIndywidualnyForm_Closing);
-            this.Load += new System.EventHandler(this.AnalizatorIndywidualny_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bjDgvTWFx)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bjErrorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bjChrt)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -564,7 +565,7 @@ namespace Projekt2_Janusz70130
         private System.Windows.Forms.TextBox bjTxtH;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider bjErrorProvider2;
         private System.Windows.Forms.DataGridViewTextBoxColumn bjNrPrzedzia³u;
         private System.Windows.Forms.DataGridViewTextBoxColumn bjWartoœæX;
         private System.Windows.Forms.DataGridViewTextBoxColumn bjWartoœæFx;

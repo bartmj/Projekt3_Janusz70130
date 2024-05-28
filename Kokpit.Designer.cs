@@ -29,8 +29,8 @@ namespace Projekt2_Janusz70130
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAnalizatorLaboratoryjnyProjektuNr2 = new System.Windows.Forms.Button();
-            this.btnAnalizatorIndywidualnyProjektuNr2 = new System.Windows.Forms.Button();
+            this.btnAnalizatorLaboratoryjnyProjektuNr3 = new System.Windows.Forms.Button();
+            this.btnAnalizatorIndywidualnyProjektuNr3 = new System.Windows.Forms.Button();
             this.btnSpr3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -47,27 +47,27 @@ namespace Projekt2_Janusz70130
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btnAnalizatorLaboratoryjnyProjektuNr2
+            // btnAnalizatorLaboratoryjnyProjektuNr3
             // 
-            this.btnAnalizatorLaboratoryjnyProjektuNr2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAnalizatorLaboratoryjnyProjektuNr2.Location = new System.Drawing.Point(116, 134);
-            this.btnAnalizatorLaboratoryjnyProjektuNr2.Name = "btnAnalizatorLaboratoryjnyProjektuNr2";
-            this.btnAnalizatorLaboratoryjnyProjektuNr2.Size = new System.Drawing.Size(195, 60);
-            this.btnAnalizatorLaboratoryjnyProjektuNr2.TabIndex = 1;
-            this.btnAnalizatorLaboratoryjnyProjektuNr2.Text = "Analizator Laboratoryjny Projektu nr 2";
-            this.btnAnalizatorLaboratoryjnyProjektuNr2.UseVisualStyleBackColor = true;
-            this.btnAnalizatorLaboratoryjnyProjektuNr2.Click += new System.EventHandler(this.btnAnalizatorLaboratoryjnyProjektuNr2_Click);
+            this.btnAnalizatorLaboratoryjnyProjektuNr3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAnalizatorLaboratoryjnyProjektuNr3.Location = new System.Drawing.Point(116, 134);
+            this.btnAnalizatorLaboratoryjnyProjektuNr3.Name = "btnAnalizatorLaboratoryjnyProjektuNr3";
+            this.btnAnalizatorLaboratoryjnyProjektuNr3.Size = new System.Drawing.Size(195, 60);
+            this.btnAnalizatorLaboratoryjnyProjektuNr3.TabIndex = 1;
+            this.btnAnalizatorLaboratoryjnyProjektuNr3.Text = "Analizator Laboratoryjny Projektu nr 3";
+            this.btnAnalizatorLaboratoryjnyProjektuNr3.UseVisualStyleBackColor = true;
+            this.btnAnalizatorLaboratoryjnyProjektuNr3.Click += new System.EventHandler(this.btnAnalizatorLaboratoryjnyProjektuNr2_Click);
             // 
-            // btnAnalizatorIndywidualnyProjektuNr2
+            // btnAnalizatorIndywidualnyProjektuNr3
             // 
-            this.btnAnalizatorIndywidualnyProjektuNr2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAnalizatorIndywidualnyProjektuNr2.Location = new System.Drawing.Point(391, 134);
-            this.btnAnalizatorIndywidualnyProjektuNr2.Name = "btnAnalizatorIndywidualnyProjektuNr2";
-            this.btnAnalizatorIndywidualnyProjektuNr2.Size = new System.Drawing.Size(195, 60);
-            this.btnAnalizatorIndywidualnyProjektuNr2.TabIndex = 2;
-            this.btnAnalizatorIndywidualnyProjektuNr2.Text = "Analizator Indywidualny Projektu nr 2";
-            this.btnAnalizatorIndywidualnyProjektuNr2.UseVisualStyleBackColor = true;
-            this.btnAnalizatorIndywidualnyProjektuNr2.Click += new System.EventHandler(this.btnAnalizatorIndywidualnyProjektuNr2_Click);
+            this.btnAnalizatorIndywidualnyProjektuNr3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnAnalizatorIndywidualnyProjektuNr3.Location = new System.Drawing.Point(391, 134);
+            this.btnAnalizatorIndywidualnyProjektuNr3.Name = "btnAnalizatorIndywidualnyProjektuNr3";
+            this.btnAnalizatorIndywidualnyProjektuNr3.Size = new System.Drawing.Size(195, 60);
+            this.btnAnalizatorIndywidualnyProjektuNr3.TabIndex = 2;
+            this.btnAnalizatorIndywidualnyProjektuNr3.Text = "Analizator Indywidualny Projektu nr 3";
+            this.btnAnalizatorIndywidualnyProjektuNr3.UseVisualStyleBackColor = true;
+            this.btnAnalizatorIndywidualnyProjektuNr3.Click += new System.EventHandler(this.btnAnalizatorIndywidualnyProjektuNr2_Click);
             // 
             // btnSpr3
             // 
@@ -81,6 +81,7 @@ namespace Projekt2_Janusz70130
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.button2.Location = new System.Drawing.Point(116, 231);
             this.button2.Name = "button2";
@@ -97,8 +98,8 @@ namespace Projekt2_Janusz70130
             this.ClientSize = new System.Drawing.Size(717, 331);
             this.Controls.Add(this.btnSpr3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnAnalizatorIndywidualnyProjektuNr2);
-            this.Controls.Add(this.btnAnalizatorLaboratoryjnyProjektuNr2);
+            this.Controls.Add(this.btnAnalizatorIndywidualnyProjektuNr3);
+            this.Controls.Add(this.btnAnalizatorLaboratoryjnyProjektuNr3);
             this.Controls.Add(this.label1);
             this.Name = "KokpitNr2";
             this.Text = "Kokpit_ProjektuNr2";
@@ -111,8 +112,8 @@ namespace Projekt2_Janusz70130
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAnalizatorLaboratoryjnyProjektuNr2;
-        private System.Windows.Forms.Button btnAnalizatorIndywidualnyProjektuNr2;
+        private System.Windows.Forms.Button btnAnalizatorLaboratoryjnyProjektuNr3;
+        private System.Windows.Forms.Button btnAnalizatorIndywidualnyProjektuNr3;
         private System.Windows.Forms.Button btnSpr3;
         private System.Windows.Forms.Button button2;
     }
