@@ -236,8 +236,10 @@ namespace Projekt2_Janusz70130
                 // przerwanie obs³ugi zdarzenia Click: btnWizualizacjaGraficznaFx_Click
                 return;
             }
-            // zresetowanie kontrolki
+
+            // zresetowanie kontrolki usun to 
             bjResetChart();
+
             // po poprawnym za³adowaniu dnaych ustawienie odpowedniego stanu kontrolek
             // ukrycie kontrolki wizualizacji tabelarycznej
             bjDgvTWFx.Visible = false;
@@ -425,6 +427,7 @@ namespace Projekt2_Janusz70130
                 {
                     int NrWiersza = 0; // ustalenie warunku brzegowego
                                        // wczytywanie wierszy z pliku znakowego a¿ do 'znacznika' koñca pliku
+
                     while (!bjPlikZnakowy.EndOfStream)
                     {
                         // wczytywanie wiersza (linii) z pliku znakowego
@@ -454,12 +457,17 @@ namespace Projekt2_Janusz70130
                         NrWiersza++; // zwiêkszenie licznika wierszy wpisanych do kontrolki DataGridView
                     }
 
+                    bjAktualizacjaStanuZmiennychAplikacjiNaPodstawieDGV();
+
                     // Krok 3: ods³oniêcie kontrolki DataGridView (+ ukrycie kontrolki chtyWykresFx)
                     bjDgvTWFx.Visible = true;
                     bjChrt.Visible = false; // ukrycie kontrolki Chart
                     // ustawienie braku aktywnoœci, w pozycji Plik menu poziomego, polecenia 'pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem'
                     // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
-                    bjWyczyscPolaTekstowe();
+
+                    // code here usun to 
+                    // bjWyczyscPolaTekstowe();
+
                     // usta odpowiedni stan aktywnoœci przycisków
                     bjBtnWizualizacjaGraficznaFx.Enabled = true;
                     bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
@@ -495,6 +503,52 @@ namespace Projekt2_Janusz70130
             // zwolnienie okna dialogowego: bjOknoWyboruPiku
             bjOknoWyboruPiku.Dispose();
 
+        }
+
+        private void bjAktualizacjaStanuZmiennychAplikacjiNaPodstawieDGV()
+        {
+            {
+                // Sprawdzenie, czy DataGridView zawiera co najmniej jeden wiersz
+                if (bjDgvTWFx.Rows.Count > 0)
+                {
+                    // Pobranie wartoœci z pierwszego wiersza, kolumna 1 (indeks 0)
+                    var firstRowValue = bjDgvTWFx.Rows[0].Cells[1].Value;
+                    bjXd = Convert.ToSingle(firstRowValue);
+              
+
+                    // Pobranie wartoœci z ostatniego wiersza, kolumna 1 (indeks 0)
+                    int lastRowIndex = bjDgvTWFx.Rows.Count - 1;
+                    var lastRowValue = bjDgvTWFx.Rows[lastRowIndex].Cells[1].Value;
+                    bjXg = Convert.ToSingle(lastRowValue);
+
+                    // Obliczenie ró¿nicy miêdzy wartoœci¹ pierwszego a nastêpnego wiersza
+                    if (bjDgvTWFx.Rows.Count > 1)
+                    {
+                        // Pobranie wartoœci z drugiego wiersza, kolumna 1 (indeks 0)
+                        var nextRowValue = bjDgvTWFx.Rows[1].Cells[1].Value;
+                        float nextValue = Convert.ToSingle(nextRowValue);
+
+                        // Obliczenie ró¿nicy miêdzy wartoœci¹ pierwszego a nastêpnego wiersza
+                        bjH = Math.Abs(nextValue - bjXd);
+                    }
+                    else
+                    {
+                        // Jeœli DataGridView zawiera tylko jeden wiersz, ustawienie bjH na 0
+                        bjH = 0;
+                    }
+
+                    bjTxtXd.Text = bjXd.ToString();
+                    bjTxtXg.Text = bjXg.ToString();
+                    bjTxtH.Text = bjH.ToString();
+
+                }
+                else
+                {
+                    // Obs³uga przypadku, gdy DataGridView jest puste
+                    MessageBox.Show("DataGridView is empty. Cannot retrieve values.");
+                }
+
+            }
         }
 
         private void bjWyczyscPolaTekstowe()
@@ -617,6 +671,27 @@ namespace Projekt2_Janusz70130
             // Opcjonalnie: Dodaj domyœln¹ seriê i obszar wykresu, jeœli to konieczne
             var series = new Series("Default");
             bjChrt.Series.Add(series);
+        }
+
+        private void zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult OknoMessage =
+                    MessageBox.Show("Czy na pewno chcesz zamkn¹æ ten formularz?",
+                    this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+            if (OknoMessage == DialogResult.Yes)
+            {
+                foreach (Form mainForm in Application.OpenForms)
+                {
+                    if (mainForm.Name == "KokpitNr2")
+                    {
+                        this.Hide();
+                        mainForm.Show();
+                        return;
+                    }
+                }
+            }
+            
         }
     }
 }

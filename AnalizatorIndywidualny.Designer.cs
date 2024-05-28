@@ -30,9 +30,9 @@ namespace Projekt2_Janusz70130
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalizatorIndywidualny));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.bjTxtX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -293,21 +293,21 @@ namespace Projekt2_Janusz70130
             // 
             // bjChrt
             // 
-            chartArea2.Name = "ChartArea1";
-            this.bjChrt.ChartAreas.Add(chartArea2);
-            legend2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            legend2.IsTextAutoFit = false;
-            legend2.Name = "Legend1";
-            legend2.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjChrt.Legends.Add(legend2);
+            chartArea3.Name = "ChartArea1";
+            this.bjChrt.ChartAreas.Add(chartArea3);
+            legend3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
+            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "Legend1";
+            legend3.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bjChrt.Legends.Add(legend3);
             this.bjChrt.Location = new System.Drawing.Point(270, 210);
             this.bjChrt.Name = "bjChrt";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.bjChrt.Series.Add(series2);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.bjChrt.Series.Add(series3);
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
             this.bjChrt.TabIndex = 25;
             this.bjChrt.Text = "chart1";
@@ -368,10 +368,10 @@ namespace Projekt2_Janusz70130
             // 
             // zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem
             // 
-            this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Enabled = false;
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Name = "zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem";
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Text = "Zamknij formularz (i przejdŸ do menu g³ównego)";
+            this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Click += new System.EventHandler(this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem_Click);
             // 
             // zakoñczDzia³anieProgramuToolStripMenuItem
             // 
