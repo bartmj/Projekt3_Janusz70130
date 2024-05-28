@@ -11,6 +11,8 @@ namespace Projekt2_Janusz70130
         public AnalizatorIndywidualny()
         {
             InitializeComponent();
+            // Wy³¹czenie dodatkowego wiersza w kontrolce DGataGridView
+            bjDgvTWFx.AllowUserToAddRows = false;
         }
 
         private void bjBtnObliczWartoœæFx_Click(object sender, EventArgs e)
@@ -215,10 +217,9 @@ namespace Projekt2_Janusz70130
 
         private void bjBtnWizualizacjaGraficznaFx_Click(object sender, EventArgs e)
         {
-
-            // 1. Zgaszenie kontrolki errorProvider
+            // zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
-            // 2. Pobranie danych wejœciowych 
+            // pobranie danych wejœciowych 
             if (!bjPobranieDanychWejœciowychDlaTablicowania(out float bjXd, out float bjXg, out float bjH))
             {
                 // by³ b³¹d, to go sygnalizuje 
@@ -227,7 +228,9 @@ namespace Projekt2_Janusz70130
                 // przerwanie obs³ugi zdarzenia Click: btnWizualizacjaGraficznaFx_Click
                 return;
             }
-            // 3. Po poprawnym za³adowaniu dnaych ustawienie odpowedniego stanu kontrolek
+            // zresetowanie kontrolki
+            bjResetChart();
+            // po poprawnym za³adowaniu dnaych ustawienie odpowedniego stanu kontrolek
             // ukrycie kontrolki wizualizacji tabelarycznej
             bjDgvTWFx.Visible = false;
             // resetowanie kontrolki wizualizacji graficznej
@@ -238,13 +241,14 @@ namespace Projekt2_Janusz70130
             bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
             // zablokowanie przycisku wizualizacji graficznej
             bjBtnWizualizacjaGraficznaFx.Enabled = false;
-            // 4.Tablicowanie wartoœci równania(funkcji F(X)) w przedziale[Xd, Xg] z przyrostem 'h' */
+            // tablicowanie wartoœci równania(funkcji F(X)) w przedziale[Xd, Xg] z przyrostem 'h' */
             // wywo³anie metody tablicowania 
             bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH, out float[,] bjTWFx);
-            // 5. Wpisanie do kontrolki Chart wierszy danych tablicy zmian wartoœci F(X)
+            // wpisanie do kontrolki Chart wierszy danych tablicy zmian wartoœci F(X)
             // wywo³anie metody przepisania wierszy tablicy TWFx do kontrolki Chart
             bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
             // modyfikator ref oznacza, ¿e dany parametr metordy jest parametrem wejœciowo-wyjœciowym
+            
         }
 
         private void bjBtnReset_Click(object sender, EventArgs e)
@@ -481,6 +485,21 @@ namespace Projekt2_Janusz70130
 
         }
 
+        private void bjWyczyscPolaTekstowe()
+        {
+            bjTxtFX.Clear();
+            bjTxtX.Clear();
+            bjTxtXd.Clear();
+            bjTxtXg.Clear();
+            bjTxtH.Clear();
+
+            bjTxtFX.Enabled = true;
+            bjTxtX.Enabled = true;
+            bjTxtXd.Enabled = true;
+            bjTxtXg.Enabled = true;
+            bjTxtH.Enabled = true;
+        }
+
         private void usuñWierszeDanychToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // sprawdzenie widocznoœci kontrolki DataGridView
@@ -522,8 +541,70 @@ namespace Projekt2_Janusz70130
             {
                 // Ustawienie formatu pliku aby u¿yæ funkcji SaveImage, format bêdzie jednak zale¿a³ od tego wybranego z okienka bjOknoPlikuDoZapisu
                 ChartImageFormat bjFormat = ChartImageFormat.Bmp;
-                bjChrt.SaveImage(bjOknoPlikuDoZapisu.FileName, bjFormat);
+                try
+                {
+                    // Zapisanie wykresu jako plik graficzny
+                    bjChrt.SaveImage(bjOknoPlikuDoZapisu.FileName, bjFormat);
+                }
+                catch (System.IO.IOException ex)
+                {
+                    MessageBox.Show($"ERROR: {ex.Message}", "B³¹d zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
+
+        private void pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog bjOknoPlikuDoZapisu = new OpenFileDialog
+            {
+                Title = "Wybór pliku graficznego do za³adowania",
+                Filter = "Bitmap Image|*.bmp|PNG Image|*.png|JPEG Image|*.jpg",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                InitialDirectory = "C:\\"
+            };
+
+            DialogResult bjWyborOpcji = bjOknoPlikuDoZapisu.ShowDialog();
+            if (bjWyborOpcji == DialogResult.OK)
+            {
+                // czyszczenie pól tekstowych
+                bjWyczyscPolaTekstowe();
+                // zresetowanie kontrolki
+                bjResetChart();
+                // odblokowanie przycisku wizualizacji tabelarycznej, je¿eli by³a zablokowana
+                bjBtnObliczWartoœæFx.Enabled = true;
+                // odblokowanie przycisku wizualizacji tabelarycznej, je¿eli by³a zablokowana
+                bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
+                // odblokowanie przycisku wizualizacji graficznej, je¿eli by³a zablokowana 
+                bjBtnWizualizacjaGraficznaFx.Enabled = true;
+                // Za³adowanie obrazu jako t³o wykresu
+                bjChrt.ChartAreas[0].BackImage = bjOknoPlikuDoZapisu.FileName;
+                // pokazanie kontrolki
+                bjChrt.Visible = true;
+            }
+        }
+
+        private void bjResetChart()
+        {
+            // Usuniêcie wszystkich serii danych
+            bjChrt.Series.Clear();
+
+            // Usuniêcie wszystkich obszarów wykresu
+            bjChrt.ChartAreas.Clear();
+
+            // Usuniêcie wszystkich legend
+            bjChrt.Legends.Clear();
+
+            // Usuniêcie wszystkich tytu³ów
+            bjChrt.Titles.Clear();
+
+            // Opcjonalnie: Resetowanie t³a wykresu
+            bjChrt.ChartAreas.Add(new ChartArea("Default"));
+            bjChrt.ChartAreas[0].BackImage = "";
+
+            // Opcjonalnie: Dodaj domyœln¹ seriê i obszar wykresu, jeœli to konieczne
+            var series = new Series("Default");
+            bjChrt.Series.Add(series);
         }
     }
 }
