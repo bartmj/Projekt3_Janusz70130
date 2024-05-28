@@ -30,9 +30,9 @@ namespace Projekt2_Janusz70130
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalizatorIndywidualny));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.bjTxtX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@ namespace Projekt2_Janusz70130
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 105);
+            this.label1.Location = new System.Drawing.Point(67, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 38);
             this.label1.TabIndex = 0;
@@ -102,7 +102,7 @@ namespace Projekt2_Janusz70130
             // bjTxtX
             // 
             this.bjTxtX.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjTxtX.Location = new System.Drawing.Point(87, 154);
+            this.bjTxtX.Location = new System.Drawing.Point(87, 166);
             this.bjTxtX.Name = "bjTxtX";
             this.bjTxtX.Size = new System.Drawing.Size(80, 26);
             this.bjTxtX.TabIndex = 1;
@@ -111,7 +111,7 @@ namespace Projekt2_Janusz70130
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(320, 19);
+            this.label2.Location = new System.Drawing.Point(320, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(392, 26);
             this.label2.TabIndex = 2;
@@ -120,7 +120,7 @@ namespace Projekt2_Janusz70130
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(317, 61);
+            this.pictureBox1.Location = new System.Drawing.Point(317, 73);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(398, 119);
             this.pictureBox1.TabIndex = 3;
@@ -130,7 +130,7 @@ namespace Projekt2_Janusz70130
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(814, 105);
+            this.label3.Location = new System.Drawing.Point(814, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(164, 38);
             this.label3.TabIndex = 4;
@@ -139,7 +139,7 @@ namespace Projekt2_Janusz70130
             // bjTxtFX
             // 
             this.bjTxtFX.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjTxtFX.Location = new System.Drawing.Point(856, 154);
+            this.bjTxtFX.Location = new System.Drawing.Point(856, 166);
             this.bjTxtFX.Name = "bjTxtFX";
             this.bjTxtFX.Size = new System.Drawing.Size(80, 26);
             this.bjTxtFX.TabIndex = 5;
@@ -147,7 +147,7 @@ namespace Projekt2_Janusz70130
             // bjBtnObliczWartoœæFx
             // 
             this.bjBtnObliczWartoœæFx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjBtnObliczWartoœæFx.Location = new System.Drawing.Point(781, 198);
+            this.bjBtnObliczWartoœæFx.Location = new System.Drawing.Point(781, 210);
             this.bjBtnObliczWartoœæFx.Name = "bjBtnObliczWartoœæFx";
             this.bjBtnObliczWartoœæFx.Size = new System.Drawing.Size(230, 90);
             this.bjBtnObliczWartoœæFx.TabIndex = 6;
@@ -158,7 +158,7 @@ namespace Projekt2_Janusz70130
             // bjBtnWizualizacjaTabelarycznaFx
             // 
             this.bjBtnWizualizacjaTabelarycznaFx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjBtnWizualizacjaTabelarycznaFx.Location = new System.Drawing.Point(781, 294);
+            this.bjBtnWizualizacjaTabelarycznaFx.Location = new System.Drawing.Point(781, 306);
             this.bjBtnWizualizacjaTabelarycznaFx.Name = "bjBtnWizualizacjaTabelarycznaFx";
             this.bjBtnWizualizacjaTabelarycznaFx.Size = new System.Drawing.Size(230, 90);
             this.bjBtnWizualizacjaTabelarycznaFx.TabIndex = 17;
@@ -170,7 +170,7 @@ namespace Projekt2_Janusz70130
             // bjBtnWizualizacjaGraficznaFx
             // 
             this.bjBtnWizualizacjaGraficznaFx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjBtnWizualizacjaGraficznaFx.Location = new System.Drawing.Point(781, 390);
+            this.bjBtnWizualizacjaGraficznaFx.Location = new System.Drawing.Point(781, 402);
             this.bjBtnWizualizacjaGraficznaFx.Name = "bjBtnWizualizacjaGraficznaFx";
             this.bjBtnWizualizacjaGraficznaFx.Size = new System.Drawing.Size(230, 90);
             this.bjBtnWizualizacjaGraficznaFx.TabIndex = 21;
@@ -181,7 +181,7 @@ namespace Projekt2_Janusz70130
             // bjBtnReset
             // 
             this.bjBtnReset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjBtnReset.Location = new System.Drawing.Point(781, 486);
+            this.bjBtnReset.Location = new System.Drawing.Point(781, 498);
             this.bjBtnReset.Name = "bjBtnReset";
             this.bjBtnReset.Size = new System.Drawing.Size(230, 66);
             this.bjBtnReset.TabIndex = 22;
@@ -196,7 +196,7 @@ namespace Projekt2_Janusz70130
             this.bjNrPrzedzia³u,
             this.bjWartoœæX,
             this.bjWartoœæFx});
-            this.bjDgvTWFx.Location = new System.Drawing.Point(270, 198);
+            this.bjDgvTWFx.Location = new System.Drawing.Point(270, 210);
             this.bjDgvTWFx.Name = "bjDgvTWFx";
             this.bjDgvTWFx.Size = new System.Drawing.Size(493, 426);
             this.bjDgvTWFx.TabIndex = 23;
@@ -229,7 +229,7 @@ namespace Projekt2_Janusz70130
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox2.Location = new System.Drawing.Point(22, 198);
+            this.groupBox2.Location = new System.Drawing.Point(22, 210);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(230, 215);
             this.groupBox2.TabIndex = 24;
@@ -293,21 +293,21 @@ namespace Projekt2_Janusz70130
             // 
             // bjChrt
             // 
-            chartArea3.Name = "ChartArea1";
-            this.bjChrt.ChartAreas.Add(chartArea3);
-            legend3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            legend3.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjChrt.Legends.Add(legend3);
-            this.bjChrt.Location = new System.Drawing.Point(270, 198);
+            chartArea1.Name = "ChartArea1";
+            this.bjChrt.ChartAreas.Add(chartArea1);
+            legend1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            legend1.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bjChrt.Legends.Add(legend1);
+            this.bjChrt.Location = new System.Drawing.Point(270, 210);
             this.bjChrt.Name = "bjChrt";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.bjChrt.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.bjChrt.Series.Add(series1);
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
             this.bjChrt.TabIndex = 25;
             this.bjChrt.Text = "chart1";
@@ -354,10 +354,10 @@ namespace Projekt2_Janusz70130
             // 
             // zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem
             // 
-            this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Enabled = false;
             this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Name = "zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem";
             this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Text = "Zapisz BitMapê kontrolki Chart w pliku";
+            this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Click += new System.EventHandler(this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem_Click);
             // 
             // pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem
             // 
@@ -514,7 +514,7 @@ namespace Projekt2_Janusz70130
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 654);
+            this.ClientSize = new System.Drawing.Size(1032, 665);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.bjChrt);
             this.Controls.Add(this.groupBox2);

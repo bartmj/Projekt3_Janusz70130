@@ -53,10 +53,11 @@ namespace Projekt2_Janusz70130
             {
                 return (float)(Math.Exp(Math.Abs(bjX)) * Math.Sin(bjX));
             }
-            else if  (bjX > -1 && bjX < 1) 
+            else if (bjX > -1 && bjX < 1)
             {
                 return 1 + bjX + (bjX * bjX) / 2;
-            } else
+            }
+            else
                 return (float)(Math.Sin(1 + bjX + (Math.Pow(bjX, 2) / 2)) * Math.Log(bjX));
         }
 
@@ -174,7 +175,7 @@ namespace Projekt2_Janusz70130
                 bjKrzywa.Points.AddXY(bjTWFx[bjI, 1], bjTWFx[bjI, 2]);
             }
         }
-                #endregion
+        #endregion
 
         private void bjBtnWizualizacjaTabelarycznaFx_Click(object sender, EventArgs e)
         {
@@ -313,7 +314,7 @@ namespace Projekt2_Janusz70130
                 return;
             }
 
-            // utworzenie egzemplarza okna dialogowego: OknoPlikuDoZapisu
+            // utworzenie egzemplarza okna dialogowego: bjOknoPlikuDoZapisu
             SaveFileDialog OknoPlikuDoZapisu = new SaveFileDialog
             {
                 Title = "Wybór pliku do wpisania wierszy danych z kontrolki " +
@@ -323,7 +324,7 @@ namespace Projekt2_Janusz70130
                 RestoreDirectory = true,
                 InitialDirectory = "C:\\"
             };
-            // wizualizacja okna OknoPlikuDoZapisu i odczytanie informacji o wyborze pliku
+            // wizualizacja okna bjOknoPlikuDoZapisu i odczytanie informacji o wyborze pliku
             if (OknoPlikuDoZapisu.ShowDialog() == DialogResult.OK)
             {
                 // plik zosta³ wybrany lub zosta³ utworzony nowy plik 
@@ -352,7 +353,7 @@ namespace Projekt2_Janusz70130
                     bjPlikZnakowy.Close();
                     bjPlikZnakowy.Dispose();
                 }
-                // zmkniêcie okna dialogowego OknoPlikuDoZapisu 
+                // zmkniêcie okna dialogowego bjOknoPlikuDoZapisu 
                 OknoPlikuDoZapisu.Dispose();
             }
         }
@@ -360,9 +361,9 @@ namespace Projekt2_Janusz70130
         private void pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // zgaszenie kontrolki errorProvider
-            bjErrorProvider2.Dispose();    
+            bjErrorProvider2.Dispose();
             // sprawdzenie, czy kontrolka DataGridView jest ods³oniêta
-            /*if (!bjDgvTWFx.Visible)
+            if (!bjDgvTWFx.Visible)
             {
                 // kontrolka DataGridView nie jest ods³oniêta
                 bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx,
@@ -371,7 +372,7 @@ namespace Projekt2_Janusz70130
                 // przerwanie dalszej obs³ugi zdarzenia Click:
                 return;
             }
-            */
+
             // usuniêcie danych w kontrolce DataGridView
             bjDgvTWFx.Rows.Clear();
             // wycentrowanie zapisów w poszczególnych komórkach (kolumnach) kontrolki DataGridView
@@ -434,8 +435,6 @@ namespace Projekt2_Janusz70130
 
                         // numer przedzia³u
                         bjDgvTWFx.Rows[NrWiersza].Cells[0].Value = bjElementyWierszaDanych[0];
-                        // code here
-
                         // wartoœci zmiennej X
                         bjDgvTWFx.Rows[NrWiersza].Cells[1].Value = bjElementyWierszaDanych[1];
                         // wartoœci funkcji F(X)
@@ -480,17 +479,13 @@ namespace Projekt2_Janusz70130
             // zwolnienie okna dialogowego: bjOknoWyboruPiku
             bjOknoWyboruPiku.Dispose();
 
-            // pobierz dane z pliku do tablicowania
-            // code here
-            
-
         }
 
         private void usuñWierszeDanychToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // sprawdzenie widocznoœci kontrolki DataGridView
             if (!bjDgvTWFx.Visible)
-            { 
+            {
                 // jest b³¹d
                 bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: " +
                     "kontrolka DataGridView nie zosta³a ods³oniêta");
@@ -509,6 +504,26 @@ namespace Projekt2_Janusz70130
             }
             // usuniêcie wierszy danych w kolekcji Rows kontrolki DataGridView
             bjDgvTWFx.Rows.Clear();
+        }
+
+        private void zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // utworzenie egzemplarza okna dialogowego: bjOknoPlikuDoZapisu
+            SaveFileDialog bjOknoPlikuDoZapisu = new SaveFileDialog
+            {
+                Title = "Wybór pliku do zapisania BitMapy z kontrolki Chart",
+                Filter = "Bitmap Image|*.bmp|PNG Image|*.png|JPEG Image|*.jpg",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                InitialDirectory = "C:\\"
+            };
+
+            if (bjOknoPlikuDoZapisu.ShowDialog() == DialogResult.OK)
+            {
+                // Ustawienie formatu pliku aby u¿yæ funkcji SaveImage, format bêdzie jednak zale¿a³ od tego wybranego z okienka bjOknoPlikuDoZapisu
+                ChartImageFormat bjFormat = ChartImageFormat.Bmp;
+                bjChrt.SaveImage(bjOknoPlikuDoZapisu.FileName, bjFormat);
+            }
         }
     }
 }
