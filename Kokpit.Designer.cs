@@ -32,7 +32,7 @@ namespace Projekt2_Janusz70130
             this.btnAnalizatorLaboratoryjnyProjektuNr3 = new System.Windows.Forms.Button();
             this.btnAnalizatorIndywidualnyProjektuNr3 = new System.Windows.Forms.Button();
             this.btnSpr3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCleanCode = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -79,25 +79,24 @@ namespace Projekt2_Janusz70130
             this.btnSpr3.Text = "Sprawdzian 3";
             this.btnSpr3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnCleanCode
             // 
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(116, 231);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(195, 60);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Sprawdzian 2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.bjBtnSprawdzian_Click);
+            this.btnCleanCode.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnCleanCode.Location = new System.Drawing.Point(116, 231);
+            this.btnCleanCode.Name = "btnCleanCode";
+            this.btnCleanCode.Size = new System.Drawing.Size(195, 60);
+            this.btnCleanCode.TabIndex = 5;
+            this.btnCleanCode.Text = "Analizator Clean Code";
+            this.btnCleanCode.UseVisualStyleBackColor = true;
+            this.btnCleanCode.Click += new System.EventHandler(this.btnCleanCode_Click);
             // 
             // KokpitNr2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(717, 331);
+            this.Controls.Add(this.btnCleanCode);
             this.Controls.Add(this.btnSpr3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAnalizatorIndywidualnyProjektuNr3);
             this.Controls.Add(this.btnAnalizatorLaboratoryjnyProjektuNr3);
             this.Controls.Add(this.label1);
@@ -115,7 +114,7 @@ namespace Projekt2_Janusz70130
         private System.Windows.Forms.Button btnAnalizatorLaboratoryjnyProjektuNr3;
         private System.Windows.Forms.Button btnAnalizatorIndywidualnyProjektuNr3;
         private System.Windows.Forms.Button btnSpr3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCleanCode;
     }
 }
 

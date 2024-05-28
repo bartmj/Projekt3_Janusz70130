@@ -53,6 +53,12 @@
     <Compile Include="AnalizatorIndywidualny.Designer.cs">
       <DependentUpon>AnalizatorIndywidualny.cs</DependentUpon>
     </Compile>
+    <Compile Include="AnalizatorCleanCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalizatorCleanCode.Designer.cs">
+      <DependentUpon>AnalizatorCleanCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sprawdzian2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AnalizatorIndywidualny.resx">
       <DependentUpon>AnalizatorIndywidualny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalizatorCleanCode.resx">
+      <DependentUpon>AnalizatorCleanCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sprawdzian2.resx">
       <DependentUpon>Sprawdzian2.cs</DependentUpon>

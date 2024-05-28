@@ -1,3 +1,4 @@
+using Projekt3_Janusz70130;
 using System;
 using System.Windows.Forms;
 
@@ -114,6 +115,30 @@ namespace Projekt2_Janusz70130
             AnalizatorSprawdzian FormAnalizatorSprawdzian = new AnalizatorSprawdzian();
             this.Hide(); // Ukrycie "starego" formularza
             FormAnalizatorSprawdzian.Show(); // Ods³oniêcie nowego formularza
+        }
+
+        private void btnCleanCode_Click(object sender, EventArgs e)
+        {
+            // Sprawdzenie, czy egzemplarz formularza AnalizatorCleanCode by³ ju¿ stworzony
+            foreach (Form FormularzZnaleziony in Application.OpenForms)
+            {
+                // Sprawdzenie, czy jest to poszukiwany formularz
+                if (FormularzZnaleziony.Name == "AnalizatorCleanCode")
+                {
+                    // Ukrycie bie¿¹cego formularza
+                    this.Hide();
+                    // Ods³oniêcie formularza znalezionego
+                    FormularzZnaleziony.Show();
+                    // Zakoñczenie metody, aby nie tworzyæ nowego formularza
+                    return;
+                }
+            }
+
+            // Gdy bêdziemy tutaj, to bêdzie to oznacza³o, ¿e formularz AnalizatorIndywidualny nie zosta³ znaleziony
+            // Tworzymy egzemplarz formularza AnalizatorIndywidualny
+            AnalizatorCleanCode FormAnalizatorCleanCode = new AnalizatorCleanCode();
+            this.Hide(); // Ukrycie "starego" formularza
+            FormAnalizatorCleanCode.Show(); // Ods³oniêcie nowego formularza
         }
     }
  }
