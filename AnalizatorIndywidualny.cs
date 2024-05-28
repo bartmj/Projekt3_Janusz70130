@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -302,6 +303,64 @@ namespace Projekt2_Janusz70130
         private void AnalizatorIndywidualny_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // wygaszenie kontrolki errorProvider
+            errorProvider2.Dispose();
+           /* // sprawdzenie, czy kontrolka DataGridView jest widoczna 
+            if (dgvTWFx == null || !dgvTWFx.Visible || dgvTWFx.Rows.Count <= 0)
+            {
+                errorProvider1.SetError(btnWizualizacjaTabelarycznaFx, "ERROR: " +
+                    " polecenie nie mo¿e byæ zrealizowane bo Kontrolka DataGridView jest " +
+                    " niewidoczna lub pusta");
+                // przerwanie dalszej obs³ugi zdarzenia Click
+                return;
+            }
+            // 1. utworzenie egzemplarza okna dialogowego: OknoPlikuDoZapisu
+            SaveFileDialog OknoPlikuDoZapisu = new SaveFileDialog();
+            // 2. ustawienie atrybutu okna dialogowego OknoPlikuDoZapisu
+            OknoPlikuDoZapisu.Title = "Wybór pliku do wpisania wierszy danych z kontrolki " +
+                "DataGridView";
+            OknoPlikuDoZapisu.Filter = "txtfiles(*.txt)|*.txt|all files (*.*)|*.*";
+            OknoPlikuDoZapisu.FilterIndex = 1;
+            OknoPlikuDoZapisu.RestoreDirectory = true;
+            OknoPlikuDoZapisu.InitialDirectory = "C:\\";
+            // wizualizacja okna OknoPlikuDoZapisu i odczytanie informacji o wyborze pliku
+            if (OknoPlikuDoZapisu.ShowDialog() == DialogResult.OK)
+            {
+                // plik zosta³ wybrany lub zosta³ utworzony nowy plik 
+                // utworzenie egzemplarza strumienia do zapisu 
+                StreamWriter PlikZnakowy = new StreamWriter(OknoPlikuDoZapisu.FileName);
+                try
+                { // wypisaywanie do pliku wierszy danych kontrolki DataGridView
+                    for (int i = 0; i < dgvTWFx.Rows.Count; i++)
+                    {
+                        // wpisanie do pliku i-tego wiersza kontrolki DataGridView
+                        PlikZnakowy.Write(dgvTWFx.Rows[i].Cells[0].Value);
+                        // wpisanie separatora danych 
+                        PlikZnakowy.Write(";");
+                        PlikZnakowy.Write(dgvTWFx.Rows[i].Cells[1].Value);
+                        // wpisanie separatora danych 
+                        PlikZnakowy.Write(";");
+                        PlikZnakowy.WriteLine(dgvTWFx.Rows[i].Cells[2].Value);
+                    }
+                }
+                catch (Exception B³¹d)
+                {
+                    MessageBox.Show("ERROR: wyst¹pi³ nieoczekiwany b³¹d podczas zapisu " +
+                        "wierszy danych z kontrolki DataGridView (komunikat systemowy: " +
+                        B³¹d.Message + " )");
+                }
+                finally
+                {
+                    PlikZnakowy.Close();
+                    PlikZnakowy.Dispose();
+                }
+                // zmkniêcie okna dialogowego OknoPlikuDoZapisu 
+                OknoPlikuDoZapisu.Dispose();
+            }*/
         }
     }
 }

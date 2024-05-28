@@ -1,12 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 
@@ -504,11 +498,6 @@ namespace Projekt2_Janusz70130
             errorProvider1.Dispose();    // zgaszenie kontrolki errorProvider1
                                          // sprawdzenie, czy kontrolka DataGridView jest ods³oniêta
             
-            // ods³oniêcie kontrolki przed wpisaniem danych 
-            if (!dgvTWFx.Visible)
-                dgvTWFx.Visible = true;
-
-            /*
             if (!dgvTWFx.Visible)
             {
                 // kontrolka DataGridView nie jest ods³oniêta
@@ -518,8 +507,7 @@ namespace Projekt2_Janusz70130
                 // przerwanie dalszej obs³ugi zdarzenia Click:
                 return;
             }
-            */
-
+            
             // usuniêcie danych w kontrolce DataGridView
             dgvTWFx.Rows.Clear();
             // wycentrowanie zapisów w poszczególnych komórkach (kolumnach) kontrolki DataGridView
