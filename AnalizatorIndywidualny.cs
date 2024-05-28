@@ -219,8 +219,10 @@ namespace Projekt2_Janusz70130
         {
             // zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
+            // deklaracja zmiannych pomocniczych 
+            float bjXd, bjXg, bjH;
             // pobranie danych wejœciowych 
-            if (!bjPobranieDanychWejœciowychDlaTablicowania(out float bjXd, out float bjXg, out float bjH))
+            if (!bjPobranieDanychWejœciowychDlaTablicowania(out bjXd, out bjXg, out bjH))
             {
                 // by³ b³¹d, to go sygnalizuje 
                 bjErrorProvider2.SetError(bjBtnWizualizacjaGraficznaFx, "ERROR: w zapisie danych wejœciowych wyst¹pi³ " +
