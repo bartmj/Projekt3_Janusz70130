@@ -8,6 +8,12 @@ namespace Projekt2_Janusz70130
 {
     public partial class AnalizatorIndywidualny : Form
     {
+        // tablica wartoœci
+        private float[,] bjTWFx;
+        // parametry aplikacji
+        private float bjXd;
+        private float bjXg;
+        private float bjH;
         public AnalizatorIndywidualny()
         {
             InitializeComponent();
@@ -124,7 +130,7 @@ namespace Projekt2_Janusz70130
             return true;
         }
 
-        private void bjTablicowanieWartoœciFunkcjiFx(float bjXd, float bjXg, float bjH, out float[,] bjTWFx)
+        private void bjTablicowanieWartoœciFunkcjiFx(float bjXd, float bjXg, float bjH)
         {
             // wyznaczenie liczby podprzedzia³ów przedzia³u [Xd, Xg] z krokiem h
             int bjN = (int)((bjXg - bjXd) / bjH) + 1;
@@ -181,10 +187,11 @@ namespace Projekt2_Janusz70130
 
         private void bjBtnWizualizacjaTabelarycznaFx_Click(object sender, EventArgs e)
         {
-            // 1. zgaszenie kontrolki errorProvider
+            // zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
-            // 2. Pobranie danych wejœciowych 
-            if (!bjPobranieDanychWejœciowychDlaTablicowania(out float bjXd, out float bjXg, out float bjH))
+
+            // pobranie danych wejœciowych 
+            if (!bjPobranieDanychWejœciowychDlaTablicowania(out bjXd, out bjXg, out bjH))
             {
                 // by³ b³¹d, to go sygnalizuje 
                 bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: w zapisie danych wejœciowych wyst¹pi³ " +
@@ -192,7 +199,6 @@ namespace Projekt2_Janusz70130
                 // przerwanie obs³ugi zdarzenia Click: bjBtnWizualizacjaTabelarycznaFx_Click
                 return;
             }
-
             // 3. Po poprawnym za³adowaniu dnaych ustawienie stanu kontrolek
             // ukrycie kontrolki wizualizacji graficznej
             bjChrt.Visible = false;
@@ -208,7 +214,7 @@ namespace Projekt2_Janusz70130
             /* 4.Tablicowanie wartoœci równania(funkcji F(X)) w przedziale[Xd, Xg]
             z przyrostem 'h' */
             // wywo³anie metody tablicowania zmian wartoœci F(x) w podanym przedziale: [Xd, Xg] z 'h'
-            bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH, out float[,] bjTWFx);
+            bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
             // 5. Wpisanie do Kontrolki DataGridView wierszy danych tablicy zmian wartoœci F(X)
             // wywo³anie metody przepisania wierszy tablicy TWFx do kontrolki DataGridView
             bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
@@ -245,7 +251,7 @@ namespace Projekt2_Janusz70130
             bjBtnWizualizacjaGraficznaFx.Enabled = false;
             // tablicowanie wartoœci równania(funkcji F(X)) w przedziale[Xd, Xg] z przyrostem 'h' */
             // wywo³anie metody tablicowania 
-            bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH, out float[,] bjTWFx);
+            bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
             // wpisanie do kontrolki Chart wierszy danych tablicy zmian wartoœci F(X)
             // wywo³anie metody przepisania wierszy tablicy TWFx do kontrolki Chart
             bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
@@ -369,7 +375,7 @@ namespace Projekt2_Janusz70130
             // zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
             // sprawdzenie, czy kontrolka DataGridView jest ods³oniêta
-            if (!bjDgvTWFx.Visible)
+            /*if (!bjDgvTWFx.Visible)
             {
                 // kontrolka DataGridView nie jest ods³oniêta
                 bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx,
@@ -377,7 +383,7 @@ namespace Projekt2_Janusz70130
                     "DataGridView nie jest ods³oniêta (nie jest widoczna na formularzu)");
                 // przerwanie dalszej obs³ugi zdarzenia Click:
                 return;
-            }
+            }*/
 
             // usuniêcie danych w kontrolce DataGridView
             bjDgvTWFx.Rows.Clear();
@@ -453,6 +459,10 @@ namespace Projekt2_Janusz70130
                     bjChrt.Visible = false; // ukrycie kontrolki Chart
                     // ustawienie braku aktywnoœci, w pozycji Plik menu poziomego, polecenia 'pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem'
                     // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
+                    bjWyczyscPolaTekstowe();
+                    // usta odpowiedni stan aktywnoœci przycisków
+                    bjBtnWizualizacjaGraficznaFx.Enabled = true;
+                    bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
                 }
                 catch (IndexOutOfRangeException bjB³¹d1)
                 {
