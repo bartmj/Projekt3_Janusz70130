@@ -29,10 +29,10 @@ namespace Projekt2_Janusz70130
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.btnObliczWartoœæFx = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -69,6 +69,7 @@ namespace Projekt2_Janusz70130
             this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zakoñczDzia³anieProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatowanieKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,13 +81,12 @@ namespace Projekt2_Janusz70130
             this.zmianaFormatuCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaStyluLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuniêcieWykresuBitMapyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zakoñczDzia³anieProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liniowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kolumnowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.s³upkowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.punktowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.piramidowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuniêcieWykresuBitMapyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -104,6 +104,7 @@ namespace Projekt2_Janusz70130
             this.label1.Size = new System.Drawing.Size(537, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Analizator Laboratoryjny równania kwadratowego";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnObliczWartoœæFx
             // 
@@ -347,38 +348,38 @@ namespace Projekt2_Janusz70130
             // chrtFx
             // 
             this.chrtFx.BackColor = System.Drawing.Color.LightSkyBlue;
-            chartArea6.AxisX.Title = "Wartoœæ X";
-            chartArea6.AxisX.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea6.AxisX2.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea6.AxisY.Title = "Wartoœæ równania";
-            chartArea6.AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea6.AxisY2.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea6.Name = "ChartArea1";
-            chartArea6.Position.Auto = false;
-            chartArea6.Position.Height = 72.87241F;
-            chartArea6.Position.Width = 84F;
-            chartArea6.Position.X = 3F;
-            chartArea6.Position.Y = 12.8231F;
-            this.chrtFx.ChartAreas.Add(chartArea6);
-            legend6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend6.Name = "Legend1";
-            legend6.TitleFont = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.chrtFx.Legends.Add(legend6);
+            chartArea2.AxisX.Title = "Wartoœæ X";
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea2.AxisX2.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea2.AxisY.Title = "Wartoœæ równania";
+            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea2.AxisY2.TitleFont = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea2.Name = "ChartArea1";
+            chartArea2.Position.Auto = false;
+            chartArea2.Position.Height = 72.87241F;
+            chartArea2.Position.Width = 84F;
+            chartArea2.Position.X = 3F;
+            chartArea2.Position.Y = 12.8231F;
+            this.chrtFx.ChartAreas.Add(chartArea2);
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Name = "Legend1";
+            legend2.TitleFont = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.chrtFx.Legends.Add(legend2);
             this.chrtFx.Location = new System.Drawing.Point(257, 79);
             this.chrtFx.Margin = new System.Windows.Forms.Padding(0);
             this.chrtFx.Name = "chrtFx";
-            series6.ChartArea = "ChartArea1";
-            series6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chrtFx.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chrtFx.Series.Add(series2);
             this.chrtFx.Size = new System.Drawing.Size(493, 426);
             this.chrtFx.TabIndex = 19;
             this.chrtFx.Text = "chart1";
-            title6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            title6.Name = "Wykres zmian wartoœci równania kwadratowego";
-            title6.Text = "Wykres zmian wartoœci równania kwadratowego";
-            this.chrtFx.Titles.Add(title6);
+            title2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            title2.Name = "Wykres zmian wartoœci równania kwadratowego";
+            title2.Text = "Wykres zmian wartoœci równania kwadratowego";
+            this.chrtFx.Titles.Add(title2);
             this.chrtFx.Visible = false;
             // 
             // btnWizualizacjaGraficznaFx
@@ -434,21 +435,33 @@ namespace Projekt2_Janusz70130
             // 
             // zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem
             // 
+            this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Enabled = false;
             this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Name = "zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem";
             this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Text = "Zapisz BitMapê kontrolki Chart w pliku";
+            this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem.Click += new System.EventHandler(this.zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem_Click);
             // 
             // pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem
             // 
+            this.pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Enabled = false;
             this.pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Name = "pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem";
             this.pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Text = "Pobierz BitMapê z pliku i podepnij do kontrolki Chart";
+            this.pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Click += new System.EventHandler(this.pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem_Click);
             // 
             // zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem
             // 
+            this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Enabled = false;
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Name = "zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem";
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Text = "Zamknij formularz (i przejdŸ do menu g³ównego)";
+            // 
+            // zakoñczDzia³anieProgramuToolStripMenuItem
+            // 
+            this.zakoñczDzia³anieProgramuToolStripMenuItem.Enabled = false;
+            this.zakoñczDzia³anieProgramuToolStripMenuItem.Name = "zakoñczDzia³anieProgramuToolStripMenuItem";
+            this.zakoñczDzia³anieProgramuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
+            this.zakoñczDzia³anieProgramuToolStripMenuItem.Text = "Zakoñcz dzia³anie programu";
             // 
             // formatowanieKontrolkiDataGridViewToolStripMenuItem
             // 
@@ -463,18 +476,21 @@ namespace Projekt2_Janusz70130
             // 
             // zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem
             // 
+            this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
             this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem";
             this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
             this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana formatu czcionki kontrolki DataGridView";
             // 
             // zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem
             // 
+            this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
             this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem";
             this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
             this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru czcionki kontrolki DataGridView";
             // 
             // zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem
             // 
+            this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
             this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem";
             this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
             this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru siatki kontrolki DataGridView";
@@ -483,7 +499,8 @@ namespace Projekt2_Janusz70130
             // 
             this.usuñWierszeDanychToolStripMenuItem.Name = "usuñWierszeDanychToolStripMenuItem";
             this.usuñWierszeDanychToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-            this.usuñWierszeDanychToolStripMenuItem.Text = "Usuñ wiersze danych";
+            this.usuñWierszeDanychToolStripMenuItem.Text = "Usuñ wiersze danych kontrolki DataGridView";
+            this.usuñWierszeDanychToolStripMenuItem.Click += new System.EventHandler(this.usuñWierszeDanychToolStripMenuItem_Click);
             // 
             // formatowanieKontrolkiChartToolStripMenuItem
             // 
@@ -500,24 +517,28 @@ namespace Projekt2_Janusz70130
             // 
             // zmianaKoloruT³aWykresuToolStripMenuItem
             // 
+            this.zmianaKoloruT³aWykresuToolStripMenuItem.Enabled = false;
             this.zmianaKoloruT³aWykresuToolStripMenuItem.Name = "zmianaKoloruT³aWykresuToolStripMenuItem";
             this.zmianaKoloruT³aWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaKoloruT³aWykresuToolStripMenuItem.Text = "Zmiana koloru t³a wykresu";
             // 
             // zmianaKoloruLiniiWykresuToolStripMenuItem
             // 
+            this.zmianaKoloruLiniiWykresuToolStripMenuItem.Enabled = false;
             this.zmianaKoloruLiniiWykresuToolStripMenuItem.Name = "zmianaKoloruLiniiWykresuToolStripMenuItem";
             this.zmianaKoloruLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaKoloruLiniiWykresuToolStripMenuItem.Text = "Zmiana koloru linii wykresu";
             // 
             // zmianaFormatuCzcionkiToolStripMenuItem
             // 
+            this.zmianaFormatuCzcionkiToolStripMenuItem.Enabled = false;
             this.zmianaFormatuCzcionkiToolStripMenuItem.Name = "zmianaFormatuCzcionkiToolStripMenuItem";
             this.zmianaFormatuCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaFormatuCzcionkiToolStripMenuItem.Text = "Zmiana formatu czcionki";
             // 
             // zmianaStyluLiniiWykresuToolStripMenuItem
             // 
+            this.zmianaStyluLiniiWykresuToolStripMenuItem.Enabled = false;
             this.zmianaStyluLiniiWykresuToolStripMenuItem.Name = "zmianaStyluLiniiWykresuToolStripMenuItem";
             this.zmianaStyluLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaStyluLiniiWykresuToolStripMenuItem.Text = "Zmiana stylu linii wykresu";
@@ -530,21 +551,10 @@ namespace Projekt2_Janusz70130
             this.s³upkowyToolStripMenuItem,
             this.punktowyToolStripMenuItem,
             this.piramidowyToolStripMenuItem});
+            this.zmianaTypuWykresuToolStripMenuItem.Enabled = false;
             this.zmianaTypuWykresuToolStripMenuItem.Name = "zmianaTypuWykresuToolStripMenuItem";
             this.zmianaTypuWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaTypuWykresuToolStripMenuItem.Text = "Zmiana typu wykresu";
-            // 
-            // usuniêcieWykresuBitMapyToolStripMenuItem
-            // 
-            this.usuniêcieWykresuBitMapyToolStripMenuItem.Name = "usuniêcieWykresuBitMapyToolStripMenuItem";
-            this.usuniêcieWykresuBitMapyToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.usuniêcieWykresuBitMapyToolStripMenuItem.Text = "Usuniêcie wykresu (BitMapy)";
-            // 
-            // zakoñczDzia³anieProgramuToolStripMenuItem
-            // 
-            this.zakoñczDzia³anieProgramuToolStripMenuItem.Name = "zakoñczDzia³anieProgramuToolStripMenuItem";
-            this.zakoñczDzia³anieProgramuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
-            this.zakoñczDzia³anieProgramuToolStripMenuItem.Text = "Zakoñcz dzia³anie programu";
             // 
             // liniowyToolStripMenuItem
             // 
@@ -575,6 +585,13 @@ namespace Projekt2_Janusz70130
             this.piramidowyToolStripMenuItem.Name = "piramidowyToolStripMenuItem";
             this.piramidowyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.piramidowyToolStripMenuItem.Text = "Piramidowy";
+            // 
+            // usuniêcieWykresuBitMapyToolStripMenuItem
+            // 
+            this.usuniêcieWykresuBitMapyToolStripMenuItem.Enabled = false;
+            this.usuniêcieWykresuBitMapyToolStripMenuItem.Name = "usuniêcieWykresuBitMapyToolStripMenuItem";
+            this.usuniêcieWykresuBitMapyToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.usuniêcieWykresuBitMapyToolStripMenuItem.Text = "Usuniêcie wykresu (BitMapy)";
             // 
             // AnalizatorLaboratoryjny
             // 
