@@ -65,9 +65,9 @@ namespace Projekt2_Janusz70130
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zakoñczDzia³anieProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatowanieKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuñWierszeDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formatowanieKontrolkiChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaKoloruT³aWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -371,43 +371,43 @@ namespace Projekt2_Janusz70130
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Name = "zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem";
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Text = "Zamknij formularz (i przejdŸ do menu g³ównego)";
-            this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Click += new System.EventHandler(this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem_Click);
+            this.zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem.Click += new System.EventHandler(this.bjZamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem_Click);
             // 
             // zakoñczDzia³anieProgramuToolStripMenuItem
             // 
             this.zakoñczDzia³anieProgramuToolStripMenuItem.Name = "zakoñczDzia³anieProgramuToolStripMenuItem";
             this.zakoñczDzia³anieProgramuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zakoñczDzia³anieProgramuToolStripMenuItem.Text = "Zakoñcz dzia³anie programu";
-            this.zakoñczDzia³anieProgramuToolStripMenuItem.Click += new System.EventHandler(this.zakoñczDzia³anieProgramuToolStripMenuItem_Click);
+            this.zakoñczDzia³anieProgramuToolStripMenuItem.Click += new System.EventHandler(this.bjZakoñczDzia³anieProgramuToolStripMenuItem_Click);
             // 
             // formatowanieKontrolkiDataGridViewToolStripMenuItem
             // 
             this.formatowanieKontrolkiDataGridViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem,
-            this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem,
-            this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem,
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem,
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem,
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem,
             this.usuñWierszeDanychToolStripMenuItem});
             this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Name = "formatowanieKontrolkiDataGridViewToolStripMenuItem";
             this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(219, 20);
             this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Text = "Formatowanie kontrolki DataGridView";
             // 
-            // zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem
+            // bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem
             // 
-            this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem";
-            this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-            this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana formatu czcionki kontrolki DataGridView";
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem";
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana formatu czcionki kontrolki DataGridView";
             // 
-            // zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem
+            // bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem
             // 
-            this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem";
-            this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-            this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru czcionki kontrolki DataGridView";
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem";
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru czcionki kontrolki DataGridView";
             // 
-            // zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem
+            // bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem
             // 
-            this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem";
-            this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-            this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru siatki kontrolki DataGridView";
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem";
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru siatki kontrolki DataGridView";
             // 
             // usuñWierszeDanychToolStripMenuItem
             // 
@@ -576,9 +576,9 @@ namespace Projekt2_Janusz70130
         private System.Windows.Forms.ToolStripMenuItem zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zakoñczDzia³anieProgramuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formatowanieKontrolkiDataGridViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuñWierszeDanychToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem formatowanieKontrolkiChartToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmianaKoloruT³aWykresuToolStripMenuItem;

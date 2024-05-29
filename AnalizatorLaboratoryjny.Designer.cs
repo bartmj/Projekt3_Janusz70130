@@ -473,21 +473,21 @@ namespace Projekt2_Janusz70130
             this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(219, 20);
             this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Text = "Formatowanie kontrolki DataGridView";
             // 
-            // zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem
+            // bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem
             // 
             this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
             this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem";
             this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
             this.zmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana formatu czcionki kontrolki DataGridView";
             // 
-            // zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem
+            // bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem
             // 
             this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
             this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem";
             this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
             this.zmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru czcionki kontrolki DataGridView";
             // 
-            // zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem
+            // bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem
             // 
             this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
             this.zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Name = "zmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem";

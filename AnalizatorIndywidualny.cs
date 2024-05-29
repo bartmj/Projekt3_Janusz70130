@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
@@ -22,8 +23,38 @@ namespace Projekt2_Janusz70130
             InitializeComponent();
             // Wy³¹czenie dodatkowego wiersza w kontrolce DGataGridView
             bjDgvTWFx.AllowUserToAddRows = false;
+
+            // Dodajemy opcje do menu zmiany formatu czcionki
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Arial", null, bjZmianaFormatuCzcionki_Click);
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Times New Roman", null, bjZmianaFormatuCzcionki_Click);
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Verdana", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Verdana
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Tahoma", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Tahoma
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Courier New", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Courier New
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Domyœlna", null, bjZmianaFormatuCzcionki_Click);
+
+            // Dodajemy opcje do menu zmiany koloru czcionki
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czerwony", null, bjZmianaKoloruCzcionki_Click);
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Niebieski", null, bjZmianaKoloruCzcionki_Click);
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Zielony", null, bjZmianaKoloruCzcionki_Click);
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("¯ó³ty", null, bjZmianaKoloruCzcionki_Click);
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Pomarañczowy", null, bjZmianaKoloruCzcionki_Click);
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Fioletowy", null, bjZmianaKoloruCzcionki_Click);
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Ró¿owy", null, bjZmianaKoloruCzcionki_Click);
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Domyœlny", null, bjZmianaKoloruCzcionki_Click);
+
+            // Dodajemy opcje do menu zmiany koloru siatki
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czerwony", null, bjZmianaKoloruSiatki_Click);
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Niebieski", null, bjZmianaKoloruSiatki_Click);
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Zielony", null, bjZmianaKoloruSiatki_Click);
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("¯ó³ty", null, bjZmianaKoloruSiatki_Click);
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Pomarañczowy", null, bjZmianaKoloruSiatki_Click);
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Fioletowy", null, bjZmianaKoloruSiatki_Click);
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Ró¿owy", null, bjZmianaKoloruSiatki_Click);
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Domyœlny", null, bjZmianaKoloruSiatki_Click);
         }
 
+
+        #region funkcje pomocnicze analizatora indywidualnego
         private void bjBtnObliczWartoœæFx_Click(object sender, EventArgs e)
         {
             // Pobranie zmiennej X
@@ -57,7 +88,7 @@ namespace Projekt2_Janusz70130
         }
 
 
-        #region funkcje pomocnicze analizatora indywidualnego
+        
         private float bjObliczWartoœæFunkcji(float bjX)
         {
             if (bjX <= -1)
@@ -191,7 +222,7 @@ namespace Projekt2_Janusz70130
                 bjKrzywa.Points.AddXY(bjTWFx[bjI, 1], bjTWFx[bjI, 2]);
             }
         }
-        #endregion
+        
 
         private void bjBtnWizualizacjaTabelarycznaFx_Click(object sender, EventArgs e)
         {
@@ -315,7 +346,7 @@ namespace Projekt2_Janusz70130
                 e.Cancel = true;
             }
             // u¿ytkonik chce omin¹æ zamykanie aplikacji przez wychodzenie z kokpitu,
-            // wyœwietla sie tylko okienko u¿yte w funkcji zakoñczDzia³anieProgramuToolStripMenuItem_Click
+            // wyœwietla sie tylko okienko u¿yte w funkcji bjZakoñczDzia³anieProgramuToolStripMenuItem_Click
             else
             {
                 // Pominiêcie dodatkowych dzia³añ przy zamykaniu
@@ -683,20 +714,20 @@ namespace Projekt2_Janusz70130
             bjChrt.Series.Add(series);
         }
 
-        private void zamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bjZamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult OknoMessage =
+            DialogResult bjOknoWiadomosci =
                     MessageBox.Show("Czy na pewno chcesz zamkn¹æ ten formularz?",
                     this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            if (OknoMessage == DialogResult.Yes)
+            if (bjOknoWiadomosci == DialogResult.Yes)
             {
-                foreach (Form mainForm in Application.OpenForms)
+                foreach (Form bjFormularzGlowny in Application.OpenForms)
                 {
-                    if (mainForm.Name == "KokpitNr2")
+                    if (bjFormularzGlowny.Name == "KokpitNr2")
                     {
                         this.Hide();
-                        mainForm.Show();
+                        bjFormularzGlowny.Show();
                         return;
                     }
                 }
@@ -704,11 +735,87 @@ namespace Projekt2_Janusz70130
             
         }
 
-        private void zakoñczDzia³anieProgramuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bjZakoñczDzia³anieProgramuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Ustawienie flagi informuj¹cej o zamykaniu aplikacji do pomiêcia wychodzenia z formularza AnalizatoraIndywidualnego
             AnalizatorIndywidualny.bjCzyZamknac = true;
             Application.Exit();
         }
+
+        private void bjZmianaFormatuCzcionki_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem bjElementMenu = sender as ToolStripMenuItem;
+            if (bjElementMenu != null)
+            {
+                string bjNazwaCzcionki = bjElementMenu.Text;
+                if (bjNazwaCzcionki == "Domyœlna")
+                {
+                    bjDgvTWFx.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8.25F); // lub inna domyœlna czcionka
+                }
+                else
+                {
+                    bjDgvTWFx.DefaultCellStyle.Font = new Font(bjNazwaCzcionki, bjDgvTWFx.DefaultCellStyle.Font.Size);
+                }
+            }
+
+        }
+            private void bjZmianaKoloruCzcionki_Click(object sender, EventArgs e)
+            {
+                ToolStripMenuItem bjElementMenu = sender as ToolStripMenuItem;
+                if (bjElementMenu != null)
+                {
+                    string bjNazwaKoloru = bjElementMenu.Text;
+                    if (bjNazwaKoloru == "Domyœlny")
+                    {
+                        bjDgvTWFx.DefaultCellStyle.ForeColor = Color.Black; // lub inny domyœlny kolor
+                    }
+                    else
+                    {
+                        bjDgvTWFx.DefaultCellStyle.ForeColor = bjPobierzNazweKoloruDlaProgramu(bjNazwaKoloru);
+                    }
+                }
+            }
+
+        private void bjZmianaKoloruSiatki_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem bjElementMenu = sender as ToolStripMenuItem;
+            if (bjElementMenu != null)
+            {
+                string bjNazwaKoloru = bjElementMenu.Text;
+                if (bjNazwaKoloru == "Domyœlny")
+                {
+                    bjDgvTWFx.GridColor = Color.Black; // lub inny domyœlny kolor
+                }
+                else
+                {
+                    bjDgvTWFx.GridColor = bjPobierzNazweKoloruDlaProgramu(bjNazwaKoloru);
+                }
+            }
+        }
+
+        private Color bjPobierzNazweKoloruDlaProgramu(string bjNazwaKoloru)
+        {
+            switch (bjNazwaKoloru)
+            {
+                case "Czerwony":
+                    return Color.Red;
+                case "Niebieski":
+                    return Color.Blue;
+                case "Zielony":
+                    return Color.Green;
+                case "¯ó³ty":
+                    return Color.Yellow;
+                case "Pomarañczowy":
+                    return Color.Orange;
+                case "Fioletowy":
+                    return Color.Purple;
+                case "Ró¿owy":
+                    return Color.Pink;
+                default:
+                    return Color.Black;
+            }
+        }
     }
 }
+
+#endregion
