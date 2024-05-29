@@ -751,10 +751,6 @@ namespace Projekt2_Janusz70130
             dgvTWFx.Rows.Clear();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 #endregion

@@ -30,9 +30,9 @@ namespace Projekt2_Janusz70130
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalizatorIndywidualny));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.bjTxtX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -293,21 +293,21 @@ namespace Projekt2_Janusz70130
             // 
             // bjChrt
             // 
-            chartArea3.Name = "ChartArea1";
-            this.bjChrt.ChartAreas.Add(chartArea3);
-            legend3.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
-            legend3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            legend3.IsTextAutoFit = false;
-            legend3.Name = "Legend1";
-            legend3.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjChrt.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.bjChrt.ChartAreas.Add(chartArea1);
+            legend1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            legend1.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bjChrt.Legends.Add(legend1);
             this.bjChrt.Location = new System.Drawing.Point(270, 210);
             this.bjChrt.Name = "bjChrt";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.bjChrt.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.bjChrt.Series.Add(series1);
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
             this.bjChrt.TabIndex = 25;
             this.bjChrt.Text = "chart1";
@@ -375,10 +375,10 @@ namespace Projekt2_Janusz70130
             // 
             // zakoñczDzia³anieProgramuToolStripMenuItem
             // 
-            this.zakoñczDzia³anieProgramuToolStripMenuItem.Enabled = false;
             this.zakoñczDzia³anieProgramuToolStripMenuItem.Name = "zakoñczDzia³anieProgramuToolStripMenuItem";
             this.zakoñczDzia³anieProgramuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zakoñczDzia³anieProgramuToolStripMenuItem.Text = "Zakoñcz dzia³anie programu";
+            this.zakoñczDzia³anieProgramuToolStripMenuItem.Click += new System.EventHandler(this.zakoñczDzia³anieProgramuToolStripMenuItem_Click);
             // 
             // formatowanieKontrolkiDataGridViewToolStripMenuItem
             // 

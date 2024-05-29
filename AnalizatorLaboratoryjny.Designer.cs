@@ -104,7 +104,6 @@ namespace Projekt2_Janusz70130
             this.label1.Size = new System.Drawing.Size(537, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Analizator Laboratoryjny równania kwadratowego";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnObliczWartoœæFx
             // 

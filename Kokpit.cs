@@ -48,7 +48,7 @@ namespace Projekt2_Janusz70130
         {
             /* Utworzenie egzemplarza okna dialogowego ""MessageBox z pytaniem, czy naprawdê 
              * nale¿y zamkn¹æ ten formularz */
-            DialogResult OknoMessage = MessageBox.Show("Czy na pewno chcesz zamkn¹æ ten formularz?",
+            DialogResult OknoMessage = MessageBox.Show("Czy na pewno chcesz zamkn¹æ aplikacjê?",
              this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
             if (OknoMessage == DialogResult.Yes)

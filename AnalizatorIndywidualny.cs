@@ -14,6 +14,9 @@ namespace Projekt2_Janusz70130
         private float bjXd;
         private float bjXg;
         private float bjH;
+        // zmienna s³u¿¹ca do œledzenia czy u¿ytkownik chce wyjœæ z aplikacji bezpoœrednio pomiajaj¹c wychodzenie do kokpitu
+        public static bool bjCzyZamknac { get; set; } = false;
+
         public AnalizatorIndywidualny()
         {
             InitializeComponent();
@@ -280,7 +283,11 @@ namespace Projekt2_Janusz70130
 
         private void bjAnalizatorIndywidualnyForm_Closing(object sender, FormClosingEventArgs e)
         {
-            DialogResult OknoMessage =
+            // sprawdzenie czy u¿ytkownik chce obejœæ wychodznie z aplikacji przez kokpit
+            if (!bjCzyZamknac)
+            {
+                // Normalne zachowanie zamykania formularza
+                DialogResult OknoMessage =
                     MessageBox.Show("Czy na pewno chcesz zamkn¹æ ten formularz?",
                     this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
@@ -301,6 +308,15 @@ namespace Projekt2_Janusz70130
                 e.Cancel = true;
             else
                 e.Cancel = true;
+            }
+            // u¿ytkonik chce omin¹æ zamykanie aplikacji przez wychodzenie z kokpitu,
+            // wyœwietla sie tylko okienko u¿yte w funkcji zakoñczDzia³anieProgramuToolStripMenuItem_Click
+            else
+            {
+                // Pominiêcie dodatkowych dzia³añ przy zamykaniu
+                e.Cancel = false;
+            }
+            
         }
 
         private void zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -365,6 +381,7 @@ namespace Projekt2_Janusz70130
             // zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
             // sprawdzenie, czy kontrolka DataGridView jest ods³oniêta
+            
             /*if (!bjDgvTWFx.Visible)
             {
                 // kontrolka DataGridView nie jest ods³oniêta
@@ -680,6 +697,13 @@ namespace Projekt2_Janusz70130
                 }
             }
             
+        }
+
+        private void zakoñczDzia³anieProgramuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Ustawienie flagi informuj¹cej o zamykaniu aplikacji do pomiêcia wychodzenia z formularza AnalizatoraIndywidualnego
+            AnalizatorIndywidualny.bjCzyZamknac = true;
+            Application.Exit();
         }
     }
 }
