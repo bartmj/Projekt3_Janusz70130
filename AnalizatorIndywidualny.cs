@@ -126,11 +126,16 @@ namespace Projekt2_Janusz70130
             }
             // gdy nie by³o ¿adnego b³êdu to sterowanie przejdzie "tutaj" 
             // ustawienie stanu braku aktywnoœci dla kontrolek z danymi wejœciowymi
+            bjZablokujPolaTekstowe();
+            /* musimy przekazaæ informacjê, ¿e b³êdu nie by³o */
+            return true;
+        }
+
+        private void bjZablokujPolaTekstowe()
+        {
             bjTxtXd.Enabled = false;
             bjTxtXg.Enabled = false;
             bjTxtH.Enabled = false;
-            /* musimy przekazaæ informacjê, ¿e b³êdu nie by³o */
-            return true;
         }
 
         private void bjTablicowanieWartoœciFunkcjiFx(float bjXd, float bjXg, float bjH)
@@ -470,12 +475,12 @@ namespace Projekt2_Janusz70130
                     // ustawienie braku aktywnoœci, w pozycji Plik menu poziomego, polecenia 'pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem'
                     // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
 
-                    // code here usun to 
-                    // bjWyczyscPolaTekstowe();
+                    // zablokowanie przycisków
+                    bjZablokujPolaTekstowe();
 
                     // usta odpowiedni stan aktywnoœci przycisków
                     bjBtnWizualizacjaGraficznaFx.Enabled = true;
-                    bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
+                    bjBtnWizualizacjaTabelarycznaFx.Enabled = false;
                 }
                 catch (IndexOutOfRangeException bjB³¹d1)
                 {
