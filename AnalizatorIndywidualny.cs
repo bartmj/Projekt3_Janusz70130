@@ -36,7 +36,7 @@ namespace Projekt2_Janusz70130
             // obliczenie wartoœci funkcji
             float bjWartoœæFunkcji = bjObliczWartoœæFunkcji(bjX);
             // wizualizacja wyniku obliczeñ 
-            bjTxtFX.Text = String.Format("{0:F3}", bjWartoœæFunkcji);
+            bjTxtFX.Text = String.Format("{0:F2}", bjWartoœæFunkcji);
             // ustawienie stanu braku aktywnoœci dla obs³ugiwanego przycisku poleceñ
             bjBtnObliczWartoœæFx.Enabled = false;
             // ustawienie stanu braku aktywnoœci dla pola tekstowego
@@ -164,9 +164,9 @@ namespace Projekt2_Janusz70130
                 // wpisanie wartoœci numeru przedzia³u X
                 bjDgvTWFx.Rows[bjI].Cells[0].Value = String.Format("{0}", bjTWFx[bjI, 0]);
                 // wpisanie wartoœci zmiennej niezale¿nej X
-                bjDgvTWFx.Rows[bjI].Cells[1].Value = String.Format("{0:F3}", bjTWFx[bjI, 1]);
+                bjDgvTWFx.Rows[bjI].Cells[1].Value = String.Format("{0:F2}", bjTWFx[bjI, 1]);
                 // wpisanie wartoœci równania
-                bjDgvTWFx.Rows[bjI].Cells[2].Value = String.Format("{0:F3}", bjTWFx[bjI, 2]);
+                bjDgvTWFx.Rows[bjI].Cells[2].Value = String.Format("{0:F2}", bjTWFx[bjI, 2]);
             }
         }
 
