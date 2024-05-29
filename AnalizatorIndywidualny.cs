@@ -237,7 +237,7 @@ namespace Projekt2_Janusz70130
                 return;
             }
 
-            // zresetowanie kontrolki usun to 
+            // zresetowanie kontrolki
             bjResetChart();
 
             // po poprawnym za³adowaniu dnaych ustawienie odpowedniego stanu kontrolek
@@ -275,19 +275,7 @@ namespace Projekt2_Janusz70130
             bjBtnWizualizacjaGraficznaFx.Enabled = true;
             bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
             // odblokowanie i czyszczenie okienek z tekstem
-            List<TextBox> bjTextBoxy = new List<TextBox>
-            {
-                bjTxtFX,
-                bjTxtX,
-                bjTxtXd,
-                bjTxtXg,
-                bjTxtH
-            };
-            foreach (TextBox bjTB in bjTextBoxy)
-            {
-                bjTB.Enabled = true;
-                bjTB.Clear();
-            }
+            bjWyczyscPolaTekstowe();
         }
 
         private void bjAnalizatorIndywidualnyForm_Closing(object sender, FormClosingEventArgs e)
