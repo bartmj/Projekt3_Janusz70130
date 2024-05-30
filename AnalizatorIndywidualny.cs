@@ -61,6 +61,11 @@ namespace Projekt2_Janusz70130
             bjZmianaFormatuCzcionkiToolStripMenuItem.DropDownItems.Add("Times New Roman", null, bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click);
             bjZmianaFormatuCzcionkiToolStripMenuItem.DropDownItems.Add("Verdana", null, bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click);
             bjZmianaFormatuCzcionkiToolStripMenuItem.DropDownItems.Add("Tahoma", null, bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click);
+
+            // Dodanie opcji zmiany stylu linii wykresu
+            zmianaStyluLiniiWykresuToolStripMenuItem.DropDownItems.Add("Ci¹g³a", null, bjZmianaStyluLiniiWykresuToolStripMenuItem_Click);
+            zmianaStyluLiniiWykresuToolStripMenuItem.DropDownItems.Add("Kreskowana", null, bjZmianaStyluLiniiWykresuToolStripMenuItem_Click);
+            zmianaStyluLiniiWykresuToolStripMenuItem.DropDownItems.Add("Kropkowana", null, bjZmianaStyluLiniiWykresuToolStripMenuItem_Click);
         }
 
 
@@ -846,6 +851,36 @@ namespace Projekt2_Janusz70130
                 series.Font = bjNowaCzcionka;
             }
         }
+
+        private void bjZmianaStyluLiniiWykresuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem bjElementMenu = sender as ToolStripMenuItem;
+            string bjWybranyStyl = bjElementMenu.Text;
+            System.Windows.Forms.DataVisualization.Charting.ChartDashStyle dashStyle;
+
+            // Okreœlenie stylu linii na podstawie wybranego tekstu
+            foreach (var series in bjChrt.Series)
+            {
+                switch (bjWybranyStyl)
+                {
+                    case "Ci¹g³a":
+                        series.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+                        break;
+                    case "Kreskowana":
+                        series.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+                        series.BorderWidth = 2; // Grubsza kreska dla lepszej widocznoœci
+                        break;
+                    case "Kropkowana":
+                        series.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+                        series.BorderWidth = 2; // Grubsza kreska dla lepszej widocznoœci
+                        break;
+                    default:
+                        series.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+                        break;
+                }
+            }
+        }
+
 
 
         private void bjZmianaKoloruT³aWykresuToolStripMenuItem_Click(object sender, EventArgs e)

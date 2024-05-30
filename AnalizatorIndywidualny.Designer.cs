@@ -75,11 +75,6 @@ namespace Projekt2_Janusz70130
             this.bjZmianaFormatuCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaStyluLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.liniowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kolumnowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.s³upkowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.punktowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.piramidowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuniêcieWykresuBitMapyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bjDgvTWFx)).BeginInit();
@@ -438,13 +433,13 @@ namespace Projekt2_Janusz70130
             // 
             // bjZmianaKoloruLiniiWykresuToolStripMenuItem
             // 
-            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Name = "zmianaKoloruLiniiWykresuToolStripMenuItem";
+            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Name = "bjZmianaKoloruLiniiWykresuToolStripMenuItem";
             this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Text = "Zmiana koloru linii wykresu";
             // 
             // bjZmianaFormatuCzcionkiToolStripMenuItem
             // 
-            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Name = "zmianaFormatuCzcionkiToolStripMenuItem";
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Name = "bjZmianaFormatuCzcionkiToolStripMenuItem";
             this.bjZmianaFormatuCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.bjZmianaFormatuCzcionkiToolStripMenuItem.Text = "Zmiana formatu czcionki";
             // 
@@ -456,46 +451,10 @@ namespace Projekt2_Janusz70130
             // 
             // zmianaTypuWykresuToolStripMenuItem
             // 
-            this.zmianaTypuWykresuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.liniowyToolStripMenuItem,
-            this.kolumnowyToolStripMenuItem,
-            this.s³upkowyToolStripMenuItem,
-            this.punktowyToolStripMenuItem,
-            this.piramidowyToolStripMenuItem});
             this.zmianaTypuWykresuToolStripMenuItem.Enabled = false;
             this.zmianaTypuWykresuToolStripMenuItem.Name = "zmianaTypuWykresuToolStripMenuItem";
             this.zmianaTypuWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaTypuWykresuToolStripMenuItem.Text = "Zmiana typu wykresu";
-            // 
-            // liniowyToolStripMenuItem
-            // 
-            this.liniowyToolStripMenuItem.Name = "liniowyToolStripMenuItem";
-            this.liniowyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.liniowyToolStripMenuItem.Text = "Liniowy";
-            // 
-            // kolumnowyToolStripMenuItem
-            // 
-            this.kolumnowyToolStripMenuItem.Name = "kolumnowyToolStripMenuItem";
-            this.kolumnowyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.kolumnowyToolStripMenuItem.Text = "Kolumnowy";
-            // 
-            // s³upkowyToolStripMenuItem
-            // 
-            this.s³upkowyToolStripMenuItem.Name = "s³upkowyToolStripMenuItem";
-            this.s³upkowyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.s³upkowyToolStripMenuItem.Text = "S³upkowy";
-            // 
-            // punktowyToolStripMenuItem
-            // 
-            this.punktowyToolStripMenuItem.Name = "punktowyToolStripMenuItem";
-            this.punktowyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.punktowyToolStripMenuItem.Text = "Punktowy";
-            // 
-            // piramidowyToolStripMenuItem
-            // 
-            this.piramidowyToolStripMenuItem.Name = "piramidowyToolStripMenuItem";
-            this.piramidowyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.piramidowyToolStripMenuItem.Text = "Piramidowy";
             // 
             // usuniêcieWykresuBitMapyToolStripMenuItem
             // 
@@ -583,11 +542,6 @@ namespace Projekt2_Janusz70130
         private System.Windows.Forms.ToolStripMenuItem bjZmianaFormatuCzcionkiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmianaStyluLiniiWykresuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmianaTypuWykresuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem liniowyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kolumnowyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem s³upkowyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem punktowyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem piramidowyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuniêcieWykresuBitMapyToolStripMenuItem;
     }
 }
