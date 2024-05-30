@@ -72,7 +72,7 @@ namespace Projekt2_Janusz70130
             this.formatowanieKontrolkiChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaKoloruT³aWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bjZmianaKoloruLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zmianaFormatuCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaStyluLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liniowyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -421,7 +421,7 @@ namespace Projekt2_Janusz70130
             this.formatowanieKontrolkiChartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.zmianaKoloruT³aWykresuToolStripMenuItem,
             this.bjZmianaKoloruLiniiWykresuToolStripMenuItem,
-            this.zmianaFormatuCzcionkiToolStripMenuItem,
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem,
             this.zmianaStyluLiniiWykresuToolStripMenuItem,
             this.zmianaTypuWykresuToolStripMenuItem,
             this.usuniêcieWykresuBitMapyToolStripMenuItem});
@@ -434,7 +434,7 @@ namespace Projekt2_Janusz70130
             this.zmianaKoloruT³aWykresuToolStripMenuItem.Name = "zmianaKoloruT³aWykresuToolStripMenuItem";
             this.zmianaKoloruT³aWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaKoloruT³aWykresuToolStripMenuItem.Text = "Zmiana koloru t³a wykresu";
-            this.zmianaKoloruT³aWykresuToolStripMenuItem.Click += new System.EventHandler(this.zmianaKoloruT³aWykresuToolStripMenuItem_Click);
+            this.zmianaKoloruT³aWykresuToolStripMenuItem.Click += new System.EventHandler(this.bjZmianaKoloruT³aWykresuToolStripMenuItem_Click);
             // 
             // bjZmianaKoloruLiniiWykresuToolStripMenuItem
             // 
@@ -442,11 +442,11 @@ namespace Projekt2_Janusz70130
             this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Text = "Zmiana koloru linii wykresu";
             // 
-            // zmianaFormatuCzcionkiToolStripMenuItem
+            // bjZmianaFormatuCzcionkiToolStripMenuItem
             // 
-            this.zmianaFormatuCzcionkiToolStripMenuItem.Name = "zmianaFormatuCzcionkiToolStripMenuItem";
-            this.zmianaFormatuCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.zmianaFormatuCzcionkiToolStripMenuItem.Text = "Zmiana formatu czcionki";
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Name = "zmianaFormatuCzcionkiToolStripMenuItem";
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Text = "Zmiana formatu czcionki";
             // 
             // zmianaStyluLiniiWykresuToolStripMenuItem
             // 
@@ -580,7 +580,7 @@ namespace Projekt2_Janusz70130
         private System.Windows.Forms.ToolStripMenuItem formatowanieKontrolkiChartToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmianaKoloruT³aWykresuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruLiniiWykresuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zmianaFormatuCzcionkiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaFormatuCzcionkiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmianaStyluLiniiWykresuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmianaTypuWykresuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem liniowyToolStripMenuItem;

@@ -30,33 +30,37 @@ namespace Projekt2_Janusz70130
             bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Times New Roman", null, bjZmianaFormatuCzcionki_Click);
             bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Verdana", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Verdana
             bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Tahoma", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Tahoma
-            
 
             // Dodajemy opcje do menu zmiany koloru czcionki
             bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czarny", null, bjZmianaKoloruCzcionki_Click);
             bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czerwony", null, bjZmianaKoloruCzcionki_Click);
             bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Niebieski", null, bjZmianaKoloruCzcionki_Click);
             bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Zielony", null, bjZmianaKoloruCzcionki_Click);
-            
 
             // Dodajemy opcje do menu zmiany koloru siatki
             bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czarny", null, bjZmianaKoloruSiatki_Click);
             bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czerwony", null, bjZmianaKoloruSiatki_Click);
             bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Niebieski", null, bjZmianaKoloruSiatki_Click);
             bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Zielony", null, bjZmianaKoloruSiatki_Click);
-            
 
             // Dodajemy opcje zmiany koloru t³a kontrolki Chart
-            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Bia³y", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
-            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Czerwony", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
-            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Niebieski", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
-            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Zielony", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
+            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Bia³y", null, bjZmianaKoloruT³aWykresuToolStripMenuItem_Click);
+            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Czerwony", null, bjZmianaKoloruT³aWykresuToolStripMenuItem_Click);
+            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Niebieski", null, bjZmianaKoloruT³aWykresuToolStripMenuItem_Click);
+            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Zielony", null, bjZmianaKoloruT³aWykresuToolStripMenuItem_Click);
 
             // Dodajemy opcje zmiany koloru linii wykresu
-            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Bia³y", null, zmianaKoloruLiniiWykresuToolStripMenuItem_Click);
-            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Czerwony", null, zmianaKoloruLiniiWykresuToolStripMenuItem_Click);
-            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Niebieski", null, zmianaKoloruLiniiWykresuToolStripMenuItem_Click);
-            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Zielony", null, zmianaKoloruLiniiWykresuToolStripMenuItem_Click);
+            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Bia³y", null, bjZmianaKoloruLiniiWykresuToolStripMenuItem_Click);
+            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Czerwony", null, bjZmianaKoloruLiniiWykresuToolStripMenuItem_Click);
+            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Niebieski", null, bjZmianaKoloruLiniiWykresuToolStripMenuItem_Click);
+            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Zielony", null, bjZmianaKoloruLiniiWykresuToolStripMenuItem_Click);
+
+            // Dodajemy opcje zmiany czcionki wykresu
+            bjZmianaFormatuCzcionkiToolStripMenuItem.DropDownItems.Add("Domyœlna (Microsoft Sans Serif)", null, bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click);
+            bjZmianaFormatuCzcionkiToolStripMenuItem.DropDownItems.Add("Arial", null, bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click);
+            bjZmianaFormatuCzcionkiToolStripMenuItem.DropDownItems.Add("Times New Roman", null, bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click);
+            bjZmianaFormatuCzcionkiToolStripMenuItem.DropDownItems.Add("Verdana", null, bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click);
+            bjZmianaFormatuCzcionkiToolStripMenuItem.DropDownItems.Add("Tahoma", null, bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click);
         }
 
 
@@ -747,7 +751,7 @@ namespace Projekt2_Janusz70130
             if (bjElementMenu != null)
             {
                 string bjNazwaCzcionki = bjElementMenu.Text;
-                if (bjNazwaCzcionki == "Domyœlna")
+                if (bjNazwaCzcionki == "Domyœlna (Microsoft Sans Serif)")
                 {
                     bjDgvTWFx.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 8.25F); // lub inna domyœlna czcionka
                 }
@@ -785,7 +789,7 @@ namespace Projekt2_Janusz70130
             bjZmienKolor(sender, bjDgvTWFx, (control, bjColor) => ((DataGridView)control).GridColor = bjColor);
         }
 
-        private void zmianaKoloruLiniiWykresuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bjZmianaKoloruLiniiWykresuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bjZmienKolor(sender, bjChrt, (bjKontrolkaLambda, bjKolorLambda) =>
             {
@@ -797,7 +801,54 @@ namespace Projekt2_Janusz70130
             });
         }
 
-        private void zmianaKoloruT³aWykresuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bjZmianaFormatuCzcionkiWykresuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem bjElementMenu = sender as ToolStripMenuItem;
+            string bjNazwaCzcionki = bjElementMenu.Text;
+
+            // Domyœlna czcionka do zastosowania
+            Font bjNowaCzcionka;
+            if (bjNazwaCzcionki == "Domyœlna (Microsoft Sans Serif)")
+            {
+                bjNowaCzcionka = new Font("Microsoft Sans Serif", 12, FontStyle.Regular);
+            }
+            else
+            {
+                bjNowaCzcionka = new Font(bjNazwaCzcionki, 12, FontStyle.Regular);
+            }
+
+            // Ustawienie czcionki dla tytu³u wykresu (sprawdzenie, czy istniej¹ tytu³y)
+            if (bjChrt.Titles.Count > 0)
+            {
+                bjChrt.Titles[0].Font = bjNowaCzcionka;
+            }
+
+            // Ustawienie czcionki dla legendy wykresu (sprawdzenie, czy istniej¹ legendy)
+            if (bjChrt.Legends.Count > 0)
+            {
+                bjChrt.Legends[0].Font = bjNowaCzcionka;
+            }
+
+            // Ustawienie czcionki dla osi X (sprawdzenie, czy istniej¹ obszary wykresu)
+            if (bjChrt.ChartAreas.Count > 0)
+            {
+                bjChrt.ChartAreas[0].AxisX.LabelStyle.Font = bjNowaCzcionka;
+                bjChrt.ChartAreas[0].AxisX.TitleFont = bjNowaCzcionka;
+
+                // Ustawienie czcionki dla osi Y
+                bjChrt.ChartAreas[0].AxisY.LabelStyle.Font = bjNowaCzcionka;
+                bjChrt.ChartAreas[0].AxisY.TitleFont = bjNowaCzcionka;
+            }
+
+            // Ustawienie czcionki dla serii danych
+            foreach (var series in bjChrt.Series)
+            {
+                series.Font = bjNowaCzcionka;
+            }
+        }
+
+
+        private void bjZmianaKoloruT³aWykresuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bjZmienKolor(sender, bjChrt, (control, bjColor) => ((Chart)control).BackColor = bjColor); 
         }

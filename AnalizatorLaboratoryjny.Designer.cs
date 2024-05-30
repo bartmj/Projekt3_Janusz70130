@@ -528,7 +528,7 @@ namespace Projekt2_Janusz70130
             this.zmianaKoloruLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaKoloruLiniiWykresuToolStripMenuItem.Text = "Zmiana koloru linii wykresu";
             // 
-            // zmianaFormatuCzcionkiToolStripMenuItem
+            // bjZmianaFormatuCzcionkiToolStripMenuItem
             // 
             this.zmianaFormatuCzcionkiToolStripMenuItem.Enabled = false;
             this.zmianaFormatuCzcionkiToolStripMenuItem.Name = "zmianaFormatuCzcionkiToolStripMenuItem";
