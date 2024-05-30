@@ -338,7 +338,7 @@ namespace Projekt2_Janusz70130
             this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Name = "zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem";
             this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Text = "Zapisz wiersze danych kontrolki DataGridView w pliku";
-            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Click += new System.EventHandler(this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem_Click);
+            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Click += new System.EventHandler(this.zapiszWierszeDanychKontrolkiDataGridViewDoPlikuToolStripMenuItem_Click);
             // 
             // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem
             // 

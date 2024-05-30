@@ -15,6 +15,8 @@ namespace Projekt2_Janusz70130
         private float bjXd;
         private float bjXg;
         private float bjH;
+        // pomocnicza flaga aktualnoœci danych s³u¿¹ca do œledzenia stanu aplikacji i spójnoœci danych
+        private bool bjFlagaAktualnosciDanych;
         // zmienna s³u¿¹ca do œledzenia czy u¿ytkownik chce wyjœæ z aplikacji bezpoœrednio pomiajaj¹c wychodzenie do kokpitu
         public static bool bjCzyZamknac { get; set; } = false;
 
@@ -252,8 +254,34 @@ namespace Projekt2_Janusz70130
             // zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
 
+            // 1. Je¿eli flaga nie jest ustawiona, wystarczy odkryæ kontrolkê DGV i ukryæ inne,
+            // je¿eli jest to trzeba podj¹æ kroki do wizualizacji tabelarycznej
+            if (!bjFlagaAktualnosciDanych)
+            {
+                // 2. Pobranie danych z pól tekstowych
+                if (!bjPobranieDanychWejœciowychDlaTablicowania(out bjXd, out bjXg, out bjH))
+                {
+                    // by³ b³¹d, to go sygnalizuje 
+                    bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: w zapisie danych wejœciowych wyst¹pi³ " +
+                        "niedozwolony znak.");
+                    // przerwanie obs³ugi zdarzenia Click: bjBtnWizualizacjaTabelarycznaFx_Click
+                    return;
+                }
+                // 3. Tablicowanie wartoœæi 
+                bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
+                // 4. Wype³nienie Kontrolki Chart danymi
+                bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
+                // 5. Wype³nienie Kontrolki DataGridView danymi
+                bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
+                // 6. Ustawienie flagi aktualnoœæi danych
+                bjFlagaAktualnosciDanych = true;
+            }
+            // 7. Odkrycie kontrolki Chart i zakrycie DataGridView
+            bjDgvTWFx.Visible = true;
+            bjChrt.Visible = false;
+
             // pobranie danych wejœciowych 
-            if (!bjPobranieDanychWejœciowychDlaTablicowania(out bjXd, out bjXg, out bjH))
+            /*if (!bjPobranieDanychWejœciowychDlaTablicowania(out bjXd, out bjXg, out bjH))
             {
                 // by³ b³¹d, to go sygnalizuje 
                 bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: w zapisie danych wejœciowych wyst¹pi³ " +
@@ -276,15 +304,46 @@ namespace Projekt2_Janusz70130
             /* 4.Tablicowanie wartoœci równania(funkcji F(X)) w przedziale[Xd, Xg]
             z przyrostem 'h' */
             // wywo³anie metody tablicowania zmian wartoœci F(x) w podanym przedziale: [Xd, Xg] z 'h'
-            bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
+            //bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
             // 5. Wpisanie do Kontrolki DataGridView wierszy danych tablicy zmian wartoœci F(X)
             // wywo³anie metody przepisania wierszy tablicy TWFx do kontrolki DataGridView
-            bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
+            //bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
             // modyfikator ref oznacza, ¿e dany parametr metordy jest parametrem wejœciowo-wyjœciowym
         }
 
         private void bjBtnWizualizacjaGraficznaFx_Click(object sender, EventArgs e)
         {
+            // zgaszenie kontrolki errorProvider
+            bjErrorProvider2.Dispose();
+
+            // 1. Je¿eli flaga nie jest ustawiona, wystarczy odkryæ kontrolkê Chart i ukryæ inne,
+            // je¿eli jest to trzeba podj¹æ kroki do wizualizacji graficznej
+            if (!bjFlagaAktualnosciDanych)
+            {
+                // 2. Pobranie danych z pól tekstowych
+                if (!bjPobranieDanychWejœciowychDlaTablicowania(out bjXd, out bjXg, out bjH))
+                {
+                    // sygnalizowanie b³êdu
+                    bjErrorProvider2.SetError(bjBtnWizualizacjaGraficznaFx, "ERROR: w zapisie danych wejœciowych wyst¹pi³ " +
+                        "niedozwolony znak.");
+                    // przerwanie obs³ugi zdarzenia Click: btnWizualizacjaGraficznaFx_Click
+                    return;
+                }
+                // 3. Tablicowanie wartoœæi
+                bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
+                // 4. Wype³nienie Kontrolki Chart danymi
+                bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
+                // 5. Wype³nienie Kontrolki DataGridView danymi
+                bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
+                // 6. Ustawienie flagi aktualnoœæi danych
+                bjFlagaAktualnosciDanych = true;
+                
+            }
+            // 7. Odkrycie kontrolki Chart i zakrycie DataGridView
+            bjDgvTWFx.Visible = false;
+            bjChrt.Visible = true;
+
+            /*
             // zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
             // deklaracja zmiannych pomocniczych 
@@ -301,7 +360,7 @@ namespace Projekt2_Janusz70130
 
             // zresetowanie kontrolki
             bjResetChart();
-
+            
             // po poprawnym za³adowaniu dnaych ustawienie odpowedniego stanu kontrolek
             // ukrycie kontrolki wizualizacji tabelarycznej
             bjDgvTWFx.Visible = false;
@@ -315,11 +374,12 @@ namespace Projekt2_Janusz70130
             bjBtnWizualizacjaGraficznaFx.Enabled = false;
             // tablicowanie wartoœci równania(funkcji F(X)) w przedziale[Xd, Xg] z przyrostem 'h' */
             // wywo³anie metody tablicowania 
-            bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
+            //bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
             // wpisanie do kontrolki Chart wierszy danych tablicy zmian wartoœci F(X)
             // wywo³anie metody przepisania wierszy tablicy TWFx do kontrolki Chart
-            bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
+            //bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
             // modyfikator ref oznacza, ¿e dany parametr metordy jest parametrem wejœciowo-wyjœciowym
+
         }
 
         private void bjBtnReset_Click(object sender, EventArgs e)
@@ -376,10 +436,11 @@ namespace Projekt2_Janusz70130
             }
         }
 
-        private void zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void zapiszWierszeDanychKontrolkiDataGridViewDoPlikuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // wygaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
+            /*
             if (bjDgvTWFx == null || !bjDgvTWFx.Visible || bjDgvTWFx.Rows.Count <= 0)
             {
                 bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: " +
@@ -388,175 +449,134 @@ namespace Projekt2_Janusz70130
                 // przerwanie dalszej obs³ugi zdarzenia Click
                 return;
             }
-
+            */
             // utworzenie egzemplarza okna dialogowego: bjOknoPlikuDoZapisu
-            SaveFileDialog OknoPlikuDoZapisu = new SaveFileDialog
+            
+            // Utworzenie egzemplarza okna dialogowego do zapisu pliku
+            SaveFileDialog bjOknoPlikuDoZapisu = new SaveFileDialog
             {
-                Title = "Wybór pliku do wpisania wierszy danych z kontrolki " +
-                "DataGridView",
-                Filter = "txtfiles(*.txt)|*.txt|all files (*.*)|*.*",
+                Title = "Wybór pliku do zapisania danych z kontrolki DataGridView",
+                Filter = "txt files (*.txt)|*.txt|all files (*.*)|*.*",
                 FilterIndex = 1,
                 RestoreDirectory = true,
                 InitialDirectory = "C:\\"
             };
-            // wizualizacja okna bjOknoPlikuDoZapisu i odczytanie informacji o wyborze pliku
-            if (OknoPlikuDoZapisu.ShowDialog() == DialogResult.OK)
+
+            // Wizualizacja okna dialogowego i odczytanie informacji o wyborze pliku
+            if (bjOknoPlikuDoZapisu.ShowDialog() == DialogResult.OK)
             {
-                // plik zosta³ wybrany lub zosta³ utworzony nowy plik 
-                // utworzenie egzemplarza strumienia do zapisu 
-                StreamWriter bjPlikZnakowy = new StreamWriter(OknoPlikuDoZapisu.FileName);
+                // Zapisanie zawartoœci DataGridView do wybranego pliku
+                bjZapiszDaneKontrolkiDataGridViewDoPliku(bjOknoPlikuDoZapisu.FileName);
+            }
+        }
+
+        private void bjZapiszDaneKontrolkiDataGridViewDoPliku(string bjNazwaPliku)
+        {
+            // Utworzenie egzemplarza StreamWriter do zapisu wierszy DataGridView do pliku
+            using (StreamWriter bjPlikZnakowy = new StreamWriter(bjNazwaPliku))
+            {
                 try
-                { // wypisaywanie do pliku wierszy danych kontrolki DataGridView
+                {
+                    // Zapisanie ka¿dego wiersza z DataGridView do pliku
                     for (int i = 0; i < bjDgvTWFx.Rows.Count; i++)
                     {
-                        // wpisanie do pliku i-tego wiersza kontrolki DataGridView
-                        bjPlikZnakowy.Write(bjDgvTWFx.Rows[i].Cells[0].Value);
-                        bjPlikZnakowy.Write(";");
-                        bjPlikZnakowy.Write(bjDgvTWFx.Rows[i].Cells[1].Value);
-                        bjPlikZnakowy.Write(";");
-                        bjPlikZnakowy.WriteLine(bjDgvTWFx.Rows[i].Cells[2].Value);
+                        bjPlikZnakowy.Write(bjDgvTWFx.Rows[i].Cells[0].Value); // Zapisanie wartoœci z pierwszej komórki
+                        bjPlikZnakowy.Write(";"); // Separator
+                        bjPlikZnakowy.Write(bjDgvTWFx.Rows[i].Cells[1].Value); // Zapisanie wartoœci z drugiej komórki
+                        bjPlikZnakowy.Write(";"); // Separator
+                        bjPlikZnakowy.WriteLine(bjDgvTWFx.Rows[i].Cells[2].Value); // Zapisanie wartoœci z trzeciej komórki i przejœcie do nowej linii
                     }
                 }
                 catch (Exception bjB³¹d)
                 {
+                    // Wyœwietlenie komunikatu o b³êdzie w przypadku wyst¹pienia wyj¹tku
                     MessageBox.Show("ERROR: wyst¹pi³ nieoczekiwany b³¹d podczas zapisu " +
                         "wierszy danych z kontrolki DataGridView (komunikat systemowy: " +
                         bjB³¹d.Message + " )");
                 }
-                finally
-                {
-                    bjPlikZnakowy.Close();
-                    bjPlikZnakowy.Dispose();
-                }
-                // zmkniêcie okna dialogowego bjOknoPlikuDoZapisu 
-                OknoPlikuDoZapisu.Dispose();
             }
         }
-
         private void pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // zgaszenie kontrolki errorProvider
+            // Zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
-            
-            // usuniêcie danych w kontrolce DataGridView
-            bjDgvTWFx.Rows.Clear();
-            // wycentrowanie zapisów w poszczególnych komórkach (kolumnach) kontrolki DataGridView
-            bjDgvTWFx.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            bjDgvTWFx.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            bjDgvTWFx.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            /* utworzenie okna dialogowego dla otwarcia (wskazania) pliku, z którego zostan¹ pobrane dane i wpisane do kontrolki DataGridView */
-            OpenFileDialog bjOknoWyboruPiku = new OpenFileDialog();
-            // ustalenie tytu³u okna dialogowego
-            bjOknoWyboruPiku.Title = "Wybór pliku do pobrania wierszy danych dla kontrolki DataGridView";
-            // ustawienie filtru dla "pokazywania" plików
-            bjOknoWyboruPiku.Filter = "txtfiles (*.txt)|*.txt|all files (*.*)|*.*";
-            // ustawienie filtru domyœlnego: *.txt
-            bjOknoWyboruPiku.FilterIndex = 1;
-            // przywrócenie bie¿¹cego ustawienia po zamkniêciu okna dialogowego
-            bjOknoWyboruPiku.RestoreDirectory = true;
-            // ustawienie domyœlnego dysku, gdzie jest plik do pobrania
-            bjOknoWyboruPiku.InitialDirectory = "C:\\";
-
-            // wizualizacja okna dialogowego: bjOknoWyboruPiku
-            if (bjOknoWyboruPiku.ShowDialog() == DialogResult.OK)
+            // Utworzenie okna dialogowego dla otwarcia (wskazania) pliku, z którego zostan¹ pobrane dane
+            OpenFileDialog bjOknoWyboruPliku = new OpenFileDialog
             {
-                // plik zosta³ wybrany, to musimy go otworzyæ w trybie strumieni znaków
-                // musimy przy tym pamiêtaæ jak ten plik zosta³ zapisany:
-                // jako ci¹g wierszy, w którym poszczególne dane liczbowe oddzielone s¹ œrednikiem
-                // deklaracje pomocnicze
-                string bjWierszDanych; // dla przechowania wiersza danych (³añcucha znaków) wczytanych z pliku znakowego
-                string[] bjElementyWierszaDanych; // dla przechowania pojedynczych danych (liczby), które s¹ zapisane w tym wczytanym wierszu danych: bjWierszDanych
+                Title = "Wybór pliku do pobrania wierszy danych dla kontrolki DataGridView",
+                Filter = "txt files (*.txt)|*.txt|all files (*.*)|*.*",
+                FilterIndex = 1,
+                RestoreDirectory = true,
+                InitialDirectory = "C:\\"
+            };
 
-                // Krok 1: utworzenie i otwarcie egzemplarza strumienia znaków do odczytu,
-                // co umo¿liwi wykonywanie na nim operacji "podobnych" do operacji wykonywanych w oknie konsoli: Console, co poznaliœmy podczas realizacji Projektu Nr1
-                StreamReader bjPlikZnakowy = new StreamReader(bjOknoWyboruPiku.FileName);
-                //lub: new StreamReader(OknoOdczytuPliku.OpenFile());
-
-                // Krok 2: odczytywanie pliku znakowego "wiersz po wierszu" i wpisanie danych do kontrolki DataGridView
-                try
-                {
-                    int NrWiersza = 0; // ustalenie warunku brzegowego
-                                       // wczytywanie wierszy z pliku znakowego a¿ do 'znacznika' koñca pliku
-
-                    while (!bjPlikZnakowy.EndOfStream)
-                    {
-                        // wczytywanie wiersza (linii) z pliku znakowego
-                        bjWierszDanych = bjPlikZnakowy.ReadLine();
-                        // "rozpakowanie" (jego podzia³) pobranego wiersza tekstowego na "czêœci", które s¹ oddzielane separatorem (znakiem) ';'
-                        bjElementyWierszaDanych = bjWierszDanych.Split(';');
-                        // gdy dane w wierszu mog¹ byæ oddzielone ró¿nymi separatorami (na przyk³ad, jednym z separatorów: ; lub : lub |),
-                        // to 'rozpakowanie' stringu bjWierszDanych (liczb) zapisaliœmy tak:
-                        bjElementyWierszaDanych = bjWierszDanych.Split(new char[] { ';', ':', '|' });
-
-                        // w wierszach tablicy bjElementyWierszaDanych bêd¹ sk³adniki wczytane z pliku:
-                        // Numer przedzia³u; wartoœæ X; wartoœæ F(X)
-                        // usuniêcie ewentualnych spacji w poszczególnych wierszach tablicy bjElementyWierszaDanych
-                        bjElementyWierszaDanych[0].Trim();
-                        bjElementyWierszaDanych[1].Trim();
-                        bjElementyWierszaDanych[2].Trim();
-                        // dodanie nowego wiersza do kolekcji wierszy Rows kontrolki DataGridView
-                        bjDgvTWFx.Rows.Add();
-                        // wpisanie danych do nowego (dodadnego) wiersza kontrolki DataGridView
-
-                        // numer przedzia³u
-                        bjDgvTWFx.Rows[NrWiersza].Cells[0].Value = bjElementyWierszaDanych[0];
-                        // wartoœci zmiennej X
-                        bjDgvTWFx.Rows[NrWiersza].Cells[1].Value = bjElementyWierszaDanych[1];
-                        // wartoœci funkcji F(X)
-                        bjDgvTWFx.Rows[NrWiersza].Cells[2].Value = bjElementyWierszaDanych[2];
-                        NrWiersza++; // zwiêkszenie licznika wierszy wpisanych do kontrolki DataGridView
-                    }
-
-                    bjAktualizacjaStanuZmiennychAplikacjiNaPodstawieDGV();
-
-                    // Krok 3: ods³oniêcie kontrolki DataGridView (+ ukrycie kontrolki chtyWykresFx)
-                    bjDgvTWFx.Visible = true;
-                    bjChrt.Visible = false; // ukrycie kontrolki Chart
-                    // ustawienie braku aktywnoœci, w pozycji Plik menu poziomego, polecenia 'pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem'
-                    // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
-
-                    // zablokowanie przycisków
-                    bjZablokujPolaTekstowe();
-
-                    // usta odpowiedni stan aktywnoœci przycisków
-                    bjBtnWizualizacjaGraficznaFx.Enabled = true;
-                    bjBtnWizualizacjaTabelarycznaFx.Enabled = false;
-                }
-                catch (IndexOutOfRangeException bjB³¹d1)
-                {
-                    // powiadomienie u¿ytkownika o zaistnia³ym b³êdzie
-                    MessageBox.Show("ERROR: wyst¹pi³o przekroczenie wartoœci indeksu" +
-                                    "wierszy danych kontrolki DataGridView (zg³oszony komunikat systemowy: " + bjB³¹d1.Message + " )");
-                }
-                catch (IOException bjB³¹d2)
-                {
-                    // powiadomienie u¿ytkownika o zaistnia³ym b³êdzie
-                    MessageBox.Show("ERROR: wyst¹pi³ nieoczekiwany b³¹d przy pobieraniu" +
-                                    "(wczytywaniu) wierszy danych z pliku " +
-                                    "(zg³oszony komunikat systemowy: " + bjB³¹d2.Message + " )");
-                }
-                finally
-                {
-                    // zamkniêcie i zwolnienie przydzielonych zasobów (zwi¹zanych z operacjami na pliku)
-                    bjPlikZnakowy.Close();
-                    // zwolnienie pliku
-                    bjPlikZnakowy.Dispose();
-                }
-            }
-            else
-            {
-                // wyœwietlenie komunikatu o niewybraniu pliku do odczytu
-                MessageBox.Show("UWAGA: plik do odczytu nie zosta³ wybrany i operacje " +
-                                "pobrania danych z pliku nie mo¿e byæ zrealizowana", this.Name, MessageBoxButtons.OK);
-            }
-
-            // zwolnienie okna dialogowego: bjOknoWyboruPiku
-            bjOknoWyboruPiku.Dispose();
-
+            // 1. Wczytanie danych tekstowych z pliku do tablicy
+            bjWczytajDaneTekstoweDoTablicy(bjOknoWyboruPliku, "");
+            // 2. Aktualizacja pól tekstowych dla podg¹du u¿ytkownika
+            bjAktualizacjaZmiennychDlaPolTekstowych();
+            // 3. Wype³nienie Kontrolki Chart danymi
+            bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
+            // 4. Wype³nienie Kontrolki DataGridView danymi
+            bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
+            // 6. Ustawienie flagi aktualnoœæi danych
+            bjFlagaAktualnosciDanych = true;
+            // 7. Odkrycie kontrolki DataGridView i zakrycie Chart
+            bjDgvTWFx.Visible = true;
+            bjChrt.Visible = false;
         }
 
-        private void bjAktualizacjaStanuZmiennychAplikacjiNaPodstawieDGV()
+        private static void bjWczytajDaneTekstoweDoTablicy(OpenFileDialog bjOknoWyboruPliku, string bjSuffix)
+        {
+            if (bjOknoWyboruPliku.ShowDialog() == DialogResult.OK)
+            {
+                // Plik zosta³ wybrany, otwarcie go w trybie strumieni znaków
+                string bjWierszDanych; // Przechowanie wiersza danych wczytanych z pliku znakowego
+                string[] bjElementyWierszaDanych; // Przechowanie pojedynczych danych z wczytanego wiersza danych
+                int liczbaWierszy = File.ReadAllLines(bjOknoWyboruPliku.FileName).Length;
+                double[,] bjTWFx = new double[liczbaWierszy, 3]; // Inicjalizacja tablicy
+
+                // Utworzenie i otwarcie strumienia znaków do odczytu
+                using (StreamReader bjPlikZnakowy = new StreamReader(bjOknoWyboruPliku.FileName + bjSuffix))
+                {
+                    try
+                    {
+                        int NrWiersza = 0; // Ustalenie warunku brzegowego
+
+                        // Wczytywanie wierszy z pliku znakowego a¿ do 'znacznika' koñca pliku
+                        while (!bjPlikZnakowy.EndOfStream)
+                        {
+                            // Wczytywanie wiersza (linii) z pliku znakowego
+                            bjWierszDanych = bjPlikZnakowy.ReadLine();
+
+                            // "Rozpakowanie" (podzia³) pobranego wiersza tekstowego na czêœci oddzielane separatorem ';'
+                            bjElementyWierszaDanych = bjWierszDanych.Split(new char[] { ';', ':', '|' });
+
+                            // Usuniêcie ewentualnych spacji w poszczególnych wierszach tablicy bjElementyWierszaDanych
+                            bjElementyWierszaDanych[0] = bjElementyWierszaDanych[0].Trim();
+                            bjElementyWierszaDanych[1] = bjElementyWierszaDanych[1].Trim();
+                            bjElementyWierszaDanych[2] = bjElementyWierszaDanych[2].Trim();
+
+                            // Przypisanie wartoœci do tablicy bjTWFx
+                            bjTWFx[NrWiersza, 0] = double.Parse(bjElementyWierszaDanych[0]);
+                            bjTWFx[NrWiersza, 1] = double.Parse(bjElementyWierszaDanych[1]);
+                            bjTWFx[NrWiersza, 2] = double.Parse(bjElementyWierszaDanych[2]);
+
+                            NrWiersza++; // Zwiêkszenie licznika wierszy wpisanych do tablicy
+                        }
+                    }
+                    catch (Exception bjB³¹d)
+                    {
+                        // Wyœwietlenie komunikatu o b³êdzie w przypadku wyst¹pienia wyj¹tku
+                        MessageBox.Show("ERROR: wyst¹pi³ nieoczekiwany b³¹d podczas odczytu " +
+                            "wierszy danych z pliku (komunikat systemowy: " +
+                            bjB³¹d.Message + " )");
+                    }
+                }
+            }
+        }
+
+        private void bjAktualizacjaZmiennychDlaPolTekstowych()
         {
             {
                 // Sprawdzenie, czy DataGridView zawiera co najmniej jeden wiersz
@@ -643,6 +663,7 @@ namespace Projekt2_Janusz70130
 
         private void zapiszBitMapêKontrolkiChartWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //. 1. Zapis BitMapy do pliku 
             // utworzenie egzemplarza okna dialogowego: bjOknoPlikuDoZapisu
             SaveFileDialog bjOknoPlikuDoZapisu = new SaveFileDialog
             {
@@ -667,11 +688,14 @@ namespace Projekt2_Janusz70130
                     MessageBox.Show($"ERROR: {ex.Message}", "B³¹d zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            // 2. Zapis dodatkowych danych DataGridView do pliku tekstowego
+            bjZapiszDaneKontrolkiDataGridViewDoPliku(bjOknoPlikuDoZapisu.FileName + ".Chart.Data");
         }
 
         private void pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog bjOknoPlikuDoZapisu = new OpenFileDialog
+            OpenFileDialog bjOknoWyboruPliku = new OpenFileDialog
             {
                 Title = "Wybór pliku graficznego do za³adowania",
                 Filter = "Bitmap Image|*.bmp|PNG Image|*.png|JPEG Image|*.jpg",
@@ -679,25 +703,19 @@ namespace Projekt2_Janusz70130
                 RestoreDirectory = true,
                 InitialDirectory = "C:\\"
             };
-
-            DialogResult bjWyborOpcji = bjOknoPlikuDoZapisu.ShowDialog();
-            if (bjWyborOpcji == DialogResult.OK)
-            {
-                // czyszczenie pól tekstowych
-                bjWyczyscPolaTekstowe();
-                // zresetowanie kontrolki
-                bjResetChart();
-                // odblokowanie przycisku wizualizacji tabelarycznej, je¿eli by³a zablokowana
-                bjBtnObliczWartoœæFx.Enabled = true;
-                // odblokowanie przycisku wizualizacji tabelarycznej, je¿eli by³a zablokowana
-                bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
-                // odblokowanie przycisku wizualizacji graficznej, je¿eli by³a zablokowana 
-                bjBtnWizualizacjaGraficznaFx.Enabled = true;
-                // Za³adowanie obrazu jako t³o wykresu
-                bjChrt.ChartAreas[0].BackImage = bjOknoPlikuDoZapisu.FileName;
-                // pokazanie kontrolki
-                bjChrt.Visible = true;
-            }
+            // 1. Wczytanie danych tekstowych z pliku do tablicy
+            bjWczytajDaneTekstoweDoTablicy(bjOknoWyboruPliku, ".Chart.Data");
+            // 2. Aktualizacja pól tekstowych dla podg¹du u¿ytkownika
+            bjAktualizacjaZmiennychDlaPolTekstowych();
+            // 3. Wype³nienie Kontrolki Chart danymi
+            bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
+            // 4. Wype³nienie Kontrolki DataGridView danymi
+            bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
+            // 6. Ustawienie flagi aktualnoœæi danych
+            bjFlagaAktualnosciDanych = true;
+            // 7. Odkrycie kontrolki Chart i zakrycie DataGridView
+            bjDgvTWFx.Visible = false;
+            bjChrt.Visible = true;
         }
 
         private void bjResetChart()
