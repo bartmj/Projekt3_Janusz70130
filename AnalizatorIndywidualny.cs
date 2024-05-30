@@ -53,7 +53,10 @@ namespace Projekt2_Janusz70130
             zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Zielony", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
 
             // Dodajemy opcje zmiany koloru linii wykresu
-            //bjZmianaKoloruLiniiWykresuToolStripMenuItem
+            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Bia³y", null, zmianaKoloruLiniiWykresuToolStripMenuItem_Click);
+            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Czerwony", null, zmianaKoloruLiniiWykresuToolStripMenuItem_Click);
+            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Niebieski", null, zmianaKoloruLiniiWykresuToolStripMenuItem_Click);
+            bjZmianaKoloruLiniiWykresuToolStripMenuItem.DropDownItems.Add("Zielony", null, zmianaKoloruLiniiWykresuToolStripMenuItem_Click);
         }
 
 
@@ -788,6 +791,18 @@ namespace Projekt2_Janusz70130
         private void bjZmianaKoloruSiatki_Click(object sender, EventArgs e)
         {
             bjZmienKolor(sender, bjDgvTWFx, (control, bjColor) => ((DataGridView)control).GridColor = bjColor);
+        }
+
+        private void zmianaKoloruLiniiWykresuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bjZmienKolor(sender, bjChrt, (bjKontrolkaLambda, bjKolorLambda) =>
+            {
+                Chart bjChartCastowany = (Chart)bjKontrolkaLambda;
+                foreach (var bjSeria in bjChartCastowany.Series)
+                {
+                    bjSeria.Color = bjKolorLambda;
+                }
+            });
         }
 
         private void zmianaKoloruT³aWykresuToolStripMenuItem_Click(object sender, EventArgs e)
