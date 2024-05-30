@@ -256,7 +256,7 @@ namespace Projekt2_Janusz70130
                 bjKrzywa.Points.AddXY(bjTWFx[bjI, 1], bjTWFx[bjI, 2]);
             }
         }
-        
+
 
         private void bjBtnWizualizacjaTabelarycznaFx_Click(object sender, EventArgs e)
         {
@@ -318,7 +318,7 @@ namespace Projekt2_Janusz70130
                 bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
                 // 6. Ustawienie flagi aktualnoœæi danych
                 bjFlagaAktualnosciDanych = true;
-                
+
             }
             // 7. Odkrycie kontrolki Chart i zakrycie DataGridView
             bjDgvTWFx.Visible = false;
@@ -330,11 +330,11 @@ namespace Projekt2_Janusz70130
 
         private void bjBtnReset_Click(object sender, EventArgs e)
         {
+            // zgaszenie sygnalizacji b³êdu
             bjErrorProvider2.Clear();
-            // ukrycie wizualizacji 
+            // ukrycie i czyszczenie wszystkich wizualizacji 
             bjDgvTWFx.Visible = false;
             bjChrt.Visible = false;
-            // czyszczenie wizualizacji
             bjDgvTWFx.Rows.Clear();
             bjChrt.Series.Clear();
             // odblokowanie przycisków
@@ -342,7 +342,16 @@ namespace Projekt2_Janusz70130
             bjBtnWizualizacjaGraficznaFx.Enabled = true;
             bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
             // odblokowanie i czyszczenie okienek z tekstem
-            bjWyczyscPolaTekstowe();
+            bjTxtFX.Clear();
+            bjTxtX.Clear();
+            bjTxtXd.Clear();
+            bjTxtXg.Clear();
+            bjTxtH.Clear();
+            bjTxtFX.Enabled = true;
+            bjTxtX.Enabled = true;
+            bjTxtXd.Enabled = true;
+            bjTxtXg.Enabled = true;
+            bjTxtH.Enabled = true;
             // Ustawienie flagi aktualnoœæi danych na false
             bjFlagaAktualnosciDanych = false;
         }
@@ -357,23 +366,23 @@ namespace Projekt2_Janusz70130
                     MessageBox.Show("Czy na pewno chcesz zamkn¹æ ten formularz?",
                     this.Text, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
-            if (OknoMessage == DialogResult.Yes)
-            {
-                foreach (Form mainForm in Application.OpenForms)
+                if (OknoMessage == DialogResult.Yes)
                 {
-                    if (mainForm.Name == "KokpitNr2")
+                    foreach (Form mainForm in Application.OpenForms)
                     {
-                        this.Hide();
-                        mainForm.Show();
-                        return;
+                        if (mainForm.Name == "KokpitNr2")
+                        {
+                            this.Hide();
+                            mainForm.Show();
+                            return;
+                        }
                     }
                 }
-            }
-            else
-            if (OknoMessage == DialogResult.No)
-                e.Cancel = true;
-            else
-                e.Cancel = true;
+                else
+                if (OknoMessage == DialogResult.No)
+                    e.Cancel = true;
+                else
+                    e.Cancel = true;
             }
             // u¿ytkonik chce omin¹æ zamykanie aplikacji przez wychodzenie z kokpitu,
             // wyœwietla sie tylko okienko u¿yte w funkcji bjZakoñczDzia³anieProgramuToolStripMenuItem_Click
@@ -388,7 +397,7 @@ namespace Projekt2_Janusz70130
         {
             // wygaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
-            
+
             // Utworzenie egzemplarza okna dialogowego do zapisu pliku
             SaveFileDialog bjOknoPlikuDoZapisu = new SaveFileDialog
             {
@@ -439,7 +448,7 @@ namespace Projekt2_Janusz70130
             bjErrorProvider2.Dispose();
 
             // Utworzenie okna dialogowego dla otwarcia (wskazania) pliku, z którego zostan¹ pobrane dane
-            OpenFileDialog bjOknoWyboruPliku = new OpenFileDialog
+            OpenFileDialog bjOknoWyboru = new OpenFileDialog
             {
                 Title = "Wybór pliku do pobrania wierszy danych dla kontrolki DataGridView",
                 Filter = "txt files (*.txt)|*.txt|all files (*.*)|*.*",
@@ -448,23 +457,26 @@ namespace Projekt2_Janusz70130
                 InitialDirectory = "C:\\"
             };
 
-            // 1. Wczytanie danych tekstowych z pliku do tablicy
-            bjWczytajDaneTekstoweDoTablicy(bjOknoWyboruPliku, "");
-            // 2. Aktualizacja pól tekstowych dla podg¹du u¿ytkownika
-            bjAktualizacjaZmiennychDlaPolTekstowych();
-            // 3. Wype³nienie Kontrolki Chart danymi
-            bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
-            // 4. Wype³nienie Kontrolki DataGridView danymi
-            bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
-            // 6. Ustawienie flagi aktualnoœæi danych
-            bjFlagaAktualnosciDanych = true;
-            // 7. Odkrycie kontrolki DataGridView i zakrycie Chart
-            bjDgvTWFx.Visible = true;
-            bjChrt.Visible = false;
-            // 8. Zablokowanie pól tekstowych
-            bjZablokujPolaTekstowe();
-            // ustawienie odpowiedniego stanu przycisków
-            bjUstawPrzyciskiDlaWizualizacji(true);
+            if (bjOknoWyboru.ShowDialog() == DialogResult.OK)
+            {
+                // 1. Wczytanie danych tekstowych z pliku do tablicy
+                bjWczytajDaneTekstoweDoTablicy(bjOknoWyboru, "");
+                // 2. Aktualizacja pól tekstowych dla podg¹du u¿ytkownika
+                bjAktualizacjaZmiennychDlaPolTekstowych();
+                // 3. Wype³nienie Kontrolki Chart danymi
+                bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
+                // 4. Wype³nienie Kontrolki DataGridView danymi
+                bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
+                // 6. Ustawienie flagi aktualnoœæi danych
+                bjFlagaAktualnosciDanych = true;
+                // 7. Odkrycie kontrolki DataGridView i zakrycie Chart
+                bjDgvTWFx.Visible = true;
+                bjChrt.Visible = false;
+                // 8. Zablokowanie pól tekstowych
+                bjZablokujPolaTekstowe();
+                // ustawienie odpowiedniego stanu przycisków
+                bjUstawPrzyciskiDlaWizualizacji(true);
+            }
         }
 
         private void bjUstawPrzyciskiDlaWizualizacji(bool bjCzyTabelaryczna)
@@ -483,57 +495,56 @@ namespace Projekt2_Janusz70130
 
         private void bjWczytajDaneTekstoweDoTablicy(OpenFileDialog bjOknoWyboruPliku, string bjSuffix)
         {
-            if (bjOknoWyboruPliku.ShowDialog() == DialogResult.OK)
+            // Plik zosta³ wybrany, otwarcie go w trybie strumieni znaków
+            string bjWierszDanych; // Przechowanie wiersza danych wczytanych z pliku znakowego
+            string[] bjElementyWierszaDanych; // Przechowanie pojedynczych danych z wczytanego wiersza danych
+            string bjNazwaPlikuDanychTekstowychDlaKontrolkiChart = bjOknoWyboruPliku.FileName + bjSuffix;
+            int liczbaWierszy = File.ReadAllLines(bjNazwaPlikuDanychTekstowychDlaKontrolkiChart).Length;
+            // Pomocniczo lokalna tablica
+            float[,] bjTWFxLokalna = new float[liczbaWierszy, 3]; // Inicjalizacja tablicy
+
+            // Utworzenie i otwarcie strumienia znaków do odczytu
+            using (StreamReader bjPlikZnakowy = new StreamReader(bjNazwaPlikuDanychTekstowychDlaKontrolkiChart))
             {
-                // Plik zosta³ wybrany, otwarcie go w trybie strumieni znaków
-                string bjWierszDanych; // Przechowanie wiersza danych wczytanych z pliku znakowego
-                string[] bjElementyWierszaDanych; // Przechowanie pojedynczych danych z wczytanego wiersza danych
-                int liczbaWierszy = File.ReadAllLines(bjOknoWyboruPliku.FileName).Length;
-                // Pomocniczo lokalna tablica
-                float[,] bjTWFxLokalna = new float[liczbaWierszy, 3]; // Inicjalizacja tablicy
-
-                // Utworzenie i otwarcie strumienia znaków do odczytu
-                using (StreamReader bjPlikZnakowy = new StreamReader(bjOknoWyboruPliku.FileName + bjSuffix))
+                try
                 {
-                    try
+                    int NrWiersza = 0; // Ustalenie warunku brzegowego
+
+                    // Wczytywanie wierszy z pliku znakowego a¿ do 'znacznika' koñca pliku
+                    while (!bjPlikZnakowy.EndOfStream)
                     {
-                        int NrWiersza = 0; // Ustalenie warunku brzegowego
+                        // Wczytywanie wiersza (linii) z pliku znakowego
+                        bjWierszDanych = bjPlikZnakowy.ReadLine();
 
-                        // Wczytywanie wierszy z pliku znakowego a¿ do 'znacznika' koñca pliku
-                        while (!bjPlikZnakowy.EndOfStream)
-                        {
-                            // Wczytywanie wiersza (linii) z pliku znakowego
-                            bjWierszDanych = bjPlikZnakowy.ReadLine();
+                        // "Rozpakowanie" (podzia³) pobranego wiersza tekstowego na czêœci oddzielane separatorem ';'
+                        bjElementyWierszaDanych = bjWierszDanych.Split(new char[] { ';', ':', '|' });
 
-                            // "Rozpakowanie" (podzia³) pobranego wiersza tekstowego na czêœci oddzielane separatorem ';'
-                            bjElementyWierszaDanych = bjWierszDanych.Split(new char[] { ';', ':', '|' });
+                        // Usuniêcie ewentualnych spacji w poszczególnych wierszach tablicy bjElementyWierszaDanych
+                        bjElementyWierszaDanych[0] = bjElementyWierszaDanych[0].Trim();
+                        bjElementyWierszaDanych[1] = bjElementyWierszaDanych[1].Trim();
+                        bjElementyWierszaDanych[2] = bjElementyWierszaDanych[2].Trim();
 
-                            // Usuniêcie ewentualnych spacji w poszczególnych wierszach tablicy bjElementyWierszaDanych
-                            bjElementyWierszaDanych[0] = bjElementyWierszaDanych[0].Trim();
-                            bjElementyWierszaDanych[1] = bjElementyWierszaDanych[1].Trim();
-                            bjElementyWierszaDanych[2] = bjElementyWierszaDanych[2].Trim();
+                        // Przypisanie wartoœci do tablicy bjTWFx
+                        bjTWFxLokalna[NrWiersza, 0] = float.Parse(bjElementyWierszaDanych[0]);
+                        bjTWFxLokalna[NrWiersza, 1] = float.Parse(bjElementyWierszaDanych[1]);
+                        bjTWFxLokalna[NrWiersza, 2] = float.Parse(bjElementyWierszaDanych[2]);
 
-                            // Przypisanie wartoœci do tablicy bjTWFx
-                            bjTWFxLokalna[NrWiersza, 0] = float.Parse(bjElementyWierszaDanych[0]);
-                            bjTWFxLokalna[NrWiersza, 1] = float.Parse(bjElementyWierszaDanych[1]);
-                            bjTWFxLokalna[NrWiersza, 2] = float.Parse(bjElementyWierszaDanych[2]);
-
-                            NrWiersza++; // Zwiêkszenie licznika wierszy wpisanych do tablicy
-                        }
-                    }
-                    catch (Exception bjB³¹d)
-                    {
-                        // Wyœwietlenie komunikatu o b³êdzie w przypadku wyst¹pienia wyj¹tku
-                        MessageBox.Show("ERROR: wyst¹pi³ nieoczekiwany b³¹d podczas odczytu " +
-                            "wierszy danych z pliku (komunikat systemowy: " +
-                            bjB³¹d.Message + " )");
+                        NrWiersza++; // Zwiêkszenie licznika wierszy wpisanych do tablicy
                     }
                 }
-
-                // Aktualizacja zmiennej klasy
-                bjTWFx = bjTWFxLokalna;
+                catch (Exception bjB³¹d)
+                {
+                    // Wyœwietlenie komunikatu o b³êdzie w przypadku wyst¹pienia wyj¹tku
+                    MessageBox.Show("ERROR: wyst¹pi³ nieoczekiwany b³¹d podczas odczytu " +
+                        "wierszy danych z pliku (komunikat systemowy: " +
+                        bjB³¹d.Message + " )");
+                }
             }
+
+            // Aktualizacja zmiennej klasy
+            bjTWFx = bjTWFxLokalna;
         }
+    
 
         private void bjAktualizacjaZmiennychDlaPolTekstowych()
         {
@@ -562,21 +573,6 @@ namespace Projekt2_Janusz70130
                 // Obs³uga przypadku, gdy tablica jest pusta lub ma mniej ni¿ dwa wiersze
                 MessageBox.Show("Tablica bjTWFx jest pusta lub ma za ma³o danych do obliczenia zmiennych.", "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void bjWyczyscPolaTekstowe()
-        {
-            bjTxtFX.Clear();
-            bjTxtX.Clear();
-            bjTxtXd.Clear();
-            bjTxtXg.Clear();
-            bjTxtH.Clear();
-
-            bjTxtFX.Enabled = true;
-            bjTxtX.Enabled = true;
-            bjTxtXd.Enabled = true;
-            bjTxtXg.Enabled = true;
-            bjTxtH.Enabled = true;
         }
 
         private void usuñWierszeDanychToolStripMenuItem_Click(object sender, EventArgs e)
@@ -630,15 +626,14 @@ namespace Projekt2_Janusz70130
                 {
                     MessageBox.Show($"ERROR: {ex.Message}", "B³¹d zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                // 2. Zapis dodatkowych danych DataGridView do pliku tekstowego
+                bjZapiszDaneKontrolkiDataGridViewDoPliku(bjOknoPlikuDoZapisu.FileName + ".Chart.Data");
             }
-
-            // 2. Zapis dodatkowych danych DataGridView do pliku tekstowego
-            bjZapiszDaneKontrolkiDataGridViewDoPliku(bjOknoPlikuDoZapisu.FileName + ".Chart.Data");
         }
 
         private void pobierzBitMapêZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenFileDialog bjOknoWyboruPliku = new OpenFileDialog
+            OpenFileDialog bjOknoWyboru = new OpenFileDialog
             {
                 Title = "Wybór pliku graficznego do za³adowania",
                 Filter = "Bitmap Image|*.bmp|PNG Image|*.png|JPEG Image|*.jpg",
@@ -646,21 +641,27 @@ namespace Projekt2_Janusz70130
                 RestoreDirectory = true,
                 InitialDirectory = "C:\\"
             };
-            // 1. Wczytanie danych tekstowych z pliku do tablicy
-            bjWczytajDaneTekstoweDoTablicy(bjOknoWyboruPliku, ".Chart.Data");
-            // 2. Aktualizacja pól tekstowych dla podg¹du u¿ytkownika
-            bjAktualizacjaZmiennychDlaPolTekstowych();
-            // 3. Wype³nienie Kontrolki Chart danymi
-            bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
-            // 4. Wype³nienie Kontrolki DataGridView danymi
-            bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
-            // 6. Ustawienie flagi aktualnoœæi danych
-            bjFlagaAktualnosciDanych = true;
-            // 7. Odkrycie kontrolki Chart i zakrycie DataGridView
-            bjDgvTWFx.Visible = false;
-            bjChrt.Visible = true;
-            // ustawienie odpowiedniego stanu przycisków
-            bjUstawPrzyciskiDlaWizualizacji(false);
+
+            if (bjOknoWyboru.ShowDialog() == DialogResult.OK)
+            {
+                // 1. Wczytanie danych tekstowych z pliku do tablicy
+                bjWczytajDaneTekstoweDoTablicy(bjOknoWyboru, ".Chart.Data");
+                // 2. Aktualizacja pól tekstowych dla podg¹du u¿ytkownika
+                bjAktualizacjaZmiennychDlaPolTekstowych();
+                // 3. Wype³nienie Kontrolki Chart danymi
+                bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
+                // 4. Wype³nienie Kontrolki DataGridView danymi
+                bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
+                // 6. Ustawienie flagi aktualnoœæi danych
+                bjFlagaAktualnosciDanych = true;
+                // 7. Odkrycie kontrolki Chart i zakrycie DataGridView
+                bjDgvTWFx.Visible = false;
+                bjChrt.Visible = true;
+                // ustawienie odpowiedniego stanu przycisków
+                bjUstawPrzyciskiDlaWizualizacji(false);
+                // zablokowanie pól tekstowych
+                bjZablokujPolaTekstowe();
+            }
         }
 
         private void bjResetChart()
