@@ -521,7 +521,7 @@ namespace Projekt2_Janusz70130
             this.zmianaKoloruT³aWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaKoloruT³aWykresuToolStripMenuItem.Text = "Zmiana koloru t³a wykresu";
             // 
-            // zmianaKoloruLiniiWykresuToolStripMenuItem
+            // bjZmianaKoloruLiniiWykresuToolStripMenuItem
             // 
             this.zmianaKoloruLiniiWykresuToolStripMenuItem.Enabled = false;
             this.zmianaKoloruLiniiWykresuToolStripMenuItem.Name = "zmianaKoloruLiniiWykresuToolStripMenuItem";

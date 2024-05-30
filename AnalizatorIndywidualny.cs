@@ -29,28 +29,29 @@ namespace Projekt2_Janusz70130
             bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Times New Roman", null, bjZmianaFormatuCzcionki_Click);
             bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Verdana", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Verdana
             bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Tahoma", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Tahoma
-            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Courier New", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Courier New
-            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Domyœlna", null, bjZmianaFormatuCzcionki_Click);
 
             // Dodajemy opcje do menu zmiany koloru czcionki
+            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czarny", null, bjZmianaKoloruCzcionki_Click);
             bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czerwony", null, bjZmianaKoloruCzcionki_Click);
             bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Niebieski", null, bjZmianaKoloruCzcionki_Click);
             bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Zielony", null, bjZmianaKoloruCzcionki_Click);
-            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("¯ó³ty", null, bjZmianaKoloruCzcionki_Click);
-            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Pomarañczowy", null, bjZmianaKoloruCzcionki_Click);
-            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Fioletowy", null, bjZmianaKoloruCzcionki_Click);
-            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Ró¿owy", null, bjZmianaKoloruCzcionki_Click);
-            bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Domyœlny", null, bjZmianaKoloruCzcionki_Click);
+            
 
             // Dodajemy opcje do menu zmiany koloru siatki
+            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czarny", null, bjZmianaKoloruSiatki_Click);
             bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czerwony", null, bjZmianaKoloruSiatki_Click);
             bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Niebieski", null, bjZmianaKoloruSiatki_Click);
             bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Zielony", null, bjZmianaKoloruSiatki_Click);
-            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("¯ó³ty", null, bjZmianaKoloruSiatki_Click);
-            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Pomarañczowy", null, bjZmianaKoloruSiatki_Click);
-            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Fioletowy", null, bjZmianaKoloruSiatki_Click);
-            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Ró¿owy", null, bjZmianaKoloruSiatki_Click);
-            bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Domyœlny", null, bjZmianaKoloruSiatki_Click);
+            
+
+            // Dodajemy opcje zmiany koloru t³a kontrolki Chart
+            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Bia³y", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
+            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Czerwony", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
+            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Niebieski", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
+            zmianaKoloruT³aWykresuToolStripMenuItem.DropDownItems.Add("Zielony", null, zmianaKoloruT³aWykresuToolStripMenuItem_Click);
+
+            // Dodajemy opcje zmiany koloru linii wykresu
+            //bjZmianaKoloruLiniiWykresuToolStripMenuItem
         }
 
 
@@ -771,29 +772,28 @@ namespace Projekt2_Janusz70130
                     }
                     else
                     {
-                        bjDgvTWFx.DefaultCellStyle.ForeColor = bjPobierzNazweKoloruDlaProgramu(bjNazwaKoloru);
+                        bjDgvTWFx.DefaultCellStyle.ForeColor = bjPobierzNazweKoloru(bjNazwaKoloru);
                     }
                 }
             }
 
-        private void bjZmianaKoloruSiatki_Click(object sender, EventArgs e)
+        private void bjZmienKolor(object sender, Control bjKontrolka, Action<Control, Color> bjAkcjaZmianyKoloru)
         {
-            ToolStripMenuItem bjElementMenu = sender as ToolStripMenuItem;
-            if (bjElementMenu != null)
-            {
-                string bjNazwaKoloru = bjElementMenu.Text;
-                if (bjNazwaKoloru == "Domyœlny")
-                {
-                    bjDgvTWFx.GridColor = Color.Black; // lub inny domyœlny kolor
-                }
-                else
-                {
-                    bjDgvTWFx.GridColor = bjPobierzNazweKoloruDlaProgramu(bjNazwaKoloru);
-                }
-            }
+            ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
+            bjAkcjaZmianyKoloru(bjKontrolka, bjPobierzNazweKoloru(menuItem.Text));
         }
 
-        private Color bjPobierzNazweKoloruDlaProgramu(string bjNazwaKoloru)
+        private void bjZmianaKoloruSiatki_Click(object sender, EventArgs e)
+        {
+            bjZmienKolor(sender, bjDgvTWFx, (control, bjColor) => ((DataGridView)control).GridColor = bjColor);
+        }
+
+        private void zmianaKoloruT³aWykresuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bjZmienKolor(sender, bjChrt, (control, bjColor) => ((Chart)control).BackColor = bjColor); 
+        }
+
+        private Color bjPobierzNazweKoloru(string bjNazwaKoloru)
         {
             switch (bjNazwaKoloru)
             {
@@ -811,6 +811,10 @@ namespace Projekt2_Janusz70130
                     return Color.Purple;
                 case "Ró¿owy":
                     return Color.Pink;
+                case "Bia³y":
+                    return Color.White;
+                case "Czarny":
+                    return Color.Black;
                 default:
                     return Color.Black;
             }
