@@ -873,7 +873,7 @@ namespace Projekt2_Janusz70130
                 bjChrt.Series.Clear();
                 bjChrt.Titles.Clear();
                 bjChrt.Legends.Clear();
-                bjChrt.ChartAreas.Clear();
+                //bjChrt.ChartAreas.Clear();
             }
         }
 
