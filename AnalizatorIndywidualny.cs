@@ -881,8 +881,6 @@ namespace Projekt2_Janusz70130
             }
         }
 
-
-
         private void bjZmianaKoloruT³aWykresuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bjZmienKolor(sender, bjChrt, (control, bjColor) => ((Chart)control).BackColor = bjColor); 
