@@ -216,16 +216,21 @@ namespace Projekt2_Janusz70130
 
         private void bjWpiszWierszeDanychDoKontrolkiDataGridView(float[,] bjTWFx, ref DataGridView bjDgvTWFx)
         {
-            /* przepisanie wierszy danych z tablicy bjTWFx do kontrolki DataGridView 
-             * (najpierw dodajemy nowy wiersz, a nastêpnie do dodanego wiersza wpisujemy dane)*/
+            // Wyczyœæ wszystkie wiersze z DataGridView
+            bjDgvTWFx.Rows.Clear();
+
+            // Dodaj wiersze z tablicy bjTWFx do DataGridView
             for (int bjI = 0; bjI < bjTWFx.GetLength(0); bjI++)
             {
                 // dodanie nowego wiersza
-                bjDgvTWFx.Rows.Add(bjTWFx);
+                bjDgvTWFx.Rows.Add();
+
                 // wpisanie wartoœci numeru przedzia³u X
                 bjDgvTWFx.Rows[bjI].Cells[0].Value = String.Format("{0}", bjTWFx[bjI, 0]);
+
                 // wpisanie wartoœci zmiennej niezale¿nej X
                 bjDgvTWFx.Rows[bjI].Cells[1].Value = String.Format("{0:F2}", bjTWFx[bjI, 1]);
+
                 // wpisanie wartoœci równania
                 bjDgvTWFx.Rows[bjI].Cells[2].Value = String.Format("{0:F2}", bjTWFx[bjI, 2]);
             }
@@ -233,17 +238,21 @@ namespace Projekt2_Janusz70130
 
         private void bjWpiszWierszeDanychDoKontrolkiChart(float[,] bjTWFx, ref Chart bjChrt)
         {
+            // Wyczyœæ wszystkie serie z wykresu
+            bjChrt.Series.Clear();
 
-            // dodanie krzywej do obszaru wykresu
+            // Dodanie nowej serii danych
             Series bjKrzywa = new Series("Wartoœæ funkcji F(X)")
             {
                 ChartType = SeriesChartType.Line
             };
+
+            // Dodanie serii do wykresu
             bjChrt.Series.Add(bjKrzywa);
 
+            // Dodawanie punktów do serii z tablicy
             for (int bjI = 0; bjI < bjTWFx.GetLength(0); bjI++)
             {
-                // dodawanie do krzywej punktów z tablicy 
                 bjKrzywa.Points.AddXY(bjTWFx[bjI, 1], bjTWFx[bjI, 2]);
             }
         }
@@ -279,36 +288,8 @@ namespace Projekt2_Janusz70130
             // 7. Odkrycie kontrolki Chart i zakrycie DataGridView
             bjDgvTWFx.Visible = true;
             bjChrt.Visible = false;
-
-            // pobranie danych wejœciowych 
-            /*if (!bjPobranieDanychWejœciowychDlaTablicowania(out bjXd, out bjXg, out bjH))
-            {
-                // by³ b³¹d, to go sygnalizuje 
-                bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: w zapisie danych wejœciowych wyst¹pi³ " +
-                    "niedozwolony znak.");
-                // przerwanie obs³ugi zdarzenia Click: bjBtnWizualizacjaTabelarycznaFx_Click
-                return;
-            }
-            // 3. Po poprawnym za³adowaniu dnaych ustawienie stanu kontrolek
-            // ukrycie kontrolki wizualizacji graficznej
-            bjChrt.Visible = false;
-            // resetowanie kontrolki wizualizacji tabelarycznej
-            bjDgvTWFx.Rows.Clear();
-            // odkrycie kontrolki wizualizacji tabelarycznej
-            bjDgvTWFx.Visible = true;
-            // zablokowanie przycisku wizualizacji tabelarycznej
-            bjBtnWizualizacjaTabelarycznaFx.Enabled = false;
-            // odblokowanie przycisku wizualizacji graficznej
-            bjBtnWizualizacjaGraficznaFx.Enabled = true;
-
-            /* 4.Tablicowanie wartoœci równania(funkcji F(X)) w przedziale[Xd, Xg]
-            z przyrostem 'h' */
-            // wywo³anie metody tablicowania zmian wartoœci F(x) w podanym przedziale: [Xd, Xg] z 'h'
-            //bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
-            // 5. Wpisanie do Kontrolki DataGridView wierszy danych tablicy zmian wartoœci F(X)
-            // wywo³anie metody przepisania wierszy tablicy TWFx do kontrolki DataGridView
-            //bjWpiszWierszeDanychDoKontrolkiDataGridView(bjTWFx, ref bjDgvTWFx);
-            // modyfikator ref oznacza, ¿e dany parametr metordy jest parametrem wejœciowo-wyjœciowym
+            // ustawienie odpowiedniego stanu przycisków
+            bjUstawPrzyciskiDlaWizualizacji(true);
         }
 
         private void bjBtnWizualizacjaGraficznaFx_Click(object sender, EventArgs e)
@@ -343,43 +324,8 @@ namespace Projekt2_Janusz70130
             bjDgvTWFx.Visible = false;
             bjChrt.Visible = true;
 
-            /*
-            // zgaszenie kontrolki errorProvider
-            bjErrorProvider2.Dispose();
-            // deklaracja zmiannych pomocniczych 
-            float bjXd, bjXg, bjH;
-            // pobranie danych wejœciowych 
-            if (!bjPobranieDanychWejœciowychDlaTablicowania(out bjXd, out bjXg, out bjH))
-            {
-                // by³ b³¹d, to go sygnalizuje 
-                bjErrorProvider2.SetError(bjBtnWizualizacjaGraficznaFx, "ERROR: w zapisie danych wejœciowych wyst¹pi³ " +
-                    "niedozwolony znak.");
-                // przerwanie obs³ugi zdarzenia Click: btnWizualizacjaGraficznaFx_Click
-                return;
-            }
-
-            // zresetowanie kontrolki
-            bjResetChart();
-            
-            // po poprawnym za³adowaniu dnaych ustawienie odpowedniego stanu kontrolek
-            // ukrycie kontrolki wizualizacji tabelarycznej
-            bjDgvTWFx.Visible = false;
-            // resetowanie kontrolki wizualizacji graficznej
-            bjChrt.Series.Clear();
-            // odkrycie kontrolki wizualizacji graficznej
-            bjChrt.Visible = true;
-            // odblokowanie przycisku wizualizacji tabelarycznej
-            bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
-            // zablokowanie przycisku wizualizacji graficznej
-            bjBtnWizualizacjaGraficznaFx.Enabled = false;
-            // tablicowanie wartoœci równania(funkcji F(X)) w przedziale[Xd, Xg] z przyrostem 'h' */
-            // wywo³anie metody tablicowania 
-            //bjTablicowanieWartoœciFunkcjiFx(bjXd, bjXg, bjH);
-            // wpisanie do kontrolki Chart wierszy danych tablicy zmian wartoœci F(X)
-            // wywo³anie metody przepisania wierszy tablicy TWFx do kontrolki Chart
-            //bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
-            // modyfikator ref oznacza, ¿e dany parametr metordy jest parametrem wejœciowo-wyjœciowym
-
+            // ustawienie odpowiedniego stanu przycisków
+            bjUstawPrzyciskiDlaWizualizacji(false);
         }
 
         private void bjBtnReset_Click(object sender, EventArgs e)
@@ -397,6 +343,8 @@ namespace Projekt2_Janusz70130
             bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
             // odblokowanie i czyszczenie okienek z tekstem
             bjWyczyscPolaTekstowe();
+            // Ustawienie flagi aktualnoœæi danych na false
+            bjFlagaAktualnosciDanych = false;
         }
 
         private void bjAnalizatorIndywidualnyForm_Closing(object sender, FormClosingEventArgs e)
@@ -440,17 +388,6 @@ namespace Projekt2_Janusz70130
         {
             // wygaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
-            /*
-            if (bjDgvTWFx == null || !bjDgvTWFx.Visible || bjDgvTWFx.Rows.Count <= 0)
-            {
-                bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx, "ERROR: " +
-                    " polecenie nie mo¿e byæ zrealizowane bo Kontrolka DataGridView jest " +
-                    " niewidoczna lub pusta");
-                // przerwanie dalszej obs³ugi zdarzenia Click
-                return;
-            }
-            */
-            // utworzenie egzemplarza okna dialogowego: bjOknoPlikuDoZapisu
             
             // Utworzenie egzemplarza okna dialogowego do zapisu pliku
             SaveFileDialog bjOknoPlikuDoZapisu = new SaveFileDialog
@@ -524,9 +461,27 @@ namespace Projekt2_Janusz70130
             // 7. Odkrycie kontrolki DataGridView i zakrycie Chart
             bjDgvTWFx.Visible = true;
             bjChrt.Visible = false;
+            // 8. Zablokowanie pól tekstowych
+            bjZablokujPolaTekstowe();
+            // ustawienie odpowiedniego stanu przycisków
+            bjUstawPrzyciskiDlaWizualizacji(true);
         }
 
-        private static void bjWczytajDaneTekstoweDoTablicy(OpenFileDialog bjOknoWyboruPliku, string bjSuffix)
+        private void bjUstawPrzyciskiDlaWizualizacji(bool bjCzyTabelaryczna)
+        {
+            if (bjCzyTabelaryczna)
+            {
+                bjBtnWizualizacjaTabelarycznaFx.Enabled = false;
+                bjBtnWizualizacjaGraficznaFx.Enabled = true;
+            }
+            else
+            {
+                bjBtnWizualizacjaTabelarycznaFx.Enabled = true;
+                bjBtnWizualizacjaGraficznaFx.Enabled = false;
+            }
+        }
+
+        private void bjWczytajDaneTekstoweDoTablicy(OpenFileDialog bjOknoWyboruPliku, string bjSuffix)
         {
             if (bjOknoWyboruPliku.ShowDialog() == DialogResult.OK)
             {
@@ -534,7 +489,8 @@ namespace Projekt2_Janusz70130
                 string bjWierszDanych; // Przechowanie wiersza danych wczytanych z pliku znakowego
                 string[] bjElementyWierszaDanych; // Przechowanie pojedynczych danych z wczytanego wiersza danych
                 int liczbaWierszy = File.ReadAllLines(bjOknoWyboruPliku.FileName).Length;
-                double[,] bjTWFx = new double[liczbaWierszy, 3]; // Inicjalizacja tablicy
+                // Pomocniczo lokalna tablica
+                float[,] bjTWFxLokalna = new float[liczbaWierszy, 3]; // Inicjalizacja tablicy
 
                 // Utworzenie i otwarcie strumienia znaków do odczytu
                 using (StreamReader bjPlikZnakowy = new StreamReader(bjOknoWyboruPliku.FileName + bjSuffix))
@@ -558,9 +514,9 @@ namespace Projekt2_Janusz70130
                             bjElementyWierszaDanych[2] = bjElementyWierszaDanych[2].Trim();
 
                             // Przypisanie wartoœci do tablicy bjTWFx
-                            bjTWFx[NrWiersza, 0] = double.Parse(bjElementyWierszaDanych[0]);
-                            bjTWFx[NrWiersza, 1] = double.Parse(bjElementyWierszaDanych[1]);
-                            bjTWFx[NrWiersza, 2] = double.Parse(bjElementyWierszaDanych[2]);
+                            bjTWFxLokalna[NrWiersza, 0] = float.Parse(bjElementyWierszaDanych[0]);
+                            bjTWFxLokalna[NrWiersza, 1] = float.Parse(bjElementyWierszaDanych[1]);
+                            bjTWFxLokalna[NrWiersza, 2] = float.Parse(bjElementyWierszaDanych[2]);
 
                             NrWiersza++; // Zwiêkszenie licznika wierszy wpisanych do tablicy
                         }
@@ -573,51 +529,38 @@ namespace Projekt2_Janusz70130
                             bjB³¹d.Message + " )");
                     }
                 }
+
+                // Aktualizacja zmiennej klasy
+                bjTWFx = bjTWFxLokalna;
             }
         }
 
         private void bjAktualizacjaZmiennychDlaPolTekstowych()
         {
+            // Sprawdzenie, czy tablica bjTWFx jest zainicjalizowana i ma co najmniej dwa wiersze
+            if (bjTWFx != null && bjTWFx.GetLength(0) > 1)
             {
-                // Sprawdzenie, czy DataGridView zawiera co najmniej jeden wiersz
-                if (bjDgvTWFx.Rows.Count > 0)
+                // Pierwsza wartoœæ z tablicy to bjXd
+                bjXd = bjTWFx[0, 1];
+
+                // Ostatnia wartoœæ z tablicy to bjXg
+                bjXg = bjTWFx[bjTWFx.GetLength(0) - 1, 1];
+
+                // Ró¿nica pomiêdzy kolejnymi wartoœciami w tablicy to bjH
+                // Zak³adaj¹c, ¿e wartoœci X s¹ równomiernie roz³o¿one, mo¿emy obliczyæ bjH jako ró¿nicê miêdzy dwiema kolejnymi wartoœciami
+                if (bjTWFx.GetLength(0) > 1)
                 {
-                    // Pobranie wartoœci z pierwszego wiersza, kolumna 1 (indeks 0)
-                    var firstRowValue = bjDgvTWFx.Rows[0].Cells[1].Value;
-                    bjXd = Convert.ToSingle(firstRowValue);
-              
-
-                    // Pobranie wartoœci z ostatniego wiersza, kolumna 1 (indeks 0)
-                    int lastRowIndex = bjDgvTWFx.Rows.Count - 1;
-                    var lastRowValue = bjDgvTWFx.Rows[lastRowIndex].Cells[1].Value;
-                    bjXg = Convert.ToSingle(lastRowValue);
-
-                    // Obliczenie ró¿nicy miêdzy wartoœci¹ pierwszego a nastêpnego wiersza
-                    if (bjDgvTWFx.Rows.Count > 1)
-                    {
-                        // Pobranie wartoœci z drugiego wiersza, kolumna 1 (indeks 0)
-                        var nextRowValue = bjDgvTWFx.Rows[1].Cells[1].Value;
-                        float nextValue = Convert.ToSingle(nextRowValue);
-
-                        // Obliczenie ró¿nicy miêdzy wartoœci¹ pierwszego a nastêpnego wiersza
-                        bjH = Math.Abs(nextValue - bjXd);
-                    }
-                    else
-                    {
-                        // Jeœli DataGridView zawiera tylko jeden wiersz, ustawienie bjH na 0
-                        bjH = 0;
-                    }
-
-                    bjTxtXd.Text = bjXd.ToString();
-                    bjTxtXg.Text = bjXg.ToString();
-                    bjTxtH.Text = bjH.ToString();
-
+                    bjH = bjTWFx[1, 1] - bjTWFx[0, 1];
                 }
-                else
-                {
-                    // Obs³uga przypadku, gdy DataGridView jest puste
-                    MessageBox.Show("DataGridView is empty. Cannot retrieve values.");
-                }
+                // aktualizacja pól tekstowych
+                bjTxtXd.Text = bjXd.ToString();
+                bjTxtXg.Text = bjXg.ToString();
+                bjTxtH.Text = bjH.ToString();
+            }
+            else
+            {
+                // Obs³uga przypadku, gdy tablica jest pusta lub ma mniej ni¿ dwa wiersze
+                MessageBox.Show("Tablica bjTWFx jest pusta lub ma za ma³o danych do obliczenia zmiennych.", "B³¹d", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -716,6 +659,8 @@ namespace Projekt2_Janusz70130
             // 7. Odkrycie kontrolki Chart i zakrycie DataGridView
             bjDgvTWFx.Visible = false;
             bjChrt.Visible = true;
+            // ustawienie odpowiedniego stanu przycisków
+            bjUstawPrzyciskiDlaWizualizacji(false);
         }
 
         private void bjResetChart()

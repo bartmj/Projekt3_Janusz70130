@@ -32,7 +32,6 @@ namespace Projekt2_Janusz70130
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalizatorIndywidualny));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.bjTxtX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -299,10 +298,6 @@ namespace Projekt2_Janusz70130
             this.bjChrt.Legends.Add(legend1);
             this.bjChrt.Location = new System.Drawing.Point(270, 210);
             this.bjChrt.Name = "bjChrt";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.bjChrt.Series.Add(series1);
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
             this.bjChrt.TabIndex = 25;
             this.bjChrt.Text = "chart1";
