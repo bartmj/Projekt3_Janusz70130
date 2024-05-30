@@ -434,18 +434,7 @@ namespace Projekt2_Janusz70130
         {
             // zgaszenie kontrolki errorProvider
             bjErrorProvider2.Dispose();
-            // sprawdzenie, czy kontrolka DataGridView jest ods³oniêta
             
-            /*if (!bjDgvTWFx.Visible)
-            {
-                // kontrolka DataGridView nie jest ods³oniêta
-                bjErrorProvider2.SetError(bjBtnWizualizacjaTabelarycznaFx,
-                    "ERROR: operacja nie mo¿e byæ zrealizowana, gdy¿ kontrolka " +
-                    "DataGridView nie jest ods³oniêta (nie jest widoczna na formularzu)");
-                // przerwanie dalszej obs³ugi zdarzenia Click:
-                return;
-            }*/
-
             // usuniêcie danych w kontrolce DataGridView
             bjDgvTWFx.Rows.Clear();
             // wycentrowanie zapisów w poszczególnych komórkach (kolumnach) kontrolki DataGridView
