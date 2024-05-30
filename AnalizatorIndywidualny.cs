@@ -82,7 +82,6 @@ namespace Projekt2_Janusz70130
             bjTxtX.Enabled = false;
         }
 
-
         private bool bjSpróbujPobraæFloatIObs³ó¿bjB³¹d(string bjText, out float bjLiczbaFloat, Control bjKontrolka, string bjNazwaWspó³czynnika)
         {
             if (!float.TryParse(bjText, out bjLiczbaFloat))
@@ -93,8 +92,6 @@ namespace Projekt2_Janusz70130
             return true;
         }
 
-
-        
         private float bjObliczWartoœæFunkcji(float bjX)
         {
             if (bjX <= -1)
@@ -303,7 +300,6 @@ namespace Projekt2_Janusz70130
             // wywo³anie metody przepisania wierszy tablicy TWFx do kontrolki Chart
             bjWpiszWierszeDanychDoKontrolkiChart(bjTWFx, ref bjChrt);
             // modyfikator ref oznacza, ¿e dany parametr metordy jest parametrem wejœciowo-wyjœciowym
-            
         }
 
         private void bjBtnReset_Click(object sender, EventArgs e)
@@ -358,7 +354,6 @@ namespace Projekt2_Janusz70130
                 // Pominiêcie dodatkowych dzia³añ przy zamykaniu
                 e.Cancel = false;
             }
-            
         }
 
         private void zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -594,7 +589,6 @@ namespace Projekt2_Janusz70130
                     // Obs³uga przypadku, gdy DataGridView jest puste
                     MessageBox.Show("DataGridView is empty. Cannot retrieve values.");
                 }
-
             }
         }
 
@@ -738,7 +732,6 @@ namespace Projekt2_Janusz70130
                     }
                 }
             }
-            
         }
 
         private void bjZakoñczDzia³anieProgramuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -763,7 +756,6 @@ namespace Projekt2_Janusz70130
                     bjDgvTWFx.DefaultCellStyle.Font = new Font(bjNazwaCzcionki, bjDgvTWFx.DefaultCellStyle.Font.Size);
                 }
             }
-
         }
             private void bjZmianaKoloruCzcionki_Click(object sender, EventArgs e)
             {
