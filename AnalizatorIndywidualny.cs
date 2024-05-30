@@ -66,6 +66,14 @@ namespace Projekt2_Janusz70130
             zmianaStyluLiniiWykresuToolStripMenuItem.DropDownItems.Add("Ci¹g³a", null, bjZmianaStyluLiniiWykresuToolStripMenuItem_Click);
             zmianaStyluLiniiWykresuToolStripMenuItem.DropDownItems.Add("Kreskowana", null, bjZmianaStyluLiniiWykresuToolStripMenuItem_Click);
             zmianaStyluLiniiWykresuToolStripMenuItem.DropDownItems.Add("Kropkowana", null, bjZmianaStyluLiniiWykresuToolStripMenuItem_Click);
+
+            // Dodanie opcji zmiany typu wykresu
+            bjZmianaTypuWykresuToolStripMenuItem.DropDownItems.Add("Liniowy", null, bjZmianaTypuWykresuToolStripMenuItem_Click);
+            bjZmianaTypuWykresuToolStripMenuItem.DropDownItems.Add("Kolumnowy", null, bjZmianaTypuWykresuToolStripMenuItem_Click);
+            bjZmianaTypuWykresuToolStripMenuItem.DropDownItems.Add("S³upkowy", null, bjZmianaTypuWykresuToolStripMenuItem_Click);
+            bjZmianaTypuWykresuToolStripMenuItem.DropDownItems.Add("Punktowy", null, bjZmianaTypuWykresuToolStripMenuItem_Click);
+            bjZmianaTypuWykresuToolStripMenuItem.DropDownItems.Add("Obszarowy", null, bjZmianaTypuWykresuToolStripMenuItem_Click);
+
         }
 
 
@@ -885,6 +893,44 @@ namespace Projekt2_Janusz70130
         {
             bjZmienKolor(sender, bjChrt, (control, bjColor) => ((Chart)control).BackColor = bjColor); 
         }
+
+        private void bjZmianaTypuWykresuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ToolStripMenuItem bjElementMenu = sender as ToolStripMenuItem;
+            string bjWybranyTypWykresu = bjElementMenu.Text;
+
+            // Okreœlenie typu wykresu na podstawie wybranego tekstu
+            System.Windows.Forms.DataVisualization.Charting.SeriesChartType bjTypWykresu;
+
+            switch (bjWybranyTypWykresu)
+            {
+                case "Liniowy":
+                    bjTypWykresu = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    break;
+                case "Kolumnowy":
+                    bjTypWykresu = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;
+                    break;
+                case "S³upkowy":
+                    bjTypWykresu = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+                    break;
+                case "Punktowy":
+                    bjTypWykresu = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+                    break;
+                case "Obszarowy":
+                    bjTypWykresu = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Area;
+                    break;
+                default:
+                    bjTypWykresu = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    break;
+            }
+
+            // Zastosowanie wybranego typu wykresu do wszystkich serii
+            foreach (var bjSerie in bjChrt.Series)
+            {
+                bjSerie.ChartType = bjTypWykresu;
+            }
+        }
+
 
         private Color bjPobierzNazweKoloru(string bjNazwaKoloru)
         {

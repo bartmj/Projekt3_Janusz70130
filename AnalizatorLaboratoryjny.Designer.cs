@@ -542,7 +542,7 @@ namespace Projekt2_Janusz70130
             this.zmianaStyluLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.zmianaStyluLiniiWykresuToolStripMenuItem.Text = "Zmiana stylu linii wykresu";
             // 
-            // zmianaTypuWykresuToolStripMenuItem
+            // bjZianaTypuWykresuToolStripMenuItem
             // 
             this.zmianaTypuWykresuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.liniowyToolStripMenuItem,
