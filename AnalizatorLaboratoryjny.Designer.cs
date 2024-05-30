@@ -585,7 +585,7 @@ namespace Projekt2_Janusz70130
             this.piramidowyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.piramidowyToolStripMenuItem.Text = "Piramidowy";
             // 
-            // usuniêcieWykresuBitMapyToolStripMenuItem
+            // bjUsuniêcieWykresuBitMapyToolStripMenuItem
             // 
             this.usuniêcieWykresuBitMapyToolStripMenuItem.Enabled = false;
             this.usuniêcieWykresuBitMapyToolStripMenuItem.Name = "usuniêcieWykresuBitMapyToolStripMenuItem";

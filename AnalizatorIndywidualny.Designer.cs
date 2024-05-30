@@ -30,9 +30,9 @@ namespace Projekt2_Janusz70130
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalizatorIndywidualny));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
             this.bjTxtX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@ namespace Projekt2_Janusz70130
             this.bjZmianaFormatuCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zmianaStyluLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bjZmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuniêcieWykresuBitMapyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjUsuniêcieWykresuBitMapyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bjDgvTWFx)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -288,21 +288,21 @@ namespace Projekt2_Janusz70130
             // 
             // bjChrt
             // 
-            chartArea2.Name = "ChartArea1";
-            this.bjChrt.ChartAreas.Add(chartArea2);
-            legend2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            legend2.IsTextAutoFit = false;
-            legend2.Name = "Legend1";
-            legend2.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjChrt.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.bjChrt.ChartAreas.Add(chartArea1);
+            legend1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            legend1.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bjChrt.Legends.Add(legend1);
             this.bjChrt.Location = new System.Drawing.Point(270, 210);
             this.bjChrt.Name = "bjChrt";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.bjChrt.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.bjChrt.Series.Add(series1);
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
             this.bjChrt.TabIndex = 25;
             this.bjChrt.Text = "chart1";
@@ -419,7 +419,7 @@ namespace Projekt2_Janusz70130
             this.bjZmianaFormatuCzcionkiToolStripMenuItem,
             this.zmianaStyluLiniiWykresuToolStripMenuItem,
             this.bjZmianaTypuWykresuToolStripMenuItem,
-            this.usuniêcieWykresuBitMapyToolStripMenuItem});
+            this.bjUsuniêcieWykresuBitMapyToolStripMenuItem});
             this.formatowanieKontrolkiChartToolStripMenuItem.Name = "formatowanieKontrolkiChartToolStripMenuItem";
             this.formatowanieKontrolkiChartToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
             this.formatowanieKontrolkiChartToolStripMenuItem.Text = "Formatowanie kontrolki Chart";
@@ -451,16 +451,15 @@ namespace Projekt2_Janusz70130
             // 
             // bjZmianaTypuWykresuToolStripMenuItem
             // 
-            this.bjZmianaTypuWykresuToolStripMenuItem.Name = "zmianaTypuWykresuToolStripMenuItem";
+            this.bjZmianaTypuWykresuToolStripMenuItem.Name = "bjZmianaTypuWykresuToolStripMenuItem";
             this.bjZmianaTypuWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.bjZmianaTypuWykresuToolStripMenuItem.Text = "Zmiana typu wykresu";
             // 
-            // usuniêcieWykresuBitMapyToolStripMenuItem
+            // bjUsuniêcieWykresuBitMapyToolStripMenuItem
             // 
-            this.usuniêcieWykresuBitMapyToolStripMenuItem.Enabled = false;
-            this.usuniêcieWykresuBitMapyToolStripMenuItem.Name = "usuniêcieWykresuBitMapyToolStripMenuItem";
-            this.usuniêcieWykresuBitMapyToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.usuniêcieWykresuBitMapyToolStripMenuItem.Text = "Usuniêcie wykresu (BitMapy)";
+            this.bjUsuniêcieWykresuBitMapyToolStripMenuItem.Name = "bjUsuniêcieWykresuBitMapyToolStripMenuItem";
+            this.bjUsuniêcieWykresuBitMapyToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.bjUsuniêcieWykresuBitMapyToolStripMenuItem.Text = "Usuniêcie wykresu (BitMapy)";
             // 
             // AnalizatorIndywidualny
             // 
@@ -541,6 +540,6 @@ namespace Projekt2_Janusz70130
         private System.Windows.Forms.ToolStripMenuItem bjZmianaFormatuCzcionkiToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmianaStyluLiniiWykresuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bjZmianaTypuWykresuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuniêcieWykresuBitMapyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjUsuniêcieWykresuBitMapyToolStripMenuItem;
     }
 }
