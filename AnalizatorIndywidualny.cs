@@ -664,46 +664,7 @@ namespace Projekt2_Janusz70130
             }
         }
 
-        private void bjResetChart()
-        {
-            // Sprawdzenie, czy kontrolka bjChrt istnieje
-            if (bjChrt != null)
-            {
-                // Usuniêcie wszystkich serii danych, jeœli istniej¹
-                if (bjChrt.Series != null)
-                {
-                    bjChrt.Series.Clear();
-                }
-
-                // Usuniêcie wszystkich obszarów wykresu, jeœli istniej¹
-                if (bjChrt.ChartAreas != null)
-                {
-                    bjChrt.ChartAreas.Clear();
-                }
-
-                // Usuniêcie wszystkich legend, jeœli istniej¹
-                if (bjChrt.Legends != null)
-                {
-                    bjChrt.Legends.Clear();
-                }
-
-                // Usuniêcie wszystkich tytu³ów, jeœli istniej¹
-                if (bjChrt.Titles != null)
-                {
-                    bjChrt.Titles.Clear();
-                }
-
-                // Opcjonalnie: Resetowanie t³a wykresu
-                bjChrt.ChartAreas.Add(new ChartArea("Default"));
-                bjChrt.ChartAreas[0].BackImage = "";
-
-                // Opcjonalnie: Dodaj domyœln¹ seriê i obszar wykresu, jeœli to konieczne
-                var series = new Series("Default");
-                bjChrt.Series.Add(series);
-            }
-        }
-
-
+        
         private void bjZamknijFormularziPrzejdŸDoMenuG³ównegoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult bjOknoWiadomosci =
