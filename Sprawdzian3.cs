@@ -28,11 +28,11 @@ namespace Projekt3_Janusz70130
             bjDgvTWFx.AllowUserToAddRows = false;
 
             // Dodajemy opcje do menu zmiany formatu czcionki
-            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Domyślna (Microsoft Sans Serif)", null, bjZmianaFormatuCzcionki_Click_1); // Dodana czcionka Tahoma
-            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Arial", null, bjZmianaFormatuCzcionki_Click_1);
-            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Times New Roman", null, bjZmianaFormatuCzcionki_Click_1);
-            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Verdana", null, bjZmianaFormatuCzcionki_Click_1); // Dodana czcionka Verdana
-            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Tahoma", null, bjZmianaFormatuCzcionki_Click_1); // Dodana czcionka Tahoma
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Domyślna (Microsoft Sans Serif)", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Tahoma
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Arial", null, bjZmianaFormatuCzcionki_Click);
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Times New Roman", null, bjZmianaFormatuCzcionki_Click);
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Verdana", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Verdana
+            bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Tahoma", null, bjZmianaFormatuCzcionki_Click); // Dodana czcionka Tahoma
 
             // Dodajemy opcje do menu zmiany koloru czcionki
             bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.DropDownItems.Add("Czarny", null, bjZmianaKoloruCzcionki_Click_1);
@@ -322,30 +322,12 @@ namespace Projekt3_Janusz70130
             }
         }
 
-        private void zapiszWierszeDanychKontrolkiDataGridViewDoPlikuToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void zapiszWierszeDanychKontrolkiDataGridViewDoPlikuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // wygaszenie kontrolki errorProvider
-            bjErrorProvider2.Dispose();
 
-            // Utworzenie egzemplarza okna dialogowego do zapisu pliku
-            SaveFileDialog bjOknoPlikuDoZapisu = new SaveFileDialog
-            {
-                Title = "Wybór pliku do zapisania danych z kontrolki DataGridView",
-                Filter = "txt files (*.txt)|*.txt|all files (*.*)|*.*",
-                FilterIndex = 1,
-                RestoreDirectory = true,
-                InitialDirectory = "C:\\"
-            };
-
-            // Wizualizacja okna dialogowego i odczytanie informacji o wyborze pliku
-            if (bjOknoPlikuDoZapisu.ShowDialog() == DialogResult.OK)
-            {
-                // Zapisanie zawartości DataGridView do wybranego pliku
-                bjZapiszDaneKontrolkiDataGridViewDoPliku(bjOknoPlikuDoZapisu.FileName);
-            }
         }
 
-        private void bjZapiszDaneKontrolkiDataGridViewDoPliku(string bjNazwaPliku)
+        private void bjZapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem(string bjNazwaPliku)
         {
             // Utworzenie egzemplarza StreamWriter do zapisu wierszy DataGridView do pliku
             using (StreamWriter bjPlikZnakowy = new StreamWriter(bjNazwaPliku))
@@ -529,7 +511,7 @@ namespace Projekt3_Janusz70130
             bjDgvTWFx.Rows.Clear();
         }
 
-        private void zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void bjZapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //. 1. Zapis BitMapy do pliku 
             // utworzenie egzemplarza okna dialogowego: bjOknoPlikuDoZapisu
@@ -556,7 +538,7 @@ namespace Projekt3_Janusz70130
                     MessageBox.Show($"ERROR: {ex.Message}", "Błąd zapisu", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 // 2. Zapis dodatkowych danych DataGridView do pliku tekstowego
-                bjZapiszDaneKontrolkiDataGridViewDoPliku(bjOknoPlikuDoZapisu.FileName + ".Chart.Data");
+                bjZapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem(bjOknoPlikuDoZapisu.FileName + ".Chart.Data");
             }
         }
 
@@ -621,7 +603,7 @@ namespace Projekt3_Janusz70130
             Application.Exit();
         }
 
-        private void bjZmianaFormatuCzcionki_Click_1(object sender, EventArgs e)
+        private void bjZmianaFormatuCzcionki_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem bjElementMenu = sender as ToolStripMenuItem;
             if (bjElementMenu != null)

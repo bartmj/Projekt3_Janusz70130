@@ -418,7 +418,7 @@ namespace Projekt2_Janusz70130
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
-            // zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem
+            // bjZapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem
             // 
             this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Name = "zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem";
             this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);

@@ -29,29 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sprawdzian3));
-            this.bjZmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zakończDziałanieProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formatowanieKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuńWierszeDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.formatowanieKontrolkiChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zmianaKoloruTłaWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bjZmianaFormatuCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.zmianaStyluLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bjUsunięcieWykresuBitMapyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bjChrt = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.bjErrorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.bjBtnReset = new System.Windows.Forms.Button();
@@ -74,172 +54,45 @@
             this.label2 = new System.Windows.Forms.Label();
             this.bjTxtX = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zakończDziałanieProgramuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formatowanieKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuńWierszeDanychToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formatowanieKontrolkiChartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmianaKoloruTłaWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmianaStyluLiniiWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjZmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bjUsunięcieWykresuBitMapyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.bjChrt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bjErrorProvider2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bjDgvTWFx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // bjZmianaTypuWykresuToolStripMenuItem
-            // 
-            this.bjZmianaTypuWykresuToolStripMenuItem.Name = "bjZmianaTypuWykresuToolStripMenuItem";
-            this.bjZmianaTypuWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.bjZmianaTypuWykresuToolStripMenuItem.Text = "Zmiana typu wykresu";
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.plikToolStripMenuItem,
-            this.formatowanieKontrolkiDataGridViewToolStripMenuItem,
-            this.formatowanieKontrolkiChartToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1055, 24);
-            this.menuStrip1.TabIndex = 40;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // plikToolStripMenuItem
-            // 
-            this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem,
-            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem,
-            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem,
-            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem,
-            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem,
-            this.zakończDziałanieProgramuToolStripMenuItem});
-            this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
-            this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.plikToolStripMenuItem.Text = "Plik";
-            // 
-            // zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem
-            // 
-            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Name = "zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem";
-            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
-            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Text = "Zapisz wiersze danych kontrolki DataGridView w pliku";
-            // 
-            // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem
-            // 
-            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
-            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Name = "pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem";
-            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
-            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Text = "Pobierz z pliku wiersze danych do kontrolki DataGridView";
-            // 
-            // zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem
-            // 
-            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem.Name = "zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem";
-            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
-            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem.Text = "Zapisz BitMapę kontrolki Chart w pliku";
-            // 
-            // pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem
-            // 
-            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Enabled = false;
-            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Name = "pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem";
-            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
-            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Text = "Pobierz BitMapę z pliku i podepnij do kontrolki Chart";
-            // 
-            // zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem
-            // 
-            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem.Name = "zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem";
-            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
-            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem.Text = "Zamknij formularz (i przejdź do menu głównego)";
-            // 
-            // zakończDziałanieProgramuToolStripMenuItem
-            // 
-            this.zakończDziałanieProgramuToolStripMenuItem.Name = "zakończDziałanieProgramuToolStripMenuItem";
-            this.zakończDziałanieProgramuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
-            this.zakończDziałanieProgramuToolStripMenuItem.Text = "Zakończ działanie programu";
-            // 
-            // formatowanieKontrolkiDataGridViewToolStripMenuItem
-            // 
-            this.formatowanieKontrolkiDataGridViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem,
-            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem,
-            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem,
-            this.usuńWierszeDanychToolStripMenuItem});
-            this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Name = "formatowanieKontrolkiDataGridViewToolStripMenuItem";
-            this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(219, 20);
-            this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Text = "Formatowanie kontrolki DataGridView";
-            // 
-            // bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem
-            // 
-            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem";
-            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana formatu czcionki kontrolki DataGridView";
-            // 
-            // bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem
-            // 
-            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem";
-            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru czcionki kontrolki DataGridView";
-            // 
-            // bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem
-            // 
-            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Name = "bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem";
-            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru siatki kontrolki DataGridView";
-            // 
-            // usuńWierszeDanychToolStripMenuItem
-            // 
-            this.usuńWierszeDanychToolStripMenuItem.Name = "usuńWierszeDanychToolStripMenuItem";
-            this.usuńWierszeDanychToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
-            this.usuńWierszeDanychToolStripMenuItem.Text = "Usuń wiersze danych kontrolki DataGridView";
-            // 
-            // formatowanieKontrolkiChartToolStripMenuItem
-            // 
-            this.formatowanieKontrolkiChartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zmianaKoloruTłaWykresuToolStripMenuItem,
-            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem,
-            this.bjZmianaFormatuCzcionkiToolStripMenuItem,
-            this.zmianaStyluLiniiWykresuToolStripMenuItem,
-            this.bjZmianaTypuWykresuToolStripMenuItem,
-            this.bjUsunięcieWykresuBitMapyToolStripMenuItem});
-            this.formatowanieKontrolkiChartToolStripMenuItem.Name = "formatowanieKontrolkiChartToolStripMenuItem";
-            this.formatowanieKontrolkiChartToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
-            this.formatowanieKontrolkiChartToolStripMenuItem.Text = "Formatowanie kontrolki Chart";
-            // 
-            // zmianaKoloruTłaWykresuToolStripMenuItem
-            // 
-            this.zmianaKoloruTłaWykresuToolStripMenuItem.Name = "zmianaKoloruTłaWykresuToolStripMenuItem";
-            this.zmianaKoloruTłaWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.zmianaKoloruTłaWykresuToolStripMenuItem.Text = "Zmiana koloru tła wykresu";
-            // 
-            // bjZmianaKoloruLiniiWykresuToolStripMenuItem
-            // 
-            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Name = "bjZmianaKoloruLiniiWykresuToolStripMenuItem";
-            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Text = "Zmiana koloru linii wykresu";
-            // 
-            // bjZmianaFormatuCzcionkiToolStripMenuItem
-            // 
-            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Name = "bjZmianaFormatuCzcionkiToolStripMenuItem";
-            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Text = "Zmiana formatu czcionki";
-            // 
-            // zmianaStyluLiniiWykresuToolStripMenuItem
-            // 
-            this.zmianaStyluLiniiWykresuToolStripMenuItem.Name = "zmianaStyluLiniiWykresuToolStripMenuItem";
-            this.zmianaStyluLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.zmianaStyluLiniiWykresuToolStripMenuItem.Text = "Zmiana stylu linii wykresu";
-            // 
-            // bjUsunięcieWykresuBitMapyToolStripMenuItem
-            // 
-            this.bjUsunięcieWykresuBitMapyToolStripMenuItem.Name = "bjUsunięcieWykresuBitMapyToolStripMenuItem";
-            this.bjUsunięcieWykresuBitMapyToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
-            this.bjUsunięcieWykresuBitMapyToolStripMenuItem.Text = "Usunięcie wykresu (BitMapy)";
             // 
             // bjChrt
             // 
-            chartArea2.Name = "ChartArea1";
-            this.bjChrt.ChartAreas.Add(chartArea2);
-            legend2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            legend2.IsTextAutoFit = false;
-            legend2.Name = "Legend1";
-            legend2.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjChrt.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.bjChrt.ChartAreas.Add(chartArea4);
+            legend4.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Legend1";
+            legend4.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bjChrt.Legends.Add(legend4);
             this.bjChrt.Location = new System.Drawing.Point(277, 218);
             this.bjChrt.Name = "bjChrt";
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
@@ -438,6 +291,151 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Wartość zmiennej \r\nniezależnej X";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.plikToolStripMenuItem,
+            this.formatowanieKontrolkiDataGridViewToolStripMenuItem,
+            this.formatowanieKontrolkiChartToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1055, 24);
+            this.menuStrip1.TabIndex = 40;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // plikToolStripMenuItem
+            // 
+            this.plikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem,
+            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem,
+            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem,
+            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem,
+            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem,
+            this.zakończDziałanieProgramuToolStripMenuItem});
+            this.plikToolStripMenuItem.Name = "plikToolStripMenuItem";
+            this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.plikToolStripMenuItem.Text = "Plik";
+            // 
+            // zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem
+            // 
+            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Name = "zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem";
+            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
+            this.zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem.Text = "Zapisz wiersze danych kontrolki DataGridView w pliku";
+            // 
+            // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem
+            // 
+            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Name = "pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem";
+            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
+            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Text = "Pobierz z pliku wiersze danych do kontrolki DataGridView";
+            // 
+            // zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem
+            // 
+            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem.Name = "zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem";
+            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
+            this.zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem.Text = "Zapisz BitMapę kontrolki Chart w pliku";
+            // 
+            // pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem
+            // 
+            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Name = "pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem";
+            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
+            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Text = "Pobierz BitMapę z pliku i podepnij do kontrolki Chart";
+            // 
+            // zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem
+            // 
+            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem.Name = "zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem";
+            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
+            this.zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem.Text = "Zamknij formularz (i przejdź do menu głównego)";
+            // 
+            // zakończDziałanieProgramuToolStripMenuItem
+            // 
+            this.zakończDziałanieProgramuToolStripMenuItem.Name = "zakończDziałanieProgramuToolStripMenuItem";
+            this.zakończDziałanieProgramuToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
+            this.zakończDziałanieProgramuToolStripMenuItem.Text = "Zakończ działanie programu";
+            // 
+            // formatowanieKontrolkiDataGridViewToolStripMenuItem
+            // 
+            this.formatowanieKontrolkiDataGridViewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem,
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem,
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem,
+            this.usuńWierszeDanychToolStripMenuItem});
+            this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Name = "formatowanieKontrolkiDataGridViewToolStripMenuItem";
+            this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(219, 20);
+            this.formatowanieKontrolkiDataGridViewToolStripMenuItem.Text = "Formatowanie kontrolki DataGridView";
+            // 
+            // bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem
+            // 
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem";
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
+            this.bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana formatu czcionki kontrolki DataGridView";
+            // 
+            // bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem
+            // 
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Name = "bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem";
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
+            this.bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru czcionki kontrolki DataGridView";
+            // 
+            // bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem
+            // 
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Name = "bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem";
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
+            this.bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem.Text = "Zmiana koloru siatki kontrolki DataGridView";
+            // 
+            // usuńWierszeDanychToolStripMenuItem
+            // 
+            this.usuńWierszeDanychToolStripMenuItem.Name = "usuńWierszeDanychToolStripMenuItem";
+            this.usuńWierszeDanychToolStripMenuItem.Size = new System.Drawing.Size(330, 22);
+            this.usuńWierszeDanychToolStripMenuItem.Text = "Usuń wiersze danych kontrolki DataGridView";
+            // 
+            // formatowanieKontrolkiChartToolStripMenuItem
+            // 
+            this.formatowanieKontrolkiChartToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zmianaKoloruTłaWykresuToolStripMenuItem,
+            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem,
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem,
+            this.zmianaStyluLiniiWykresuToolStripMenuItem,
+            this.bjZmianaTypuWykresuToolStripMenuItem,
+            this.bjUsunięcieWykresuBitMapyToolStripMenuItem});
+            this.formatowanieKontrolkiChartToolStripMenuItem.Name = "formatowanieKontrolkiChartToolStripMenuItem";
+            this.formatowanieKontrolkiChartToolStripMenuItem.Size = new System.Drawing.Size(177, 20);
+            this.formatowanieKontrolkiChartToolStripMenuItem.Text = "Formatowanie kontrolki Chart";
+            // 
+            // zmianaKoloruTłaWykresuToolStripMenuItem
+            // 
+            this.zmianaKoloruTłaWykresuToolStripMenuItem.Name = "zmianaKoloruTłaWykresuToolStripMenuItem";
+            this.zmianaKoloruTłaWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.zmianaKoloruTłaWykresuToolStripMenuItem.Text = "Zmiana koloru tła wykresu";
+            // 
+            // bjZmianaKoloruLiniiWykresuToolStripMenuItem
+            // 
+            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Name = "bjZmianaKoloruLiniiWykresuToolStripMenuItem";
+            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.bjZmianaKoloruLiniiWykresuToolStripMenuItem.Text = "Zmiana koloru linii wykresu";
+            // 
+            // bjZmianaFormatuCzcionkiToolStripMenuItem
+            // 
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Name = "bjZmianaFormatuCzcionkiToolStripMenuItem";
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.bjZmianaFormatuCzcionkiToolStripMenuItem.Text = "Zmiana formatu czcionki";
+            // 
+            // zmianaStyluLiniiWykresuToolStripMenuItem
+            // 
+            this.zmianaStyluLiniiWykresuToolStripMenuItem.Name = "zmianaStyluLiniiWykresuToolStripMenuItem";
+            this.zmianaStyluLiniiWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.zmianaStyluLiniiWykresuToolStripMenuItem.Text = "Zmiana stylu linii wykresu";
+            // 
+            // bjZmianaTypuWykresuToolStripMenuItem
+            // 
+            this.bjZmianaTypuWykresuToolStripMenuItem.Name = "bjZmianaTypuWykresuToolStripMenuItem";
+            this.bjZmianaTypuWykresuToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.bjZmianaTypuWykresuToolStripMenuItem.Text = "Zmiana typu wykresu";
+            // 
+            // bjUsunięcieWykresuBitMapyToolStripMenuItem
+            // 
+            this.bjUsunięcieWykresuBitMapyToolStripMenuItem.Name = "bjUsunięcieWykresuBitMapyToolStripMenuItem";
+            this.bjUsunięcieWykresuBitMapyToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
+            this.bjUsunięcieWykresuBitMapyToolStripMenuItem.Text = "Usunięcie wykresu (BitMapy)";
+            // 
             // Sprawdzian3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,41 +456,20 @@
             this.Controls.Add(this.label1);
             this.Name = "Sprawdzian3";
             this.Text = "Sprawdzian3";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bjChrt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bjErrorProvider2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bjDgvTWFx)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStripMenuItem bjZmianaTypuWykresuToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zakończDziałanieProgramuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formatowanieKontrolkiDataGridViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuńWierszeDanychToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem formatowanieKontrolkiChartToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zmianaKoloruTłaWykresuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruLiniiWykresuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bjZmianaFormatuCzcionkiToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem zmianaStyluLiniiWykresuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bjUsunięcieWykresuBitMapyToolStripMenuItem;
         private System.Windows.Forms.DataVisualization.Charting.Chart bjChrt;
         private System.Windows.Forms.ErrorProvider bjErrorProvider2;
         private System.Windows.Forms.Button bjBtnReset;
@@ -515,5 +492,25 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox bjTxtX;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zapiszWierszeDanychKontrolkiDataGridViewWPlikuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zakończDziałanieProgramuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formatowanieKontrolkiDataGridViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaFormatuCzcionkiKontrolkiDataGridViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruCzcionkiKontrolkiDataGridViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruSiatKontrolkiDataGridViewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuńWierszeDanychToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formatowanieKontrolkiChartToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zmianaKoloruTłaWykresuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaKoloruLiniiWykresuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaFormatuCzcionkiToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem zmianaStyluLiniiWykresuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjZmianaTypuWykresuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bjUsunięcieWykresuBitMapyToolStripMenuItem;
     }
 }
