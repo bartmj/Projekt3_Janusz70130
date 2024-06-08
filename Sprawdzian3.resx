@@ -136,7 +136,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAwoAAABzCAYAAAA4/fW1AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAUExJREFUeF7t3QVYVPkax3H2Wqtr15prd3ev3d2da3d3d3d3x9otJjYiooKIiCLd
+        vgAADr4B6kKxwAAAUExJREFUeF7t3QVYVPkax3H2Wqtr15prd3ev3d2da3d3d3d3x9otJjYiooKIiCLd
         3bnfO4MDgpI6Myq+n+c5z737P2fOODDA+5t/6SCE0CodHZ2IQwghhBDiRybVihBaJkFBCCGEED8DqVaE
         0DIJCkIkX2GhQfh7ueLm5UVgaLiq9ccQGuSPt7sjrt6BhP2nakyk8NBgxetyw9nDl8DgUFXrrycs2B8v
         xdfBzduf4B/s+6spEa/ZzREHBwfF4YqXbxBhqnOE+OHmGnnOAXffEEKjTorkQKoVIbRMgoIQyVEYQb4e
@@ -482,4 +482,13 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="bjNrPrzedziału.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="bjWartośćX.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="bjWartośćFx.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sprawdzian3));
             this.bjZmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -56,7 +56,6 @@
             this.bjErrorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.bjBtnReset = new System.Windows.Forms.Button();
             this.bjBtnWizualizacjaGraficznaFx = new System.Windows.Forms.Button();
-            this.bjBtnWizualizacjaTabelarycznaFx = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -230,15 +229,15 @@
             // 
             // bjChrt
             // 
-            chartArea1.Name = "ChartArea1";
-            this.bjChrt.ChartAreas.Add(chartArea1);
-            legend1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            legend1.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjChrt.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.bjChrt.ChartAreas.Add(chartArea4);
+            legend4.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
+            legend4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend4.IsTextAutoFit = false;
+            legend4.Name = "Legend1";
+            legend4.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bjChrt.Legends.Add(legend4);
             this.bjChrt.Location = new System.Drawing.Point(277, 218);
             this.bjChrt.Name = "bjChrt";
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
@@ -253,33 +252,24 @@
             // bjBtnReset
             // 
             this.bjBtnReset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjBtnReset.Location = new System.Drawing.Point(792, 599);
+            this.bjBtnReset.Location = new System.Drawing.Point(792, 503);
             this.bjBtnReset.Name = "bjBtnReset";
             this.bjBtnReset.Size = new System.Drawing.Size(230, 66);
             this.bjBtnReset.TabIndex = 36;
             this.bjBtnReset.Text = "RESETUJ\r\n(ustaw stan początkowy)";
             this.bjBtnReset.UseVisualStyleBackColor = true;
+            this.bjBtnReset.Click += new System.EventHandler(this.bjBtnReset_Click);
             // 
             // bjBtnWizualizacjaGraficznaFx
             // 
             this.bjBtnWizualizacjaGraficznaFx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjBtnWizualizacjaGraficznaFx.Location = new System.Drawing.Point(792, 503);
+            this.bjBtnWizualizacjaGraficznaFx.Location = new System.Drawing.Point(792, 407);
             this.bjBtnWizualizacjaGraficznaFx.Name = "bjBtnWizualizacjaGraficznaFx";
             this.bjBtnWizualizacjaGraficznaFx.Size = new System.Drawing.Size(230, 90);
             this.bjBtnWizualizacjaGraficznaFx.TabIndex = 35;
             this.bjBtnWizualizacjaGraficznaFx.Text = "Wizualizacja graficzna zmian wartości Funkcji F(X)";
             this.bjBtnWizualizacjaGraficznaFx.UseVisualStyleBackColor = true;
-            // 
-            // bjBtnWizualizacjaTabelarycznaFx
-            // 
-            this.bjBtnWizualizacjaTabelarycznaFx.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bjBtnWizualizacjaTabelarycznaFx.Location = new System.Drawing.Point(792, 407);
-            this.bjBtnWizualizacjaTabelarycznaFx.Name = "bjBtnWizualizacjaTabelarycznaFx";
-            this.bjBtnWizualizacjaTabelarycznaFx.Size = new System.Drawing.Size(230, 90);
-            this.bjBtnWizualizacjaTabelarycznaFx.TabIndex = 34;
-            this.bjBtnWizualizacjaTabelarycznaFx.Text = "Wizualizacja tabelaryczna zmian wartości funkcji F(X) w podanym przedziale zmian " +
-    "X\r\n";
-            this.bjBtnWizualizacjaTabelarycznaFx.UseVisualStyleBackColor = true;
+            this.bjBtnWizualizacjaGraficznaFx.Click += new System.EventHandler(this.bjBtnWizualizacjaGraficznaFx_Click);
             // 
             // label8
             // 
@@ -388,6 +378,7 @@
             this.bjBtnObliczWartośćFx.TabIndex = 33;
             this.bjBtnObliczWartośćFx.Text = "Oblicz wartość funkcji \r\nw punkcie X";
             this.bjBtnObliczWartośćFx.UseVisualStyleBackColor = true;
+            this.bjBtnObliczWartośćFx.Click += new System.EventHandler(this.bjBtnObliczWartośćFx_Click_1);
             // 
             // bjTxtFX
             // 
@@ -421,11 +412,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(327, 39);
+            this.label2.Location = new System.Drawing.Point(361, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(392, 26);
+            this.label2.Size = new System.Drawing.Size(299, 26);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Analizator indywidualny funkcji F(x)";
+            this.label2.Text = "Analizator ze sprawdzianu 3";
             // 
             // bjTxtX
             // 
@@ -454,7 +445,6 @@
             this.Controls.Add(this.bjChrt);
             this.Controls.Add(this.bjBtnReset);
             this.Controls.Add(this.bjBtnWizualizacjaGraficznaFx);
-            this.Controls.Add(this.bjBtnWizualizacjaTabelarycznaFx);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.bjDgvTWFx);
             this.Controls.Add(this.bjBtnObliczWartośćFx);
@@ -505,7 +495,6 @@
         private System.Windows.Forms.ErrorProvider bjErrorProvider2;
         private System.Windows.Forms.Button bjBtnReset;
         private System.Windows.Forms.Button bjBtnWizualizacjaGraficznaFx;
-        private System.Windows.Forms.Button bjBtnWizualizacjaTabelarycznaFx;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox bjTxtXg;
