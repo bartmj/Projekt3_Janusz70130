@@ -886,6 +886,11 @@ namespace Projekt3_Janusz70130
             bjUstawPrzyciskiDlaWizualizacji(false);
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         #endregion
         /**/
