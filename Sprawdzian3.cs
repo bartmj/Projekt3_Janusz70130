@@ -511,7 +511,7 @@ namespace Projekt3_Janusz70130
             bjDgvTWFx.Rows.Clear();
         }
 
-        private void bjZapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void bjZapiszBitMapęKontrolkiChartWPlikuToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             //. 1. Zapis BitMapy do pliku 
             // utworzenie egzemplarza okna dialogowego: bjOknoPlikuDoZapisu
@@ -576,7 +576,7 @@ namespace Projekt3_Janusz70130
         }
 
 
-        private void bjZamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void bjZamknijFormularziPrzejdźDoMenuGłównegoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult bjOknoWiadomosci =
                     MessageBox.Show("Czy na pewno chcesz zamknąć ten formularz?",
