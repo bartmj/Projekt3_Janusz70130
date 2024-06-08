@@ -116,16 +116,16 @@ namespace Projekt2_Janusz70130
 
         private float bjObliczWartoœæFunkcji(float bjX)
         {
-            if (bjX <= -1)
+            if (bjX > 10)
             {
-                return (float)(Math.Exp(Math.Abs(bjX)) * Math.Sin(bjX));
+                return (float)(bjX * (Math.Sin(bjX) +1));
             }
-            else if (bjX > -1 && bjX < 1)
+            else if (bjX <= 10 && bjX >= -10)
             {
-                return 1 + bjX + (bjX * bjX) / 2;
+                return (float)Math.Pow(2, bjX+1);
             }
             else
-                return (float)(Math.Sin(1 + bjX + (Math.Pow(bjX, 2) / 2)) * Math.Log(bjX));
+                return (float)(1+bjX)/(1+ (float)Math.Pow((1 + Math.Pow(bjX, 2)), 2));
         }
 
         private bool bjPobranieDanychWejœciowychDlaTablicowania(out float bjXd, out float bjXg, out float bjH)
