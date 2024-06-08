@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sprawdzian3));
             this.bjZmianaTypuWykresuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -121,6 +121,7 @@
             // 
             // pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem
             // 
+            this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Enabled = false;
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Name = "pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem";
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.pobierzZPlikuWierszeDanychDoKontrolkiDataGridViewToolStripMenuItem.Text = "Pobierz z pliku wiersze danych do kontrolki DataGridView";
@@ -133,6 +134,7 @@
             // 
             // pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem
             // 
+            this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Enabled = false;
             this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Name = "pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem";
             this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Size = new System.Drawing.Size(374, 22);
             this.pobierzBitMapęZPlikuIPodepnijDoKontrolkiChartToolStripMenuItem.Text = "Pobierz BitMapę z pliku i podepnij do kontrolki Chart";
@@ -229,15 +231,15 @@
             // 
             // bjChrt
             // 
-            chartArea1.Name = "ChartArea1";
-            this.bjChrt.ChartAreas.Add(chartArea1);
-            legend1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            legend1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            legend1.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bjChrt.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.bjChrt.ChartAreas.Add(chartArea2);
+            legend2.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.BottomLeft;
+            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            legend2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            legend2.IsTextAutoFit = false;
+            legend2.Name = "Legend1";
+            legend2.TitleFont = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bjChrt.Legends.Add(legend2);
             this.bjChrt.Location = new System.Drawing.Point(277, 218);
             this.bjChrt.Name = "bjChrt";
             this.bjChrt.Size = new System.Drawing.Size(493, 426);
